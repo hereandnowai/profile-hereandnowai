@@ -1,29 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Timeline from './components/Timeline';
+import Services from './components/Services';
+import Leadership from './components/Leadership';
+import Contact from './components/Contact';
+import Chatbot from './components/Chatbot';
+import Footer from './components/Footer';
+import branding from './branding.json';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Chau Philomene One', cursive;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+  }
+`;
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 function App() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch('https://www.hereandnowai.com/wp-json/wp/v2/posts')
-      .then(response => response.json())
-      .then(data => setPosts(data));
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Posts from hereandnowai.com</h1>
-      </header>
-      <div className="posts-container">
-        {posts.map(post => (
-          <div key={post.id} className="post">
-            <h2>{post.title.rendered}</h2>
-            <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-          </div>
-        ))}
-      </div>
-    </div>
+    <>
+      <GlobalStyle />
+      <AppContainer>
+        <Header />
+        <Chatbot />
+        <Hero />
+        <About />
+        <Timeline />
+        <Services />
+        <Leadership />
+        <Contact />
+        <Footer />
+      </AppContainer>
+    </>
   );
 }
 
