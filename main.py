@@ -1,0 +1,2 @@
+editable_profile = "https://docs.google.com/document/d/1Sl4yPV9kPr_gnUbYQie0eZ2NmssbEuXrVI_BJNhFAD4/edit?tab=t.0#heading=h.863bjo2v5dv9"
+public_url_profile = "https://docs.google.com/document/d/e/2PACX-1vSxvmevitLNo10pHQ1tJYAokR7ERE7I6N-n6SCQFvOQEXcZVnH3L2i6QoHMAhErY_n95GwJtXijGI3R/pub"
