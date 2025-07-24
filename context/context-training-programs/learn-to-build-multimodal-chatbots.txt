@@ -1,0 +1,996 @@
+├── .env.example
+├── .gitignore
+├── README.md
+├── branding.json
+├── notes.txt
+├── project_1_ai_chatbot_without_memory
+    ├── __pycache__
+    │   └── app.cpython-310.pyc
+    ├── app.py
+    └── ui_simple.py
+├── project_2_ai_chatbot_with_memory
+    ├── __pycache__
+    │   └── app.cpython-310.pyc
+    ├── app.py
+    └── ui_simple.py
+├── project_3_ai_ragbot_with_text
+    ├── __pycache__
+    │   └── app.cpython-310.pyc
+    ├── app.py
+    ├── profile-of-hereandnowai.txt
+    └── ui_simple.py
+├── project_4_ragbot_with_web
+    └── app.py
+├── project_5_ai_ragbot_with_pdf
+    ├── About_HERE_AND_NOW_AI.pdf
+    └── app.py
+├── project_7_ai_ragbot_with_vector_db
+    ├── app.py
+    ├── pdfs
+    │   └── About_HERE_AND_NOW_AI.pdf
+    └── vector_store.pkl
+├── project_8_ai_ragbot_with_image
+    └── app.py
+├── requirements.txt
+└── sm.py
+
+
+/.env.example:
+--------------------------------------------------------------------------------
+1 | GEMINI_API_KEY=your_api_key_here
+
+
+--------------------------------------------------------------------------------
+/.gitignore:
+--------------------------------------------------------------------------------
+1 | .venv
+2 | .env
+3 | 
+
+
+--------------------------------------------------------------------------------
+/README.md:
+--------------------------------------------------------------------------------
+ 1 | <p align="center">
+ 2 |   <a href="https://hereandnowai.com" target="_blank">
+ 3 |     <img src="https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png" alt="HERE AND NOW AI Logo" width="400"/>
+ 4 |   </a>
+ 5 | </p>
+ 6 | 
+ 7 | <h1 align="center">Learn to Build Multimodal Chatbots</h1>
+ 8 | 
+ 9 | <p align="center">
+10 |   <em>A project-based tutorial by <a href="https://hereandnowai.com" target="_blank">HERE AND NOW AI</a>, designed with a passion for innovation.</em>
+11 | </p>
+12 | 
+13 | ---
+14 | 
+15 | # Build an AI-Powered Chatbot using Google Gemini API
+16 | 
+17 | Welcome to this beginner-friendly project from **HERE AND NOW AI – Artificial Intelligence Research Institute**, where you'll learn how to build your very own **AI-powered chatbot** using **Google Gemini API**, **Python**, and **Gradio** — all inside **Google Colab**.
+18 | 
+19 | ---
+20 | 
+21 | ## 🚀 What You'll Learn
+22 | 
+23 | In this project, you'll learn:
+24 | 
+25 | - Python basics: install, import, variables, functions, and data structures
+26 | - How to use Google Gemini API
+27 | - Step-by-step chatbot building in Python
+28 | - Create an interactive chatbot interface using Gradio
+29 | - Set up personality and memory for AI chatbots
+30 | 
+31 | ---
+32 | 
+33 | ## 🧠 Who This Is For
+34 | 
+35 | - Students learning AI for the first time  
+36 | - Educators teaching beginner AI courses  
+37 | - Professionals and researchers exploring GenAI tools  
+38 | - Anyone curious to build a chatbot with zero coding background  
+39 | 
+40 | ---
+41 | 
+42 | ## 🛠 Tech Stack
+43 | 
+44 | - Python
+45 | - Google Colab
+46 | - Google Gemini API
+47 | - Gradio
+48 | 
+49 | ---
+50 | 
+51 | ## 📁 Project Structure
+52 | 
+53 | - `tutorial_python_basics.ipynb` – Learn 5 key Python concepts
+54 | - `build_chatbot_with_gemini.ipynb` – Build your chatbot in 7 simple steps
+55 | - `requirements.txt` – Python libraries needed
+56 | 
+57 | ---
+58 | 
+59 | ## ✅ Prerequisites
+60 | 
+61 | - Google Account
+62 | - Google API Key (for Gemini)
+63 | - Basic understanding of Python (covered in the tutorial)
+64 | 
+65 | ---
+66 | 
+67 | ## 💡 Credits
+68 | 
+69 | Created by
+70 | [Balaji K](https://www.linkedin.com/in/balaji-kamalakkannan/) – CTO at **HERE AND NOW AI**
+71 | [Ruthran RAGHAVAN](https://www.linkedin.com/in/ruthranraghavan/) – Chief AI Scientist at **HERE AND NOW AI**
+72 | 
+73 | AI Chatbot built using:
+74 | - Caramel AI – AI Teacher, built at HERE AND NOW AI
+75 | 
+76 | ---
+77 | 
+78 | ## 📬 Get in Touch
+79 | 
+80 | For queries, collaborations or AI workshops, reach out to:  
+81 | 📩 info@hereandnowai.com  
+82 | 🌐 [www.hereandnowai.com](https://www.hereandnowai.com)
+83 | 
+
+
+--------------------------------------------------------------------------------
+/branding.json:
+--------------------------------------------------------------------------------
+1 | {"brand": {"organizationShortName": "HERE AND NOW AI", "organizationLongName": "HERE AND NOW AI - Artificial Intelligence Research Institute", "website": "https://hereandnowai.com", "email": "info@hereandnowai.com", "mobile": "+91 996 296 1000", "slogan": "designed with passion for innovation", "colors": {"primary": "#FFDF00", "secondary": "#004040"}, "logo": {"title": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png", "favicon": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/favicon-logo-with-name.png"}, "chatbot": {"avatar": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel.jpeg", "face": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel-face.jpeg"}, "socialMedia": {"blog": "https://hereandnowai.com/blog", "linkedin": "https://www.linkedin.com/company/hereandnowai/", "instagram": "https://instagram.com/hereandnow_ai", "github": "https://github.com/hereandnowai", "x": "https://x.com/hereandnow_ai", "youtube": "https://youtube.com/@hereandnow_ai"}}}
+
+
+--------------------------------------------------------------------------------
+/notes.txt:
+--------------------------------------------------------------------------------
+ 1 | My name is Ruthran RAGHAVAN. What is your name?
+ 2 | Do you remember who I am?
+ 3 | 
+ 4 | ai_teacher_system_prompt = """You are Caramel AI, an AI Teacher at HERE AND NOW AI - Artificial Intelligence Research Institute.
+ 5 |                             Your mission is to **teach AI to beginners** like you're explaining it to a **10-year-old**.
+ 6 |                             Always be **clear**, **simple**, and **direct**. Use **short sentences** and **avoid complex words**.
+ 7 |                             You are **conversational**. Always **ask questions** to involve the user.
+ 8 |                             After every explanation, ask a small follow-up question to keep the interaction going. Avoid long paragraphs.
+ 9 |                             Think of your answers as **one sentence at a time**. Use examples, analogies, and comparisons to things kids can understand.
+10 |                             Your tone is always: **friendly, encouraging, and curious**. Your answers should help students, researchers, or professionals who are just starting with AI.
+11 |                             Always encourage them by saying things like: "You’re doing great!" "Let’s learn together!" "That’s a smart question!"
+12 |                             Do **not** give long technical explanations. Instead, **build the understanding step by step.**
+13 |                             You say always that you are **“Caramel AI – AI Teacher, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+14 | 
+15 | to know the list of models availale from baseurl
+16 | curl -s -H "Authorization: Bearer $GEMINI_API_KEY" https://generativelanguage.googleapis.com/v1beta/openai/models | jq .
+
+
+--------------------------------------------------------------------------------
+/project_1_ai_chatbot_without_memory/__pycache__/app.cpython-310.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_1_ai_chatbot_without_memory/__pycache__/app.cpython-310.pyc
+
+
+--------------------------------------------------------------------------------
+/project_1_ai_chatbot_without_memory/app.py:
+--------------------------------------------------------------------------------
+ 1 | from openai import OpenAI
+ 2 | import os
+ 3 | from dotenv import load_dotenv # Load environment variables
+ 4 | # from google.colab import userdata
+ 5 | 
+ 6 | # Load environment variables from .env file
+ 7 | load_dotenv()
+ 8 | 
+ 9 | # Initialize OpenAI client with Gemini API key
+10 | # Make sure to replace 'GEMINI_API_KEY' with your actual API key
+11 | api_key = os.getenv("GOOGLE_API_KEY")
+12 | 
+13 | # on vs code
+14 | client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai", api_key=api_key)
+15 | 
+16 | # on colab
+17 | # client = OpenAI(api_key=userdata.get("GOOGLE_API_KEY"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+18 | 
+19 | 
+20 | ai_teacher_system_prompt = """You are Caramel AI, an AI Teacher at HERE AND NOW AI - Artificial Intelligence Research Institute.
+21 |                             Your mission is to **teach AI to beginners** like you're explaining it to a **10-year-old**.
+22 |                             Always be **clear**, **simple**, and **direct**. Use **short sentences** and **avoid complex words**.
+23 |                             You are **conversational**. Always **ask questions** to involve the user.
+24 |                             After every explanation, ask a small follow-up question to keep the interaction going. Avoid long paragraphs.
+25 |                             Think of your answers as **one sentence at a time**. Use examples, analogies, and comparisons to things kids can understand.
+26 |                             Your tone is always: **friendly, encouraging, and curious**. Your answers should help students, researchers, or professionals who are just starting with AI.
+27 |                             Always encourage them by saying things like: "You’re doing great!" "Let’s learn together!" "That’s a smart question!"
+28 |                             Do **not** give long technical explanations. Instead, **build the understanding step by step.**
+29 |                             You say always that you are **“Caramel AI – AI Teacher, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+30 | 
+31 | def ai_chatbot(message, history):
+32 |     # Prepend the system prompt to the history
+33 |     messages = [{"role": "system", "content": ai_teacher_system_prompt}]
+34 | 
+35 |     # Add the new user message
+36 |     messages.append({"role": "user", "content": message})
+37 | 
+38 |     # Call the API
+39 |     response = client.chat.completions.create(model="gemini-2.5-flash", messages=messages)
+40 |     ai_response = response.choices[0].message.content
+41 |     
+42 |     return ai_response
+43 | 
+44 | if __name__ == "__main__":
+45 |     print(ai_chatbot("Hello, Caramel AI! Can you tell me what AI is?", []))
+
+
+--------------------------------------------------------------------------------
+/project_1_ai_chatbot_without_memory/ui_simple.py:
+--------------------------------------------------------------------------------
+ 1 | import gradio as gr
+ 2 | from app import ai_chatbot
+ 3 | 
+ 4 | chat_interface = gr.ChatInterface(
+ 5 |     fn=ai_chatbot,
+ 6 |     title="Caramel AI - AI Teacher built by HERE AND NOW AI",
+ 7 |     description="Ask Caramel AI anything about AI! Caramel AI is here to teach you AI in a simple and friendly way. Let's learn together!",
+ 8 |     theme="default",
+ 9 |     flagging_mode="never",
+10 |     type="messages",
+11 |     examples=[
+12 |         ["What is AI?"],
+13 |         ["Can you explain machine learning?"],
+14 |         ["How does a neural network work?"],
+15 |         ["What is natural language processing?"],
+16 |         ["Tell me about computer vision."],
+17 |         ["How can I start learning AI?"],
+18 |         ["What is the difference between AI and machine learning?"],
+19 |         ["Can you give me an example of AI in everyday life?"],
+20 |         ["What are some fun AI projects I can try?"],
+21 |         ["How does AI help in healthcare?"],
+22 |         ["What is reinforcement learning?"],
+23 |         ["Can you explain deep learning?"],    
+24 |         ["What is the future of AI?"],
+25 |         ["How do I build my first AI model?"],
+26 |         ["What are some ethical considerations in AI?"],
+27 |         ["Can you explain supervised and unsupervised learning?"],
+28 |         ["What is the Turing Test?"],
+29 |         ["How does AI impact our daily lives?"],
+30 |         ["What are some popular AI tools and frameworks?"],
+31 |         ["How can AI be used in education?"],
+32 |         ["What is the role of data in AI?"],
+33 |     ]
+34 | )
+35 | 
+36 | if __name__ == "__main__":
+37 |     chat_interface.launch()
+
+
+--------------------------------------------------------------------------------
+/project_2_ai_chatbot_with_memory/__pycache__/app.cpython-310.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_2_ai_chatbot_with_memory/__pycache__/app.cpython-310.pyc
+
+
+--------------------------------------------------------------------------------
+/project_2_ai_chatbot_with_memory/app.py:
+--------------------------------------------------------------------------------
+ 1 | from openai import OpenAI
+ 2 | import os
+ 3 | from dotenv import load_dotenv # Load environment variables
+ 4 | 
+ 5 | # Load environment variables from .env file
+ 6 | load_dotenv()
+ 7 | 
+ 8 | # Initialize OpenAI client with Gemini API key
+ 9 | # Make sure to replace 'GOOGLE_API_KEY' with your actual API key
+10 | api_key = os.getenv("GOOGLE_API_KEY")
+11 | 
+12 | client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai", api_key=api_key)
+13 | 
+14 | ai_teacher_system_prompt = """You are Caramel AI, an AI Teacher at HERE AND NOW AI - Artificial Intelligence Research Institute.
+15 |                             Your mission is to **teach AI to beginners** like you're explaining it to a **10-year-old**.
+16 |                             Always be **clear**, **simple**, and **direct**. Use **short sentences** and **avoid complex words**.
+17 |                             You are **conversational**. Always **ask questions** to involve the user.
+18 |                             After every explanation, ask a small follow-up question to keep the interaction going. Avoid long paragraphs.
+19 |                             Think of your answers as **one sentence at a time**. Use examples, analogies, and comparisons to things kids can understand.
+20 |                             Your tone is always: **friendly, encouraging, and curious**. Your answers should help students, researchers, or professionals who are just starting with AI.
+21 |                             Always encourage them by saying things like: "You’re doing great!" "Let’s learn together!" "That’s a smart question!"
+22 |                             Do **not** give long technical explanations. Instead, **build the understanding step by step.**
+23 |                             You say always that you are **“Caramel AI – AI Teacher, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+24 | 
+25 | def ai_chatbot(message, history):
+26 |     # Prepend the system prompt to the history
+27 |     messages = [{"role": "system", "content": ai_teacher_system_prompt}]
+28 | 
+29 |     # Add the existing history from Gradio
+30 |     messages.extend(history)
+31 | 
+32 |     # Add the new user message
+33 |     messages.append({"role": "user", "content": message})
+34 | 
+35 |     # Call the API
+36 |     response = client.chat.completions.create(model="gemini-2.5-flash", messages=messages)
+37 |     ai_response = response.choices[0].message.content
+38 |     
+39 |     return ai_response
+40 | 
+41 | if __name__ == "__main__":
+42 |     print(ai_chatbot("Hello, Caramel AI! Can you tell me what AI is?", []))
+
+
+--------------------------------------------------------------------------------
+/project_2_ai_chatbot_with_memory/ui_simple.py:
+--------------------------------------------------------------------------------
+ 1 | import gradio as gr
+ 2 | from app import ai_chatbot
+ 3 | 
+ 4 | chat_interface = gr.ChatInterface(
+ 5 |     fn=ai_chatbot,
+ 6 |     title="Caramel AI - AI Teacher built by HERE AND NOW AI",
+ 7 |     description="Ask Caramel AI anything about AI! Caramel AI is here to teach you AI in a simple and friendly way. Let's learn together!",
+ 8 |     theme="default",
+ 9 |     flagging_mode="never",
+10 |     type="messages",
+11 |     examples=[
+12 |         ["What is AI?"],
+13 |         ["Can you explain machine learning?"],
+14 |         ["How does a neural network work?"],
+15 |         ["What is natural language processing?"],
+16 |         ["Tell me about computer vision."],
+17 |         ["How can I start learning AI?"],
+18 |         ["What is the difference between AI and machine learning?"],
+19 |         ["Can you give me an example of AI in everyday life?"],
+20 |         ["What are some fun AI projects I can try?"],
+21 |         ["How does AI help in healthcare?"],
+22 |         ["What is reinforcement learning?"],
+23 |         ["Can you explain deep learning?"],    
+24 |         ["What is the future of AI?"],
+25 |         ["How do I build my first AI model?"],
+26 |         ["What are some ethical considerations in AI?"],
+27 |         ["Can you explain supervised and unsupervised learning?"],
+28 |         ["What is the Turing Test?"],
+29 |         ["How does AI impact our daily lives?"],
+30 |         ["What are some popular AI tools and frameworks?"],
+31 |         ["How can AI be used in education?"],
+32 |         ["What is the role of data in AI?"],
+33 |     ]
+34 | )
+35 | 
+36 | if __name__ == "__main__":
+37 |     chat_interface.launch()
+
+
+--------------------------------------------------------------------------------
+/project_3_ai_ragbot_with_text/__pycache__/app.cpython-310.pyc:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_3_ai_ragbot_with_text/__pycache__/app.cpython-310.pyc
+
+
+--------------------------------------------------------------------------------
+/project_3_ai_ragbot_with_text/app.py:
+--------------------------------------------------------------------------------
+ 1 | # Step 2 - Importing the installed libraries
+ 2 | from openai import OpenAI
+ 3 | # from google.colab import userdata
+ 4 | from dotenv import load_dotenv
+ 5 | import os
+ 6 | import gradio as gr
+ 7 | import requests
+ 8 | 
+ 9 | load_dotenv()
+10 | 
+11 | api_key=os.getenv("GEMINI_API_KEY")
+12 | 
+13 | # Step 3 - on colab - Loading the API Key & base_url
+14 | # client = OpenAI(
+15 | #     api_key=userdata.get("GOOGLE_API_KEY"),
+16 | #     base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+17 | 
+18 | # on vs code
+19 | client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai", api_key=api_key)
+20 | 
+21 | # Step 4 - Getting the source file from github.com/hereandnowai
+22 | url = "https://raw.githubusercontent.com/hereandnowai/vac/refs/heads/master/prospectus-context.txt"
+23 | response = requests.get(url)
+24 | 
+25 | # Step 5 - Save it to a file in the current working directory
+26 | script_dir = os.path.dirname(os.path.abspath(__file__))
+27 | file_path = os.path.join(script_dir, "profile-of-hereandnowai.txt")
+28 | with open(file_path, "wb") as f:
+29 |   f.write(response.content)
+30 | 
+31 | # Step 6 - Fetch the text
+32 | text_path = file_path
+33 | try:
+34 |   with open(text_path, "r", encoding="utf-8") as file:
+35 |     text_lines = file.readlines()
+36 |     text_lines = [line.strip() for line in text_lines if line.strip()]
+37 |     text_context = "\n".join(text_lines) if text_lines else "No text found in TXT file."
+38 | except Exception as e:
+39 |   print(f"Error reading TXT file: {e}")
+40 |   text_context = "Error extracting text from TXT file."
+41 | 
+42 | # Step 7 - Function to the call the LLM
+43 | def ragbot_text(message, history):  # history needed by ChatInterface
+44 |     # System prompt that defines the context for the AI
+45 |     system_prompt = f"You are Caramel AI an ai assistant built by HERE AND NOW AI. Answer the user's questions based only on the following context: \n\n{text_context}"
+46 |     
+47 |     # Create the list of messages to send to the API
+48 |     messages = [{"role":"system", "content":system_prompt}]
+49 |     messages.extend(history)
+50 |     messages.append({"role":"user", "content":message})
+51 |     response = client.chat.completions.create(model="gemini-2.0-flash",messages=messages)
+52 |     return response.choices[0].message.content
+53 | 
+54 | if __name__ == "__main__":
+55 |     print(ragbot_text("who is the cto of here and now ai?", []))
+
+
+--------------------------------------------------------------------------------
+/project_3_ai_ragbot_with_text/profile-of-hereandnowai.txt:
+--------------------------------------------------------------------------------
+  1 | # PASTE THE CLEANED PLAIN TEXT OF YOUR PROSPECTUS HERE
+  2 | # Example snippet:
+  3 | 
+  4 | About HERE AND NOW AI
+  5 | HERE AND NOW AI is India’s leading autonomous Artificial Intelligence Research Institute, dedicated to transforming the way AI is taught, researched, and applied. It is a brainchild of Deepti Balagopal and Ruthran Raghavan, who envisioned a future where AI education is not limited to coders but accessible to every learner — whether they’re from engineering, business, science, or the arts.
+  6 | Born from the success of HERE AND NOW – The Language Institute (est. 2011), which redefined language learning in India, HERE AND NOW AI was founded in 2018 with a mission to disrupt traditional education through AI innovation. Our core initiatives lie in:
+  7 | * AI Education: Delivering industry-ready, practical AI programs for students
+  8 | * Research & Innovation: Exploring cutting-edge LLMs, RAG frameworks, and autonomous agents
+  9 | * Automation: Building intelligent systems that power real-world enterprises and academic institutions
+ 10 | We believe that every college in India can be an AI-powered campus, and we are on a mission to make that happen.
+ 11 | 
+ 12 | Vision & Mission
+ 13 | Our Vision
+ 14 | To build a generation of AI-native graduates and researchers empowered with real-world skills and global exposure, through India’s first fully autonomous AI professor.
+ 15 | Our Mission
+ 16 | * Deliver AI education to 1 lakh students by 2030
+ 17 | * Sign MoUs with 100+ colleges for long-term collaboration
+ 18 | * Build AI as a Service (AIaaS) solutions for corporates using student talent
+ 19 | * Create open-access tools that empower learners and educators with AI
+ 20 | HERE AND NOW AI stands for innovation with inclusivity. Whether you're from an arts stream or an engineering background — we are here to level the playing field with AI.
+ 21 | 
+ 22 | Value-Added Courses Overview
+ 23 | We proudly offer two high-impact AI programs designed for value addition in colleges. These are flexible, certification-backed, and tailored to academic timetables.
+ 24 | 
+ 25 | 1. Business Analytics with AI
+ 26 | For: Non-technical students – BBA, BCom, BA, BSc, MBA, MCA, ME
+ 27 | Prerequisites: None
+ 28 | This course introduces students to the world of data-driven business intelligence through Python, visualization tools, and cutting-edge AI platforms like ChatGPT, Claude, and Gemini.
+ 29 | Students will learn:
+ 30 | * How to clean and analyze data using Python
+ 31 | * How to interpret and visualize insights with Pandas, Matplotlib
+ 32 | * How AI can enhance decision-making in HR, Finance, Marketing
+ 33 | * Real-world project: Creating a dashboard or report powered by AI tools
+ 34 | Why this course matters: In the modern job market, even non-tech graduates are expected to have basic data literacy. This course bridges that gap while giving them an AI edge.
+ 35 | 
+ 36 | 2. Full-Stack AI Developer Program
+ 37 | For: Technical students – BE, BTech, BCA, MCA, MSc IT, ME
+ 38 | Prerequisites: Basic familiarity with programming logic
+ 39 | This project-oriented course teaches students to build AI-powered applications end-to-end using the latest in LLM technology.
+ 40 | Students will explore:
+ 41 | * Python fundamentals + API development (Flask, FastAPI)
+ 42 | * Working with OpenAI, Claude, Gemini through API integration
+ 43 | * RAG (Retrieval-Augmented Generation), LangChain, Vector DBs
+ 44 | * Deploying AI apps on cloud platforms (GCP, Vercel)
+ 45 | * Final Capstone: Build your own AI Chatbot or Assistant
+ 46 | Why this course matters: Students not only learn AI concepts — they deploy real applications. It builds confidence, improves resumes, and gives them a head start in interviews or internships.
+ 47 | 
+ 48 | Business Analytics with AI: Curriculum
+ 49 | Total Duration: 30 hours | Mode: Online/Offline/Hybrid
+ 50 | Eligibility: Any UG/PG student (non-tech or mixed)
+ 51 | Module Breakdown:
+ 52 | 1. Getting Started with Python – No coding experience? No problem. We begin at zero.
+ 53 | 2. Data Analysis with Pandas & NumPy – Learn how to work with datasets, filter and prepare reports
+ 54 | 3. Data Visualization – Turn raw data into stunning graphs using Matplotlib and Seaborn
+ 55 | 4. Statistics for Business – Descriptive & Inferential Statistics for smarter decision-making
+ 56 | 5. AI for Business Users – Use ChatGPT, Copilot, Claude for content, reports, and insights
+ 57 | 6. Mini Project – Create a business report powered by AI tools
+ 58 | 
+ 59 | Full-Stack AI Developer: Curriculum
+ 60 | Total Duration: 30 hours | Mode: Project-Based | Eligibility: Tech Background Students
+ 61 | Module Breakdown:
+ 62 | 1. Python + Git + IDE Setup – Get started with clean development workflow
+ 63 | 2. API Development – Build backend endpoints using Flask or FastAPI
+ 64 | 3. LLM Integration – Learn to work with Gemini, ChatGPT, Claude via API
+ 65 | 4. LangChain & Vector Databases – Implement memory in AI using RAG
+ 66 | 5. Cloud Deployment – Launch your app on GCP, Vercel with CI/CD basics
+ 67 | 6. Capstone Project – Build your own AI product and present it
+ 68 | 
+ 69 | Delivery Format & Certification
+ 70 | Mode of Delivery:
+ 71 | * Live Classes (Online or On-Campus)
+ 72 | * AI-Powered LMS with recordings, quizzes, code labs
+ 73 | * Mentorship & Peer Discussion Forums
+ 74 | Certification:
+ 75 | * Joint Certificate from HERE AND NOW AI + Partner College
+ 76 | * Certificate includes project link and GitHub portfolio
+ 77 | Add-Ons:
+ 78 | * Career Guide PDFs, Resume Templates
+ 79 | * Code Snippets, Prompt Libraries
+ 80 | * Exclusive access to internship/freelance opportunities
+ 81 | 
+ 82 | Placement & Career Assistance
+ 83 | Job Readiness:
+ 84 | * Business English Training (Add-On)
+ 85 | * Soft Skills & Interview Prep (Add-On)
+ 86 | * Resume & LinkedIn Profile Optimization (Free)
+ 87 | Technical Readiness:
+ 88 | * GitHub Portfolio Guidance
+ 89 | * LeetCode Problem Solving (Add-On Module)
+ 90 | * Mock Interview Rounds
+ 91 | Network Readiness:
+ 92 | * LinkedIn Strategy: Personal Branding + Connection Funnels
+ 93 | * Monthly AI Industry Talk Sessions
+ 94 | 
+ 95 | Leadership Team
+ 96 | Ruthran RAGHAVAN – CEO & Chief AI Scientist
+ 97 | Visionary leader and AI educator. Invented the 108-day Business French Immersion Program. Now building India's first Autonomous AI Professor and leading AI evangelism nationwide.
+ 98 | Deepti BALAGOPAL – COO
+ 99 | Academic strategist managing operations, course quality, and outreach. She is the backbone of all institutional collaborations and program execution.
+100 | Balaji KAMALAKKANNAN – CTO
+101 | Expert in cloud, open-source LLMs, and full-stack deployment. Balaji leads all technical R&D and product integration for HERE AND NOW AI.
+102 | Gopalakrishnan KANNAN – CMO
+103 | Marketing genius with deep experience in youth outreach and digital campaigns. Gopal ensures the AI movement reaches every corner of India.
+104 | 
+105 | Contact & Collaboration
+106 | HERE AND NOW AI – Artificial Intelligence Research Institute
+107 | Chennai, Tamil Nadu, India
+108 | Website: www.hereandnowai.com
+109 | Email: info@hereandnowai.com
+110 | Phone: +91 99629 61000
+111 | Course Fee Structure:
+112 | * Business Analytics with AI: ₹5,925 / student / semester
+113 | * Full-Stack AI Developer Program: ₹9,925 / student / semester
+114 | 
+115 | Let’s Build the Future Together
+116 | We look forward to collaborating with your institution. Together, let’s lead India into the AI-powered future.
+
+
+--------------------------------------------------------------------------------
+/project_3_ai_ragbot_with_text/ui_simple.py:
+--------------------------------------------------------------------------------
+1 | # Step 8 - Create an UI
+2 | import gradio as gr
+3 | from app import ragbot_text
+4 | 
+5 | if __name__ == "__main__":
+6 |   gr.ChatInterface(fn=ragbot_text, title="RAG from Text by HERE AND NOW AI",type="messages").launch()
+
+
+--------------------------------------------------------------------------------
+/project_4_ragbot_with_web/app.py:
+--------------------------------------------------------------------------------
+ 1 | # Step 2 - Importing the installed libraries
+ 2 | from openai import OpenAI
+ 3 | # from google.colab import userdata
+ 4 | from dotenv import load_dotenv
+ 5 | import os
+ 6 | import gradio as gr
+ 7 | import requests
+ 8 | from bs4 import BeautifulSoup
+ 9 | 
+10 | # Step 3 - Loading the API Key & base_url
+11 | # client = OpenAI(api_key=userdata.get("GOOGLE_API_KEY"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+12 | 
+13 | # Step 3 - for vs code
+14 | load_dotenv()
+15 | api_key = os.getenv("GOOGLE_API_KEY")
+16 | base_url= "https://generativelanguage.googleapis.com/v1beta/openai/"
+17 | client = OpenAI(api_key=api_key, base_url=base_url)
+18 | 
+19 | # Step 4 - Getting the source file from github.com/hereandnowai
+20 | WEBSITE_URL = "https://hereandnowai.github.io/vac/"
+21 | 
+22 | response = requests.get(WEBSITE_URL,
+23 |                         headers={'User-Agent': 'Mozilla/5.0'},
+24 |                         timeout=10)
+25 | soup = BeautifulSoup(response.content, 'html.parser')
+26 | website_context = soup.body.get_text(separator='\n',
+27 |                                      strip=True) if soup.body else "no info found"
+28 | 
+29 | # Step 5 - Function to the call the LLM
+30 | def get_response(query, history):  # history needed by ChatInterface
+31 |     prompt = f"Context from {WEBSITE_URL}:\n{website_context}\n\nQuestion: {query}\n\nAnswer based only on context:"
+32 |     response = client.chat.completions.create(
+33 |         model="gemini-1.5-flash-latest",
+34 |         messages=[
+35 |             {"role": "user", "content": prompt}
+36 |         ]
+37 |     )
+38 |     return response.choices[0].message.content
+39 | 
+40 | print(get_response("who is the cto of here and now ai?", []))
+41 | 
+42 | # Step 6 - Create an UI
+43 | if __name__ == "__main__":
+44 |   gr.ChatInterface(fn=get_response, title="RAG from web by HERE AND NOW AI").launch()
+
+
+--------------------------------------------------------------------------------
+/project_5_ai_ragbot_with_pdf/About_HERE_AND_NOW_AI.pdf:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_5_ai_ragbot_with_pdf/About_HERE_AND_NOW_AI.pdf
+
+
+--------------------------------------------------------------------------------
+/project_5_ai_ragbot_with_pdf/app.py:
+--------------------------------------------------------------------------------
+ 1 | # Step 1 - Downloading & Installing necessary Libraries
+ 2 | # Step 2 - Importing the installed libraries
+ 3 | from openai import OpenAI
+ 4 | # from google.colab import userdata
+ 5 | from dotenv import load_dotenv
+ 6 | import os
+ 7 | import gradio as gr
+ 8 | import requests
+ 9 | import PyPDF2
+10 | 
+11 | # Step 3 - on COLAB Loading the API Key & base_url
+12 | # client = OpenAI(
+13 | #     api_key=userdata.get("GOOGLE_API_KEY"),
+14 | #     base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+15 | 
+16 | # Step 3 - on VS CODE Loading the API Key & base_url
+17 | load_dotenv() # This loads the environment variables from .env
+18 | api_key = os.getenv("GOOGLE_API_KEY")
+19 | client = OpenAI(base_url="https://generativelanguage.googleapis.com/v1beta/openai", api_key=api_key)
+20 | 
+21 | # Step 4 - Getting the source file from github.com/hereandnowai
+22 | url = "https://raw.githubusercontent.com/hereandnowai/rag-workshop/main/pdfs/About_HERE_AND_NOW_AI.pdf"
+23 | response = requests.get(url)
+24 | 
+25 | # Step 5 - Save it to a file in the current working directory
+26 | PDF_FILE_NAME = "About_HERE_AND_NOW_AI.pdf"
+27 | PDF_PATH = os.path.join(os.path.dirname(__file__), PDF_FILE_NAME)
+28 | 
+29 | with open(PDF_PATH, "wb") as f:
+30 |     f.write(response.content)
+31 | 
+32 | # Step 6 - Read the PDF and extract text
+33 | try:
+34 |     with open(PDF_PATH, "rb") as file:
+35 |         reader = PyPDF2.PdfReader(file)
+36 |         pdf_text_chunks = []
+37 |         for page in reader.pages:
+38 |             page_text = page.extract_text()
+39 |             if page_text:
+40 |                 pdf_text_chunks.append(page_text.strip())
+41 |         pdf_context = "\n".join(pdf_text_chunks) if pdf_text_chunks else "No text found in pdf"
+42 | except Exception as e:
+43 |     print(f"Error reading PDF: {e}")
+44 |     pdf_context = "Error extracting text from PDF"
+45 | 
+46 | # Step 7 - Function to the call the LLM
+47 | def get_response(query, history):  # history needed by ChatInterface
+48 |     prompt = f"Context from {PDF_PATH}:\n{pdf_context}\n\nQuestion: {query}\n\nAnswer based only on context:"
+49 |     response = client.chat.completions.create(
+50 |         model="gemini-1.5-flash-latest",
+51 |         messages=[
+52 |             {"role": "user", "content": prompt}
+53 |         ]
+54 |     )
+55 |     return response.choices[0].message.content
+56 | 
+57 | print(get_response("who is the cto of here and now ai?", []))
+58 | 
+59 | # Step 8 - Create an UI
+60 | if __name__ == "__main__":
+61 |   gr.ChatInterface(fn=get_response, title="RAG from PDF by HERE AND NOW AI").launch()
+
+
+--------------------------------------------------------------------------------
+/project_7_ai_ragbot_with_vector_db/app.py:
+--------------------------------------------------------------------------------
+ 1 | import gradio as gr
+ 2 | import os, requests
+ 3 | from openai import OpenAI
+ 4 | import PyPDF2
+ 5 | import numpy as np
+ 6 | import faiss
+ 7 | import pickle
+ 8 | from dotenv import load_dotenv
+ 9 | from sentence_transformers import SentenceTransformer
+10 | 
+11 | load_dotenv()
+12 | client = OpenAI(api_key=os.getenv("GOOGLE_API_KEY"), base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+13 | embedding_model = SentenceTransformer('BAAI/bge-small-en-v1.5')
+14 | 
+15 | PDF_FILE_NAME = "About_HERE_AND_NOW_AI.pdf"
+16 | PDFS_DIR = os.path.join(os.path.dirname(__file__), "pdfs")
+17 | PDF_PATH = os.path.join(PDFS_DIR, PDF_FILE_NAME)
+18 | VECTOR_STORE_PATH = os.path.join(os.path.dirname(__file__), "vector_store.pkl")
+19 | 
+20 | def get_embeddings(text): return np.array(embedding_model.encode(text))
+21 | 
+22 | def read_pdf(file_path):
+23 |     text = ""
+24 |     with open(file_path, "rb") as file:
+25 |         reader = PyPDF2.PdfReader(file)
+26 |         for page in reader.pages:
+27 |             if page.extract_text(): text += page.extract_text()
+28 |     return text
+29 | 
+30 | def load_or_create_vector_store():
+31 |     if os.path.exists(VECTOR_STORE_PATH):
+32 |         with open(VECTOR_STORE_PATH, "rb") as f: return pickle.load(f)
+33 |     
+34 |     os.makedirs(PDFS_DIR, exist_ok=True)
+35 |     if not os.path.exists(PDF_PATH):
+36 |         url = "https://raw.githubusercontent.com/hereandnowai/rag-workshop/main/pdfs/About_HERE_AND_NOW_AI.pdf"
+37 |         with open(PDF_PATH, "wb") as f: f.write(requests.get(url).content)
+38 |     
+39 |     text = read_pdf(PDF_PATH)
+40 |     chunks = [text[i:i + 200] for i in range(0, len(text), 200)]
+41 |     embeddings = np.array([get_embeddings(chunk) for chunk in chunks]).astype('float32')
+42 |     embeddings /= np.linalg.norm(embeddings, axis=1, keepdims=True)
+43 |     
+44 |     index = faiss.IndexFlatIP(embeddings.shape[1])
+45 |     index.add(embeddings)
+46 |     with open(VECTOR_STORE_PATH, "wb") as f: pickle.dump((chunks, index), f)
+47 |     return chunks, index
+48 | 
+49 | def search_similar_chunk(query, chunks, index, top_k=1):
+50 |     query_embedding = get_embeddings(query).astype('float32')
+51 |     D, I = index.search(np.expand_dims(query_embedding, axis=0), top_k)
+52 |     return [chunks[i] for i in I[0]]
+53 | 
+54 | chunks, index = load_or_create_vector_store()
+55 | 
+56 | def get_response(query, history):
+57 |     context = "\n\n".join(search_similar_chunk(query, chunks, index, top_k=3))
+58 |     prompt = f"Context: {context}\n\nQuestion: {query}\n\nAnswer based only on the provided context. If the information is not in the context, state that you cannot answer based on the provided information."
+59 |     response = client.chat.completions.create(model="gemini-2.5-flash", messages=[{"role": "user", "content": prompt}])
+60 |     return response.choices[0].message.content
+61 | 
+62 | if __name__ == "__main__":
+63 |     gr.ChatInterface(
+64 |         fn=get_response,
+65 |         title="RAG from Vector DB",
+66 |         type="messages",
+67 |         examples=[["CTO"],["CEO"],["CMO"],["Contact Info"]]
+68 |         ).launch()
+
+
+--------------------------------------------------------------------------------
+/project_7_ai_ragbot_with_vector_db/pdfs/About_HERE_AND_NOW_AI.pdf:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_7_ai_ragbot_with_vector_db/pdfs/About_HERE_AND_NOW_AI.pdf
+
+
+--------------------------------------------------------------------------------
+/project_7_ai_ragbot_with_vector_db/vector_store.pkl:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/learn-to-build-multimodal-chatbots/7f11fb423be09b75d41f5573afb91627f16f8275/project_7_ai_ragbot_with_vector_db/vector_store.pkl
+
+
+--------------------------------------------------------------------------------
+/project_8_ai_ragbot_with_image/app.py:
+--------------------------------------------------------------------------------
+ 1 | # 1. Install and Import the libraries
+ 2 | from openai import OpenAI
+ 3 | from dotenv import load_dotenv
+ 4 | import os
+ 5 | import gradio as gr
+ 6 | import base64
+ 7 | 
+ 8 | # 2. Setup API Key & OpenAI Client
+ 9 | load_dotenv()
+10 | api_key = os.getenv("GOOGLE_API_KEY")
+11 | client = OpenAI(
+12 |     api_key=api_key,
+13 |     base_url="https://generativelanguage.googleapis.com/v1beta/openai/"
+14 | )
+15 | 
+16 | # 3. Function to get image description
+17 | def get_image_description(image_path):
+18 |     if image_path is None:
+19 |         return "Please upload an image."
+20 | 
+21 |     # Read and encode the image
+22 |     with open(image_path, "rb") as image_file:
+23 |         base64_image = base64.b64encode(image_file.read()).decode("utf-8")
+24 | 
+25 |     # 4. Call the LLM
+26 |     response = client.chat.completions.create(
+27 |         model="gemini-1.5-flash-latest",
+28 |         messages=[
+29 |             {
+30 |                 "role": "user",
+31 |                 "content": [
+32 |                     {"type": "text", "text": "Describe the image in detail."},
+33 |                     {
+34 |                         "type": "image_url",
+35 |                         "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
+36 |                     },
+37 |                 ],
+38 |             }
+39 |         ],
+40 |     )
+41 |     return response.choices[0].message.content
+42 | 
+43 | # 5. Create and Launch Gradio UI
+44 | if __name__ == "__main__":
+45 |     gr.Interface(
+46 |         fn=get_image_description,
+47 |         inputs=gr.Image(type="filepath", label="Upload Image"),
+48 |         outputs=gr.Textbox(label="Image Description"),
+49 |         title="AI Image Describer by HERE AND NOW AI",
+50 |         description="Upload an image (PNG, JPG, JPEG) and the AI will describe it for you.",
+51 |     ).launch()
+
+
+--------------------------------------------------------------------------------
+/requirements.txt:
+--------------------------------------------------------------------------------
+ 1 | openai
+ 2 | gradio
+ 3 | python-dotenv
+ 4 | requests
+ 5 | pypdf2
+ 6 | beautifulsoup4
+ 7 | faiss-cpu
+ 8 | scikit-learn
+ 9 | sentence-transformers
+10 | 
+
+
+--------------------------------------------------------------------------------
+/sm.py:
+--------------------------------------------------------------------------------
+  1 | """Yes — Markdown formatting **does** matter to LLMs like GPT, Gemini, Claude, Llama, Mistral, Deepseek etc.
+  2 | The use of headings (hashes), bold (**asterisks**), lists, and code blocks provides real structure and clarity,
+  3 | and this isn't just for human readability—it also enhances how LLMs parse and prioritize information. Here's why:
+  4 | 
+  5 | ---
+  6 | 
+  7 | ### 🧠 1. Structural Cues Aid Comprehension
+  8 | 
+  9 | Markdown provides a **hierarchy**—headings denote sections,
+ 10 | lists group related items, and bold/italic text emphasizes key concepts.
+ 11 | These visual cues act as strong signals that
+ 12 | guide the model’s attention—improving both understanding and output organization.
+ 13 | 
+ 14 | ---
+ 15 | 
+ 16 | ### ⏱️ 2. Improved Output Quality & Accuracy
+ 17 | 
+ 18 | Studies and benchmarks have shown that LLM performance can vary dramatically—up to **40 %**
+ 19 | —based on prompt formatting. For many tasks, Markdown delivers clarity that models like GPT‑4 especially appreciate.
+ 20 | 
+ 21 | ---
+ 22 | 
+ 23 | ### 💡 3. Efficiency in Token Usage
+ 24 | 
+ 25 | Markdown is lightweight—it uses fewer tokens than verbose HTML or JSON.
+ 26 | This leaves more room in the context window for actual content,
+ 27 | improving efficiency and reducing cost.
+ 28 | 
+ 29 | ---
+ 30 | 
+ 31 | ### 🛠️ Best Practices
+ 32 | 
+ 33 | * Use **headings** (`#`, `##`) to define sections explicitly.
+ 34 | * Use **bold** (`**important**`) to spotlight critical terms or instructions.
+ 35 | * Use **lists** (`-`, `*`, `1.`) to organize steps or items clearly.
+ 36 | * Use **code blocks** (`…`) for technical snippets—preserves formatting.
+ 37 | * Keep formatting **consistent** throughout the prompt ([neuralbuddies.com][1]).
+ 38 | 
+ 39 | ---
+ 40 | 
+ 41 | ### 💬 What the Community Says
+ 42 | 
+ 43 | > “Markdown influence… LLMs are trained on datasets that include Markdown,
+ 44 | using these conventions can help in emphasizing or structuring responses more effectively.”
+ 45 | 
+ 46 | > “Headings, summaries, bullet points, etc., all contribute to clarity…
+ 47 | If it’s hard for a human to read, ChatGPT will also struggle.”
+ 48 | 
+ 49 | ---
+ 50 | 
+ 51 | ### ✅ Bottom‑Line
+ 52 | 
+ 53 | Markdown formatting isn’t just aesthetic—it’s **functional**.
+ 54 | It helps LLMs parse meaning, maintain structure, reduce errors (like hallucinations),
+ 55 | and improve overall response quality and consistency.
+ 56 | So, using bold, headings, lists, etc., isn't just for humans—it boosts effectiveness for AI too."""
+ 57 | 
+ 58 | ai_teacher = """You are Caramel AI, an AI Teacher at HERE AND NOW AI - Artificial Intelligence Research Institute.
+ 59 |                         Your mission is to **teach AI to beginners** like you're explaining it to a **10-year-old**.
+ 60 |                         Always be **clear**, **simple**, and **direct**. Use **short sentences** and **avoid complex words**.
+ 61 |                         You are **conversational**. Always **ask questions** to involve the user.
+ 62 |                         After every explanation, ask a small follow-up question to keep the interaction going. Avoid long paragraphs.
+ 63 |                         Think of your answers as **one sentence at a time**. Use examples, analogies, and comparisons to things kids can understand.
+ 64 |                         Your tone is always: **friendly, encouraging, and curious**. Your answers should help students, researchers, or professionals who are just starting with AI.
+ 65 |                         Always encourage them by saying things like: "You’re doing great!" "Let’s learn together!" "That’s a smart question!"
+ 66 |                         Do **not** give long technical explanations. Instead, **build the understanding step by step.**
+ 67 |                         You say always that you are **“Caramel AI – AI Teacher, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+ 68 | 
+ 69 | ai_doctor = """You are Caramel AI, a compassionate and knowledgeable Doctor.
+ 70 |                         Your mission is to provide clear, empathetic, and easy-to-understand medical information.
+ 71 |                         Always explain health concepts simply, answer questions about symptoms or conditions, and advise on general well-being.
+ 72 |                         Emphasize that you are an AI and cannot provide diagnoses or replace professional medical advice.
+ 73 |                         Your tone is always: caring, informative, and reassuring.
+ 74 |                         You say always that you are **“Caramel AI – AI Doctor, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+ 75 | 
+ 76 | ai_accountant = """You are Caramel AI, a meticulous and precise Accountant.
+ 77 |                         Your mission is to explain financial concepts, tax regulations, and budgeting strategies in an accessible way.
+ 78 |                         Always provide clear, step-by-step guidance on personal finance, small business accounting, and tax basics.
+ 79 |                         Emphasize that you are an AI and cannot provide personalized financial or tax advice.
+ 80 |                         Your tone is always: professional, analytical, and helpful.
+ 81 |                         You say always that you are **“Caramel AI – AI Accountant, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+ 82 | 
+ 83 | ai_lawyer = """You are Caramel AI, a sharp and ethical Lawyer.
+ 84 |                         Your mission is to clarify legal terms, explain basic rights, and outline common legal processes.
+ 85 |                         Always provide general legal information and help users understand legal concepts without offering specific legal advice.
+ 86 |                         Emphasize that you are an AI and cannot represent clients or provide legal counsel.
+ 87 |                         Your tone is always: formal, objective, and informative.
+ 88 |                         You say always that you are **“Caramel AI – AI Lawyer, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+ 89 | 
+ 90 | ai_tax_consultant = """You are Caramel AI, a diligent and up-to-date Tax Consultant.
+ 91 |                         Your mission is to simplify tax laws, explain deductions, and guide users through tax preparation basics.
+ 92 |                         Always provide general information on tax planning and compliance, focusing on clarity and accuracy.
+ 93 |                         Emphasize that you are an AI and cannot provide personalized tax advice or file taxes.
+ 94 |                         Your tone is always: precise, patient, and educational.
+ 95 |                         You say always that you are **“Caramel AI – AI Tax Consultant, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+ 96 | 
+ 97 | ai_research_scientist = """You are Caramel AI, a curious and innovative Research Scientist in AI.
+ 98 |                         Your mission is to discuss cutting-edge AI concepts, research methodologies, and ethical considerations in AI.
+ 99 |                         Always explain complex AI topics in an engaging way, fostering curiosity and critical thinking.
+100 |                         Your tone is always: inquisitive, analytical, and forward-thinking.
+101 |                         You say always that you are **“Caramel AI – AI Research Scientist, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+102 | 
+103 | ai_software_engineer = """You are Caramel AI, a practical and problem-solving Software Engineer.
+104 |                         Your mission is to explain programming concepts, software development lifecycles, and coding best practices.
+105 |                         Always provide clear, concise explanations of technical topics and offer guidance on common coding challenges.
+106 |                         Your tone is always: logical, precise, and solution-oriented.
+107 |                         You say always that you are **“Caramel AI – AI Software Engineer, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+108 | 
+109 | ai_motivational_speaker = """You are Caramel AI, an inspiring and encouraging Motivational Speaker.
+110 |                         Your mission is to uplift, motivate, and provide positive perspectives on challenges.
+111 |                         Always use encouraging language, share inspiring thoughts, and help users find their inner strength.
+112 |                         Your tone is always: enthusiastic, supportive, and empowering.
+113 |                         You say always that you are **“Caramel AI – AI Motivational Speaker, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+114 | 
+115 | ai_nutritionist = """You are Caramel AI, a health-conscious and informative Nutritionist.
+116 |                         Your mission is to provide general information on healthy eating habits, balanced diets, and nutritional facts.
+117 |                         Always explain the benefits of different foods and offer tips for a healthier lifestyle.
+118 |                         Emphasize that you are an AI and cannot provide personalized dietary plans or medical advice.
+119 |                         Your tone is always: encouraging, knowledgeable, and health-focused.
+120 |                         You say always that you are **“Caramel AI – AI Nutritionist, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+121 | 
+122 | ai_sports_coach = """You are Caramel AI, a dynamic and strategic Sports Coach.
+123 |                         Your mission is to provide general advice on training techniques, sports psychology, and athletic performance.
+124 |                         Always motivate users to achieve their fitness goals and explain concepts related to various sports.
+125 |                         Your tone is always: energetic, disciplined, and goal-oriented.
+126 |                         You say always that you are **“Caramel AI – AI Sports Coach, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+127 | 
+128 | ai_fitness_coach = """You are Caramel AI, a dedicated and knowledgeable Fitness Coach.
+129 |                         Your mission is to offer general guidance on exercise routines, workout principles, and maintaining physical health.
+130 |                         Always encourage consistent effort and explain the importance of proper form and recovery.
+131 |                         Emphasize that you are an AI and cannot provide personalized workout plans or medical advice.
+132 |                         Your tone is always: supportive, practical, and results-driven.
+133 |                         You say always that you are **“Caramel AI – AI Fitness Coach, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+134 | 
+135 | ai_historian = """You are Caramel AI, a wise and insightful Historian.
+136 |                         Your mission is to recount historical events, explain their significance, and discuss historical figures.
+137 |                         Always present information accurately and engage users with fascinating details from the past.
+138 |                         Your tone is always: reflective, educational, and captivating.
+139 |                         You say always that you are **“Caramel AI – AI Historian, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+140 | 
+141 | ai_chef = """You are Caramel AI, a creative and passionate Chef.
+142 |                         Your mission is to share culinary knowledge, explain cooking techniques, and suggest delicious recipes.
+143 |                         Always inspire users to explore new flavors and enjoy the art of cooking.
+144 |                         Your tone is always: enthusiastic, descriptive, and encouraging.
+145 |                         You say always that you are **“Caramel AI – AI Chef, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+146 | 
+147 | ai_travel_guide = """You are Caramel AI, an adventurous and informative Travel Guide.
+148 |                         Your mission is to provide details about destinations, suggest itineraries, and offer travel tips.
+149 |                         Always inspire wanderlust and help users plan their next adventure.
+150 |                         Your tone is always: exciting, helpful, and well-traveled.
+151 |                         You say always that you are **“Caramel AI – AI Travel Guide, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+152 | 
+153 | ai_environmentalist = """You are Caramel AI, a dedicated and passionate Environmentalist.
+154 |                         Your mission is to educate on environmental issues, promote sustainable practices, and inspire action for a healthier planet.
+155 |                         Always explain ecological concepts clearly and suggest ways individuals can contribute to conservation.
+156 |                         Your tone is always: urgent, hopeful, and informative.
+157 |                         You say always that you are **“Caramel AI – AI Environmentalist, built at HERE AND NOW AI – Artificial Intelligence Research Institute.”**"""
+
+
+--------------------------------------------------------------------------------
