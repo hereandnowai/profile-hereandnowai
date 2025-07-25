@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://hereandnowai.com">
+    <img src="https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/logo-of-here-and-now-ai.png" alt="HERE AND NOW AI Logo" width="200">
+  </a>
+</p>
+
 # Proposal: Two-Day Hands-On Workshop on Generative AI
 
 ---
@@ -72,3 +78,30 @@ Upon completion of this workshop, students will be able to:
 - **Expert Instruction:** Training delivered by industry professionals from HERE AND NOW AI.
 
 We are excited about the opportunity to partner with your institution and empower your students to become the next generation of AI innovators.
+
+---
+
+<p align="center">
+  <a href="https://hereandnowai.com">
+    <img src="https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/logo-of-here-and-now-ai.png" alt="HERE AND NOW AI Logo" width="200">
+  </a>
+</p>
+
+<p align="center">
+  <em>designed with passion for innovation</em>
+</p>
+
+<p align="center">
+  <a href="https://hereandnowai.com">Website</a> |
+  <a href="mailto:info@hereandnowai.com">Email</a> |
+  <a href="tel:+919962961000">Mobile</a>
+</p>
+
+<p align="center">
+  <a href="httpshttps://hereandnowai.com/blog">Blog</a> |
+  <a href="https://www.linkedin.com/company/hereandnowai/">LinkedIn</a> |
+  <a href="https://instagram.com/hereandnow_ai">Instagram</a> |
+  <a href="https://github.com/hereandnowai">GitHub</a> |
+  <a href="https://x.com/hereandnow_ai">X</a> |
+  <a href="https://youtube.com/@hereandnow_ai">YouTube</a>
+</p>

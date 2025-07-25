@@ -1,0 +1,3401 @@
+├── .gitignore
+├── LICENSE
+├── README.md
+├── branding.json
+├── project_01_hello_agent
+    ├── README.md
+    └── project_01_hello_agent.py
+├── project_02_function_tool
+    ├── README.md
+    └── project_02_function_tool.py
+├── project_03_search_agent
+    ├── README.md
+    └── project_03_search_agent.py
+├── project_04_sequential_agent
+    ├── README.md
+    └── project_04_sequential_agent.py
+├── project_05_parallel_agent
+    ├── README.md
+    └── project_05_parallel_agent.py
+├── project_06_loop_agent
+    ├── README.md
+    └── project_06_loop_agent.py
+├── project_07_chat_memory
+    ├── README.md
+    └── project_07_chat_memory.py
+├── project_08_weather_api
+    ├── README.md
+    └── project_08_weather_api.py
+├── project_09_multi_tool
+    ├── README.md
+    └── project_09_multi_tool.py
+├── project_10_multi_agent
+    ├── README.md
+    └── project_10_multi_agent.py
+├── project_11_task_planner
+    ├── README.md
+    └── project_11_task_planner.py
+├── project_12_travel_planner
+    ├── README.md
+    └── project_12_travel_planner.py
+├── project_13_langchain_wiki
+    ├── README.md
+    └── project_13_langchain_wiki.py
+├── project_14_stackoverflow_bot
+    ├── README.md
+    └── project_14_stackoverflow_bot.py
+├── project_15_github_issues
+    ├── README.md
+    └── project_15_github_issues.py
+├── project_16_advanced_chat
+    ├── README.md
+    └── project_16_advanced_chat.py
+├── project_17_plot_agent
+    ├── README.md
+    └── project_17_plot_agent.py
+├── project_18_deploy_agent
+    ├── Dockerfile
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_19_moderation_agent
+    ├── README.md
+    └── project_19_moderation_agent.py
+├── project_20_evaluation
+    ├── README.md
+    └── project_20_evaluation.py
+├── project_21_booking_assistant
+    ├── README.md
+    └── project_21_booking_assistant.py
+├── project_22_rag_agent
+    ├── README.md
+    └── project_22_rag_agent.py
+├── project_23_audio_chatbot
+    ├── README.md
+    └── project_23_audio_chatbot.py
+├── project_24_calendar_agent
+    ├── README.md
+    └── project_24_calendar_agent.py
+├── project_25_research_agent
+    ├── README.md
+    └── project_25_research_agent.py
+├── project_26_a2a_collaboration
+    ├── README.md
+    └── project_26_a2a_collaboration.py
+├── project_27_code_reviewer
+    ├── README.md
+    └── project_27_code_reviewer.py
+├── project_28_scalable_network
+    ├── README.md
+    └── project_28_scalable_network.py
+├── project_29_performance_tuning
+    ├── README.md
+    └── project_29_performance_tuning.py
+├── project_30_smart_assistant
+    ├── README.md
+    └── project_30_smart_assistant.py
+└── requirements.txt
+
+
+/.gitignore:
+--------------------------------------------------------------------------------
+  1 | # Byte-compiled / optimized / DLL files
+  2 | __pycache__/
+  3 | *.py[codz]
+  4 | *$py.class
+  5 | 
+  6 | # C extensions
+  7 | *.so
+  8 | 
+  9 | # Distribution / packaging
+ 10 | .Python
+ 11 | build/
+ 12 | develop-eggs/
+ 13 | dist/
+ 14 | downloads/
+ 15 | eggs/
+ 16 | .eggs/
+ 17 | lib/
+ 18 | lib64/
+ 19 | parts/
+ 20 | sdist/
+ 21 | var/
+ 22 | wheels/
+ 23 | share/python-wheels/
+ 24 | *.egg-info/
+ 25 | .installed.cfg
+ 26 | *.egg
+ 27 | MANIFEST
+ 28 | 
+ 29 | # PyInstaller
+ 30 | #  Usually these files are written by a python script from a template
+ 31 | #  before PyInstaller builds the exe, so as to inject date/other infos into it.
+ 32 | *.manifest
+ 33 | *.spec
+ 34 | 
+ 35 | # Installer logs
+ 36 | pip-log.txt
+ 37 | pip-delete-this-directory.txt
+ 38 | 
+ 39 | # Unit test / coverage reports
+ 40 | htmlcov/
+ 41 | .tox/
+ 42 | .nox/
+ 43 | .coverage
+ 44 | .coverage.*
+ 45 | .cache
+ 46 | nosetests.xml
+ 47 | coverage.xml
+ 48 | *.cover
+ 49 | *.py.cover
+ 50 | .hypothesis/
+ 51 | .pytest_cache/
+ 52 | cover/
+ 53 | 
+ 54 | # Translations
+ 55 | *.mo
+ 56 | *.pot
+ 57 | 
+ 58 | # Django stuff:
+ 59 | *.log
+ 60 | local_settings.py
+ 61 | db.sqlite3
+ 62 | db.sqlite3-journal
+ 63 | 
+ 64 | # Flask stuff:
+ 65 | instance/
+ 66 | .webassets-cache
+ 67 | 
+ 68 | # Scrapy stuff:
+ 69 | .scrapy
+ 70 | 
+ 71 | # Sphinx documentation
+ 72 | docs/_build/
+ 73 | 
+ 74 | # PyBuilder
+ 75 | .pybuilder/
+ 76 | target/
+ 77 | 
+ 78 | # Jupyter Notebook
+ 79 | .ipynb_checkpoints
+ 80 | 
+ 81 | # IPython
+ 82 | profile_default/
+ 83 | ipython_config.py
+ 84 | 
+ 85 | # pyenv
+ 86 | #   For a library or package, you might want to ignore these files since the code is
+ 87 | #   intended to run in multiple environments; otherwise, check them in:
+ 88 | # .python-version
+ 89 | 
+ 90 | # pipenv
+ 91 | #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+ 92 | #   However, in case of collaboration, if having platform-specific dependencies or dependencies
+ 93 | #   having no cross-platform support, pipenv may install dependencies that don't work, or not
+ 94 | #   install all needed dependencies.
+ 95 | #Pipfile.lock
+ 96 | 
+ 97 | # UV
+ 98 | #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
+ 99 | #   This is especially recommended for binary packages to ensure reproducibility, and is more
+100 | #   commonly ignored for libraries.
+101 | #uv.lock
+102 | 
+103 | # poetry
+104 | #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+105 | #   This is especially recommended for binary packages to ensure reproducibility, and is more
+106 | #   commonly ignored for libraries.
+107 | #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+108 | #poetry.lock
+109 | #poetry.toml
+110 | 
+111 | # pdm
+112 | #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+113 | #   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
+114 | #   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
+115 | #pdm.lock
+116 | #pdm.toml
+117 | .pdm-python
+118 | .pdm-build/
+119 | 
+120 | # pixi
+121 | #   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
+122 | #pixi.lock
+123 | #   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
+124 | #   in the .venv directory. It is recommended not to include this directory in version control.
+125 | .pixi
+126 | 
+127 | # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+128 | __pypackages__/
+129 | 
+130 | # Celery stuff
+131 | celerybeat-schedule
+132 | celerybeat.pid
+133 | 
+134 | # SageMath parsed files
+135 | *.sage.py
+136 | 
+137 | # Environments
+138 | .env
+139 | .envrc
+140 | .venv
+141 | env/
+142 | venv/
+143 | ENV/
+144 | env.bak/
+145 | venv.bak/
+146 | 
+147 | # Spyder project settings
+148 | .spyderproject
+149 | .spyproject
+150 | 
+151 | # Rope project settings
+152 | .ropeproject
+153 | 
+154 | # mkdocs documentation
+155 | /site
+156 | 
+157 | # mypy
+158 | .mypy_cache/
+159 | .dmypy.json
+160 | dmypy.json
+161 | 
+162 | # Pyre type checker
+163 | .pyre/
+164 | 
+165 | # pytype static type analyzer
+166 | .pytype/
+167 | 
+168 | # Cython debug symbols
+169 | cython_debug/
+170 | 
+171 | # PyCharm
+172 | #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+173 | #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+174 | #  and can be added to the global gitignore or merged into this file.  For a more nuclear
+175 | #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+176 | #.idea/
+177 | 
+178 | # Abstra
+179 | # Abstra is an AI-powered process automation framework.
+180 | # Ignore directories containing user credentials, local state, and settings.
+181 | # Learn more at https://abstra.io/docs
+182 | .abstra/
+183 | 
+184 | # Visual Studio Code
+185 | #  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
+186 | #  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+187 | #  and can be added to the global gitignore or merged into this file. However, if you prefer, 
+188 | #  you could uncomment the following to ignore the entire vscode folder
+189 | # .vscode/
+190 | 
+191 | # Ruff stuff:
+192 | .ruff_cache/
+193 | 
+194 | # PyPI configuration file
+195 | .pypirc
+196 | 
+197 | # Cursor
+198 | #  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
+199 | #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
+200 | #  refer to https://docs.cursor.com/context/ignore-files
+201 | .cursorignore
+202 | .cursorindexingignore
+203 | 
+204 | # Marimo
+205 | marimo/_static/
+206 | marimo/_lsp/
+207 | __marimo__/
+208 | 
+209 | GEMINI.md
+
+
+--------------------------------------------------------------------------------
+/LICENSE:
+--------------------------------------------------------------------------------
+ 1 | MIT License
+ 2 | 
+ 3 | Copyright (c) 2025 HERE AND NOW AI
+ 4 | 
+ 5 | Permission is hereby granted, free of charge, to any person obtaining a copy
+ 6 | of this software and associated documentation files (the "Software"), to deal
+ 7 | in the Software without restriction, including without limitation the rights
+ 8 | to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ 9 | copies of the Software, and to permit persons to whom the Software is
+10 | furnished to do so, subject to the following conditions:
+11 | 
+12 | The above copyright notice and this permission notice shall be included in all
+13 | copies or substantial portions of the Software.
+14 | 
+15 | THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+16 | IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+17 | FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+18 | AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+19 | LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+20 | OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+21 | SOFTWARE.
+22 | 
+
+
+--------------------------------------------------------------------------------
+/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Google ADK Agent Development: A Comprehensive Tutorial Series
+ 2 | 
+ 3 | ![HERE AND NOW AI Logo](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)
+ 4 | 
+ 5 | **HERE AND NOW AI** | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Welcome to the Future of Agent Development!
+10 | 
+11 | This repository hosts a meticulously crafted tutorial series designed to guide you through the exciting world of Google's Agent Development Kit (ADK). Whether you're a beginner taking your first steps into AI agents or an experienced developer looking to master advanced ADK features, this collection of 30 distinct projects offers a progressive learning path.
+12 | 
+13 | ## What is Google ADK?
+14 | 
+15 | Google's Agent Development Kit (ADK) is a powerful framework that simplifies the creation, deployment, and management of intelligent agents. It provides a robust set of tools and abstractions that enable developers to:
+16 | 
+17 | *   **Build Intelligent Agents:** Design agents capable of understanding natural language, making decisions, and performing actions.
+18 | *   **Integrate with External Services:** Seamlessly connect agents to various APIs, databases, and web services.
+19 | *   **Orchestrate Complex Workflows:** Create sophisticated multi-step processes using sequential, parallel, and loop-based agent workflows.
+20 | *   **Leverage Advanced AI Capabilities:** Incorporate features like memory, retrieval-augmented generation (RAG), and multi-agent collaboration.
+21 | *   **Ensure Robustness:** Implement comprehensive error handling and utilize callbacks for monitoring and debugging.
+22 | 
+23 | With ADK, you can transform complex AI concepts into practical, deployable solutions, from simple chatbots to autonomous research assistants and enterprise-grade booking systems.
+24 | 
+25 | ## About This Tutorial Series
+26 | 
+27 | This series comprises 30 hands-on projects, each designed to introduce and solidify your understanding of key ADK concepts. The projects are structured with increasing complexity, ensuring a smooth learning curve:
+28 | 
+29 | *   **Beginner Projects (1-10):** Focus on core ADK components, including basic agent setup, custom function tools, built-in search, sequential and parallel workflows, loop agents, and chat memory.
+30 | *   **Intermediate Projects (11-20):** Dive into more advanced integrations and functionalities, such as task planning, travel itinerary generation, LangChain tool integration (Wikipedia, StackExchange), GitHub interaction, advanced memory with callbacks, data visualization, and agent deployment examples.
+31 | *   **Advanced Projects (21-30):** Explore sophisticated multi-agent systems, Retrieval-Augmented Generation (RAG), real-time interaction simulation, external API integrations (e.g., Google Calendar simulation), autonomous research, multi-agent collaboration, code review automation, scalable agent networks, and performance tuning.
+32 | 
+33 | Each project includes a dedicated folder containing:
+34 | 
+35 | *   `project_XX_name.py`: The Python script demonstrating the ADK features.
+36 | *   `README.md`: A detailed explanation of the project, its goals, and step-by-step usage instructions.
+37 | 
+38 | ## Getting Started
+39 | 
+40 | To begin your journey with Google ADK, follow these simple steps:
+41 | 
+42 | 1.  **Clone this repository:**
+43 | 
+44 |     ```bash
+45 |     git clone https://github.com/hereandnowai/master-google-adk-agent-development-python-tutorial-hereandnow-ai.git
+46 |     cd master-google-adk-agent-development-python-tutorial-hereandnow-ai
+47 |     ```
+48 | 
+49 | 2.  **Install Dependencies:**
+50 | 
+51 |     A common `requirements.txt` file is provided in the root directory, listing all necessary Python packages for the entire series. It is recommended to use a virtual environment.
+52 | 
+53 |     ```bash
+54 |     pip install -r requirements.txt
+55 |     ```
+56 | 
+57 | 3.  **Explore Projects:**
+58 | 
+59 |     Navigate into any project folder (e.g., `project_01_hello_agent`) and follow the instructions in its `README.md` to run the specific example.
+60 | 
+61 |     ```bash
+62 |     cd project_01_hello_agent
+63 |     python project_01_hello_agent.py
+64 |     ```
+65 | 
+66 | ## Why Learn Google ADK?
+67 | 
+68 | In an increasingly AI-driven world, the ability to build and deploy intelligent agents is a critical skill. Google ADK empowers developers to:
+69 | 
+70 | *   **Innovate Faster:** Rapidly prototype and iterate on agent-based solutions.
+71 | *   **Automate Complex Tasks:** Streamline operations and enhance productivity across various domains.
+72 | *   **Create Engaging Experiences:** Develop interactive and intelligent applications that understand and respond to users naturally.
+73 | *   **Stay Ahead:** Master a cutting-edge framework from Google, positioning yourself at the forefront of AI development.
+74 | 
+75 | Join us on this exciting journey to unlock the full potential of intelligent agents with Google ADK!
+76 | 
+77 | ---
+78 | 
+79 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Blog](https://hereandnowai.com/blog) | [LinkedIn](https://www.linkedin.com/company/hereandnowai/) | [Instagram](https://instagram.com/hereandnow_ai) | [GitHub](https://github.com/hereandnowai) | [X](https://x.com/hereandnow_ai) | [YouTube](https://youtube.com/@hereandnow_ai)
+80 | 
+81 | Contact: info@hereandnowai.com | +91 996 296 1000
+82 | 
+
+
+--------------------------------------------------------------------------------
+/branding.json:
+--------------------------------------------------------------------------------
+ 1 | {
+ 2 |     "brand":
+ 3 |     {
+ 4 |         "organizationName": "HERE AND NOW AI",
+ 5 |         "website": "https://hereandnowai.com",
+ 6 |         "email": "info@hereandnowai.com",
+ 7 |         "mobile": "+91 996 296 1000",
+ 8 |         "slogan": "designed with passion for innovation",
+ 9 |         "colors": {"primary": "#FFDF00", "secondary": "#004040"},
+10 |         "logo":
+11 |             {
+12 |                 "title": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png",
+13 |                 "favicon": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/favicon-logo-with-name.png"}, "chatbot": {"avatar": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel.jpeg", "face": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel-face.jpeg"
+14 |             },
+15 |         
+16 |         "socialMedia":
+17 |             {
+18 |                 "blog": "https://hereandnowai.com/blog",
+19 |                 "linkedin": "https://www.linkedin.com/company/hereandnowai/",
+20 |                 "instagram": "https://instagram.com/hereandnow_ai",
+21 |                 "github": "https://github.com/hereandnowai",
+22 |                 "x": "https://x.com/hereandnow_ai",
+23 |                 "youtube": "https://youtube.com/@hereandnow_ai"
+24 |             }
+25 |     }
+26 | }
+
+
+--------------------------------------------------------------------------------
+/project_01_hello_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 1: Hello ADK Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project is the "Hello, World!" of the Google ADK. It demonstrates the basic setup of an ADK agent. The agent is designed to do one thing: greet the user. It's a great starting point for understanding the fundamental components of the ADK.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_01_hello_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Expected Output:**
+28 | 
+29 |     The script will print a simple greeting to the console, like:
+30 | 
+31 |     ```
+32 |     Hello from the ADK Agent!
+33 |     ```
+34 | 
+35 | ---
+36 | 
+37 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+38 | 
+39 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_01_hello_agent/project_01_hello_agent.py:
+--------------------------------------------------------------------------------
+ 1 | import adk
+ 2 | 
+ 3 | def run_hello_agent():
+ 4 |     """
+ 5 |     Initializes and runs a simple ADK agent that prints a greeting.
+ 6 |     """
+ 7 |     try:
+ 8 |         # Define the instruction for the agent.
+ 9 |         # This is a simple prompt that tells the agent what to do.
+10 |         agent = adk.Agent(instructions="You are a friendly assistant that greets the user.")
+11 | 
+12 |         # Use the Runner to execute the agent's task.
+13 |         # The Runner manages the lifecycle of the agent.
+14 |         runner = adk.Runner()
+15 |         print("Running Hello Agent...")
+16 |         output = runner.run(agent, "Hello!")
+17 | 
+18 |         # Print the output from the agent.
+19 |         print(f"Agent Response: {output}")
+20 | 
+21 |     except Exception as e:
+22 |         # Handle any exceptions that may occur during the process.
+23 |         print(f"An error occurred: {e}")
+24 | 
+25 | if __name__ == "__main__":
+26 |     # Entry point of the script.
+27 |     run_hello_agent()
+
+
+--------------------------------------------------------------------------------
+/project_02_function_tool/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 2: Basic Function Tool
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to create a custom tool for an ADK agent. The agent will use a Python function to perform unit conversions (e.g., kilometers to miles). This example illustrates how to extend an agent's capabilities with your own logic.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_02_function_tool.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a conversion query, for example:
+30 | 
+31 |     ```
+32 |     convert 10 km to miles
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will use the custom tool to calculate the conversion and print the result:
+38 | 
+39 |     ```
+40 |     10 kilometers is equal to 6.2137 miles.
+41 |     ```
+42 | 
+43 | ---
+44 | 
+45 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+46 | 
+47 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_02_function_tool/project_02_function_tool.py:
+--------------------------------------------------------------------------------
+ 1 | import adk
+ 2 | 
+ 3 | def convert_units(quantity: float, from_unit: str, to_unit: str) -> str:
+ 4 |     """Converts a quantity from one unit to another.
+ 5 | 
+ 6 |     Args:
+ 7 |         quantity: The numerical value to convert.
+ 8 |         from_unit: The starting unit (e.g., "km").
+ 9 |         to_unit: The target unit (e.g., "miles").
+10 | 
+11 |     Returns:
+12 |         A string describing the result of the conversion.
+13 |     """
+14 |     try:
+15 |         # Conversion factors
+16 |         factors = {
+17 |             "km": {"miles": 0.621371},
+18 |             "miles": {"km": 1.60934},
+19 |         }
+20 | 
+21 |         # Perform the conversion
+22 |         factor = factors[from_unit][to_unit]
+23 |         result = quantity * factor
+24 |         return f"{quantity} {from_unit} is equal to {result:.4f} {to_unit}."
+25 | 
+26 |     except KeyError:
+27 |         return f"Conversion from {from_unit} to {to_unit} is not supported."
+28 |     except Exception as e:
+29 |         return f"An error occurred during conversion: {e}"
+30 | 
+31 | def run_conversion_agent():
+32 |     """Runs an agent that uses the unit conversion tool."""
+33 |     try:
+34 |         # Create a tool from the Python function
+35 |         conversion_tool = adk.FunctionTool(convert_units)
+36 | 
+37 |         # Create an agent with the conversion tool
+38 |         agent = adk.Agent(
+39 |             instructions="You are a helpful assistant that converts units.",
+40 |             tools=[conversion_tool]
+41 |         )
+42 | 
+43 |         # Create a runner and start a chat session
+44 |         runner = adk.Runner()
+45 |         print("Unit Conversion Agent is ready. Type your conversion query or 'exit'.")
+46 | 
+47 |         while True:
+48 |             user_input = input("You: ")
+49 |             if user_input.lower() == "exit":
+50 |                 print("Exiting...")
+51 |                 break
+52 | 
+53 |             # Run the agent with the user's input
+54 |             output = runner.run(agent, user_input)
+55 |             print(f"Agent: {output}")
+56 | 
+57 |     except Exception as e:
+58 |         print(f"An error occurred: {e}")
+59 | 
+60 | if __name__ == "__main__":
+61 |     run_conversion_agent()
+
+
+--------------------------------------------------------------------------------
+/project_03_search_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 3: Built-in Search Tool Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project showcases how to use one of the powerful built-in tools in the Google ADK: the Google Search tool. The agent will be able to answer questions by searching the web. This is a fundamental example of how to ground an agent in real-world information.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_03_search_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask a question that requires a web search, for example:
+30 | 
+31 |     ```
+32 |     What is the capital of France?
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will use the Google Search tool to find the answer and present it to you.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_03_search_agent/project_03_search_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_search_agent():
+ 5 |     """Runs an agent that can use the built-in Google Search tool."""
+ 6 |     try:
+ 7 |         # Create an agent and add the google_search tool
+ 8 |         agent = adk.Agent(
+ 9 |             instructions="You are a helpful assistant that can search the web.",
+10 |             tools=[adk.google_search]
+11 |         )
+12 | 
+13 |         # Create a runner and start a chat session
+14 |         runner = adk.Runner()
+15 |         print("Search Agent is ready. Ask a question or type 'exit'.")
+16 | 
+17 |         while True:
+18 |             user_input = input("You: ")
+19 |             if user_input.lower() == "exit":
+20 |                 print("Exiting...")
+21 |                 break
+22 | 
+23 |             # Run the agent with the user's input
+24 |             output = runner.run(agent, user_input)
+25 |             print(f"Agent: {output}")
+26 | 
+27 |     except Exception as e:
+28 |         print(f"An error occurred: {e}")
+29 | 
+30 | if __name__ == "__main__":
+31 |     run_search_agent()
+32 | 
+
+
+--------------------------------------------------------------------------------
+/project_04_sequential_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 4: Sequential Workflow Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project introduces the concept of a sequential workflow in ADK. A sequential workflow executes a series of tasks in a specific order. In this example, the agent will first search for a topic and then summarize the search results. This is a basic form of a research agent.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_04_sequential_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a topic to research, for example:
+30 | 
+31 |     ```
+32 |     The history of artificial intelligence
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will first perform a search and then provide a summary of the findings.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_04_sequential_agent/project_04_sequential_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_sequential_workflow():
+ 5 |     """Demonstrates a sequential workflow with two tasks."""
+ 6 |     try:
+ 7 |         # Define the first task: searching for a topic
+ 8 |         search_task = adk.Agent(
+ 9 |             instructions="Search for the given topic and return the results.",
+10 |             tools=[adk.google_search]
+11 |         )
+12 | 
+13 |         # Define the second task: summarizing the search results
+14 |         summarize_task = adk.Agent(
+15 |             instructions="Summarize the input text."
+16 |         )
+17 | 
+18 |         # Create a sequential workflow
+19 |         workflow = adk.Sequential(
+20 |             [search_task, summarize_task]
+21 |         )
+22 | 
+23 |         # Create a runner and start a chat session
+24 |         runner = adk.Runner()
+25 |         print("Sequential Workflow Agent is ready. Enter a topic to research or type 'exit'.")
+26 | 
+27 |         while True:
+28 |             user_input = input("You: ")
+29 |             if user_input.lower() == "exit":
+30 |                 print("Exiting...")
+31 |                 break
+32 | 
+33 |             # Run the workflow with the user's input
+34 |             output = runner.run(workflow, user_input)
+35 |             print(f"Agent: {output}")
+36 | 
+37 |     except Exception as e:
+38 |         print(f"An error occurred: {e}")
+39 | 
+40 | if __name__ == "__main__":
+41 |     run_sequential_workflow()
+42 | 
+
+
+--------------------------------------------------------------------------------
+/project_05_parallel_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 5: Parallel Agents Example
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to run multiple agents in parallel. The main agent will have two sub-agents: one to fetch the weather and another to get the latest news. Both sub-agents will run concurrently, and their results will be combined. This is useful for tasks that can be performed independently and simultaneously.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_05_parallel_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a city for the weather and a topic for the news, for example:
+30 | 
+31 |     ```
+32 |     Weather in London and news about technology
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will provide both the weather and news information.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_05_parallel_agent/project_05_parallel_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_parallel_agents():
+ 5 |     """Demonstrates running two agents in parallel."""
+ 6 |     try:
+ 7 |         # Define the weather agent
+ 8 |         weather_agent = adk.Agent(
+ 9 |             instructions="Get the weather for a given city.",
+10 |             tools=[adk.google_search]
+11 |         )
+12 | 
+13 |         # Define the news agent
+14 |         news_agent = adk.Agent(
+15 |             instructions="Get the latest news on a given topic.",
+16 |             tools=[adk.google_search]
+17 |         )
+18 | 
+19 |         # Create a parallel workflow
+20 |         workflow = adk.Parallel(
+21 |             [weather_agent, news_agent]
+22 |         )
+23 | 
+24 |         # Create a runner and start a chat session
+25 |         runner = adk.Runner()
+26 |         print("Parallel Agent is ready. Enter a city and a news topic or type 'exit'.")
+27 | 
+28 |         while True:
+29 |             user_input = input("You: ")
+30 |             if user_input.lower() == "exit":
+31 |                 print("Exiting...")
+32 |                 break
+33 | 
+34 |             # Run the workflow with the user's input
+35 |             output = runner.run(workflow, user_input)
+36 |             print(f"Agent: {output}")
+37 | 
+38 |     except Exception as e:
+39 |         print(f"An error occurred: {e}")
+40 | 
+41 | if __name__ == "__main__":
+42 |     run_parallel_agents()
+43 | 
+
+
+--------------------------------------------------------------------------------
+/project_06_loop_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 6: Loop Agent Example
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates the use of a `Loop` agent in ADK. The `Loop` agent will repeatedly execute a task until a specific condition is met. In this example, the agent will keep asking math questions until the user types "exit". This is useful for creating interactive and conversational agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_06_loop_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     The agent will ask you a math question. You can answer it, and it will continue to ask questions until you type "exit".
+30 | 
+31 | 4.  **Expected Output:**
+32 | 
+33 |     The agent will engage in a continuous conversation, asking math questions and evaluating your answers.
+34 | 
+35 | ---
+36 | 
+37 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+38 | 
+39 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_06_loop_agent/project_06_loop_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_loop_agent():
+ 5 |     """Demonstrates a loop agent that continues until a condition is met."""
+ 6 |     try:
+ 7 |         # Define the agent that asks math questions
+ 8 |         math_agent = adk.Agent(
+ 9 |             instructions="Ask the user a math question."
+10 |         )
+11 | 
+12 |         # Create a loop that continues until the user says "exit"
+13 |         workflow = adk.Loop(
+14 |             math_agent,
+15 |             until="[user_input] == 'exit'"
+16 |         )
+17 | 
+18 |         # Create a runner and start the loop
+19 |         runner = adk.Runner()
+20 |         print("Loop Agent is ready. Answer the math questions or type 'exit' to stop.")
+21 | 
+22 |         # Run the workflow
+23 |         runner.run(workflow)
+24 | 
+25 |     except Exception as e:
+26 |         print(f"An error occurred: {e}")
+27 | 
+28 | if __name__ == "__main__":
+29 |     run_loop_agent()
+30 | 
+
+
+--------------------------------------------------------------------------------
+/project_07_chat_memory/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 7: Chat Agent with Memory
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build a chat agent that can remember previous parts of the conversation. The agent uses ADK's session management to maintain context. This allows the agent to have more natural and context-aware conversations.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_07_chat_memory.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     Have a conversation with the agent. It should remember what you said previously. For example:
+30 | 
+31 |     ```
+32 |     You: My name is John.
+33 |     Agent: Nice to meet you, John! What can I help you with today?
+34 |     You: What is my name?
+35 |     Agent: Your name is John.
+36 |     ```
+37 | 
+38 | ---
+39 | 
+40 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+41 | 
+42 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_07_chat_memory/project_07_chat_memory.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_chat_agent_with_memory():
+ 5 |     """Demonstrates a chat agent that remembers conversation history."""
+ 6 |     try:
+ 7 |         # Create an agent
+ 8 |         agent = adk.Agent(
+ 9 |             instructions="You are a friendly assistant that remembers the user's name."
+10 |         )
+11 | 
+12 |         # Create a runner and a session service for memory
+13 |         runner = adk.Runner(session_service=adk.InMemorySessionService())
+14 |         print("Chat Agent with Memory is ready. Talk to it or type 'exit'.")
+15 | 
+16 |         # Start a chat session
+17 |         with runner.chat() as session:
+18 |             while True:
+19 |                 user_input = input("You: ")
+20 |                 if user_input.lower() == "exit":
+21 |                     print("Exiting...")
+22 |                     break
+23 | 
+24 |                 # Run the agent with the user's input
+25 |                 output = session.run(agent, user_input)
+26 |                 print(f"Agent: {output}")
+27 | 
+28 |     except Exception as e:
+29 |         print(f"An error occurred: {e}")
+30 | 
+31 | if __name__ == "__main__":
+32 |     run_chat_agent_with_memory()
+33 | 
+
+
+--------------------------------------------------------------------------------
+/project_08_weather_api/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 8: Weather API Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project shows how to create an agent that can call an external API. The agent will use a function tool to fetch weather data from a weather API service (e.g., OpenWeatherMap). This is a practical example of how to connect your agent to real-world data sources.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 requests
+19 |     ```
+20 | 
+21 | 2.  **Get an API Key:**
+22 | 
+23 |     Sign up for a free API key from a weather service like [OpenWeatherMap](https://openweathermap.org/api).
+24 | 
+25 | 3.  **Set up your API key:**
+26 | 
+27 |     Replace `"YOUR_API_KEY"` in the Python script with your actual API key.
+28 | 
+29 | 4.  **Run the script:**
+30 | 
+31 |     ```bash
+32 |     python project_08_weather_api.py
+33 |     ```
+34 | 
+35 | 5.  **Interact with the agent:**
+36 | 
+37 |     Ask for the weather in a specific city, for example:
+38 | 
+39 |     ```
+40 |     What is the weather in New York?
+41 |     ```
+42 | 
+43 | ---
+44 | 
+45 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+46 | 
+47 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_08_weather_api/project_08_weather_api.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import requests
+ 4 | 
+ 5 | # Replace "YOUR_API_KEY" with your actual OpenWeatherMap API key
+ 6 | API_KEY = "YOUR_API_KEY"
+ 7 | 
+ 8 | def get_weather(city: str) -> str:
+ 9 |     """Fetches the current weather for a given city using the OpenWeatherMap API."""
+10 |     try:
+11 |         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+12 |         response = requests.get(url)
+13 |         response.raise_for_status()  # Raise an exception for bad status codes
+14 | 
+15 |         data = response.json()
+16 |         weather_description = data["weather"][0]["description"]
+17 |         temperature = data["main"]["temp"]
+18 | 
+19 |         return f"The weather in {city} is currently {weather_description} with a temperature of {temperature}°C."
+20 | 
+21 |     except requests.exceptions.RequestException as e:
+22 |         return f"Error fetching weather data: {e}"
+23 |     except KeyError:
+24 |         return f"Could not find weather data for {city}."
+25 |     except Exception as e:
+26 |         return f"An unexpected error occurred: {e}"
+27 | 
+28 | def run_weather_agent():
+29 |     """Runs an agent that can fetch weather information."""
+30 |     try:
+31 |         # Create a tool from the get_weather function
+32 |         weather_tool = adk.FunctionTool(get_weather)
+33 | 
+34 |         # Create an agent with the weather tool
+35 |         agent = adk.Agent(
+36 |             instructions="You are a weather assistant. Use the provided tool to get the weather.",
+37 |             tools=[weather_tool]
+38 |         )
+39 | 
+40 |         # Create a runner and start a chat session
+41 |         runner = adk.Runner()
+42 |         print("Weather Agent is ready. Ask for the weather or type 'exit'.")
+43 | 
+44 |         while True:
+45 |             user_input = input("You: ")
+46 |             if user_input.lower() == "exit":
+47 |                 print("Exiting...")
+48 |                 break
+49 | 
+50 |             # Run the agent with the user's input
+51 |             output = runner.run(agent, user_input)
+52 |             print(f"Agent: {output}")
+53 | 
+54 |     except Exception as e:
+55 |         print(f"An error occurred: {e}")
+56 | 
+57 | if __name__ == "__main__":
+58 |     run_weather_agent()
+59 | 
+
+
+--------------------------------------------------------------------------------
+/project_09_multi_tool/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 9: Multi-Tool Assistant
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build an agent that can use multiple tools. The agent will have access to both the built-in Google Search tool and a custom math tool. This allows the agent to handle a wider range of tasks, from answering general knowledge questions to performing calculations.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_09_multi_tool.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     You can ask the agent questions that require either search or calculation. For example:
+30 | 
+31 |     *   `What is the tallest building in the world?`
+32 |     *   `calc 12 + 34 * 5`
+33 | 
+34 | ---
+35 | 
+36 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto=info@hereandnowai.com)
+37 | 
+38 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_09_multi_tool/project_09_multi_tool.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def calculate(expression: str) -> str:
+ 5 |     """Calculates the result of a mathematical expression."""
+ 6 |     try:
+ 7 |         # A simple and unsafe way to evaluate math expressions.
+ 8 |         # For a real application, use a safer parsing library.
+ 9 |         result = eval(expression)
+10 |         return f"The result of the calculation is: {result}"
+11 |     except Exception as e:
+12 |         return f"Error performing calculation: {e}"
+13 | 
+14 | def run_multi_tool_agent():
+15 |     """Runs an agent that can use both search and a custom math tool."""
+16 |     try:
+17 |         # Create a tool from the calculate function
+18 |         math_tool = adk.FunctionTool(calculate)
+19 | 
+20 |         # Create an agent with multiple tools
+21 |         agent = adk.Agent(
+22 |             instructions="You are a helpful assistant. Use the search tool for questions and the math tool for calculations.",
+23 |             tools=[adk.google_search, math_tool]
+24 |         )
+25 | 
+26 |         # Create a runner and start a chat session
+27 |         runner = adk.Runner()
+28 |         print("Multi-Tool Agent is ready. Ask a question or a calculation, or type 'exit'.")
+29 | 
+30 |         while True:
+31 |             user_input = input("You: ")
+32 |             if user_input.lower() == "exit":
+33 |                 print("Exiting...")
+34 |                 break
+35 | 
+36 |             # Run the agent with the user's input
+37 |             output = runner.run(agent, user_input)
+38 |             print(f"Agent: {output}")
+39 | 
+40 |     except Exception as e:
+41 |         print(f"An error occurred: {e}")
+42 | 
+43 | if __name__ == "__main__":
+44 |     run_multi_tool_agent()
+45 | 
+
+
+--------------------------------------------------------------------------------
+/project_10_multi_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 10: Simple Multi-Agent Pipeline
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project introduces the concept of a multi-agent system where a "master" agent delegates tasks to specialized "sub-agents". In this example, the master agent will take a request to "plan a weekend" and break it down into two sub-tasks: finding activities and finding restaurants. The results from the sub-agents are then combined.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_10_multi_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask the agent to plan a weekend in a city, for example:
+30 | 
+31 |     ```
+32 |     Plan a weekend in Paris
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will provide a plan with suggestions for both activities and restaurants.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_10_multi_agent/project_10_multi_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_multi_agent_pipeline():
+ 5 |     """Demonstrates a master agent that delegates tasks to sub-agents."""
+ 6 |     try:
+ 7 |         # Define the sub-agent for finding activities
+ 8 |         activities_agent = adk.Agent(
+ 9 |             instructions="Find fun activities in the given city.",
+10 |             tools=[adk.google_search]
+11 |         )
+12 | 
+13 |         # Define the sub-agent for finding restaurants
+14 |         restaurants_agent = adk.Agent(
+15 |             instructions="Find good restaurants in the given city.",
+16 |             tools=[adk.google_search]
+17 |         )
+18 | 
+19 |         # Define the master agent that delegates to the sub-agents
+20 |         master_agent = adk.Agent(
+21 |             instructions="You are a weekend planner. Use the activities and restaurants agents to create a plan.",
+22 |             agents={
+23 |                 "activities": activities_agent,
+24 |                 "restaurants": restaurants_agent
+25 |             }
+26 |         )
+27 | 
+28 |         # Create a runner and start a chat session
+29 |         runner = adk.Runner()
+30 |         print("Multi-Agent Planner is ready. Ask me to plan a weekend or type 'exit'.")
+31 | 
+32 |         while True:
+33 |             user_input = input("You: ")
+34 |             if user_input.lower() == "exit":
+35 |                 print("Exiting...")
+36 |                 break
+37 | 
+38 |             # Run the master agent with the user's input
+39 |             output = runner.run(master_agent, user_input)
+40 |             print(f"Agent: {output}")
+41 | 
+42 |     except Exception as e:
+43 |         print(f"An error occurred: {e}")
+44 | 
+45 | if __name__ == "__main__":
+46 |     run_multi_agent_pipeline()
+47 | 
+
+
+--------------------------------------------------------------------------------
+/project_11_task_planner/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 11: Task Planner
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to create a multi-step task planning agent. The agent will take a high-level goal, like "Plan a birthday party," and break it down into a series of smaller, actionable steps. This is a more advanced example of a workflow agent that can be used for project planning.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_11_task_planner.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a goal that you want to plan, for example:
+30 | 
+31 |     ```
+32 |     Plan a birthday party
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will output a to-do list with the steps required to achieve the goal.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_11_task_planner/project_11_task_planner.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_task_planner():
+ 5 |     """Demonstrates a multi-step task planning agent."""
+ 6 |     try:
+ 7 |         # Define the agent that breaks down a goal into tasks
+ 8 |         planner_agent = adk.Agent(
+ 9 |             instructions="You are a project planner. Break down the given goal into a list of tasks."
+10 |         )
+11 | 
+12 |         # Create a runner and start a chat session
+13 |         runner = adk.Runner()
+14 |         print("Task Planner is ready. Enter a goal to plan or type 'exit'.")
+15 | 
+16 |         while True:
+17 |             user_input = input("You: ")
+18 |             if user_input.lower() == "exit":
+19 |                 print("Exiting...")
+20 |                 break
+21 | 
+22 |             # Run the agent with the user's input
+23 |             output = runner.run(planner_agent, user_input)
+24 |             print(f"Agent: {output}")
+25 | 
+26 |     except Exception as e:
+27 |         print(f"An error occurred: {e}")
+28 | 
+29 | if __name__ == "__main__":
+30 |     run_task_planner()
+31 | 
+
+
+--------------------------------------------------------------------------------
+/project_12_travel_planner/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 12: Travel Itinerary Planner
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build an agent that can propose a travel itinerary. Given a destination and dates, the agent will search for flights and hotels (using dummy data for this example) and create a plan. This project showcases how to use multiple agents in parallel to gather information and then combine it into a structured output.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_12_travel_planner.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter your travel details, for example:
+30 | 
+31 |     ```
+32 |     I want to travel to Tokyo from August 1st to August 7th
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will provide a travel itinerary with flight and hotel suggestions.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_12_travel_planner/project_12_travel_planner.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def search_flights(destination: str, dates: str) -> str:
+ 5 |     """Searches for flights to a destination on given dates (dummy data)."""
+ 6 |     return f"Found a flight to {destination} on {dates} for $500."
+ 7 | 
+ 8 | def search_hotels(destination: str, dates: str) -> str:
+ 9 |     """Searches for hotels in a destination for given dates (dummy data)."""
+10 |     return f"Found a hotel in {destination} for {dates} for $100 per night."
+11 | 
+12 | def run_travel_planner():
+13 |     """Runs a travel itinerary planning agent."""
+14 |     try:
+15 |         # Create tools from the search functions
+16 |         flight_tool = adk.FunctionTool(search_flights)
+17 |         hotel_tool = adk.FunctionTool(search_hotels)
+18 | 
+19 |         # Create agents for flights and hotels
+20 |         flight_agent = adk.Agent(
+21 |             instructions="Search for flights.",
+22 |             tools=[flight_tool]
+23 |         )
+24 |         hotel_agent = adk.Agent(
+25 |             instructions="Search for hotels.",
+26 |             tools=[hotel_tool]
+27 |         )
+28 | 
+29 |         # Create a parallel workflow to search for flights and hotels simultaneously
+30 |         search_workflow = adk.Parallel([flight_agent, hotel_agent])
+31 | 
+32 |         # Create a master agent to generate the itinerary
+33 |         itinerary_agent = adk.Agent(
+34 |             instructions="Create a travel itinerary from the flight and hotel information.",
+35 |             agents={"search": search_workflow}
+36 |         )
+37 | 
+38 |         # Create a runner and start a chat session
+39 |         runner = adk.Runner()
+40 |         print("Travel Planner is ready. Enter your destination and dates or type 'exit'.")
+41 | 
+42 |         while True:
+43 |             user_input = input("You: ")
+44 |             if user_input.lower() == "exit":
+45 |                 print("Exiting...")
+46 |                 break
+47 | 
+48 |             # Run the itinerary agent with the user's input
+49 |             output = runner.run(itinerary_agent, user_input)
+50 |             print(f"Agent: {output}")
+51 | 
+52 |     except Exception as e:
+53 |         print(f"An error occurred: {e}")
+54 | 
+55 | if __name__ == "__main__":
+56 |     run_travel_planner()
+57 | 
+
+
+--------------------------------------------------------------------------------
+/project_13_langchain_wiki/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 13: LangChain Wiki Bot
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to integrate LangChain tools with the Google ADK. Specifically, it uses LangChain's Wikipedia lookup tool to create a bot that can answer factual questions by searching Wikipedia. This shows how to leverage the vast ecosystem of LangChain tools within your ADK agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 langchain wikipedia
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_13_langchain_wiki.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask a question that can be answered by Wikipedia, for example:
+30 | 
+31 |     ```
+32 |     Who was the first person to walk on the moon?
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will use the Wikipedia tool to find the answer and present it to you.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_13_langchain_wiki/project_13_langchain_wiki.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | from langchain.tools import WikipediaQueryRun
+ 4 | from langchain_community.utilities import WikipediaAPIWrapper
+ 5 | 
+ 6 | def run_wiki_bot():
+ 7 |     """Runs an agent that can answer questions using Wikipedia via LangChain."""
+ 8 |     try:
+ 9 |         # Create a LangChain tool for Wikipedia
+10 |         wikipedia = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())
+11 | 
+12 |         # Wrap the LangChain tool as an ADK tool
+13 |         wiki_tool = adk.LangChainTool(wikipedia)
+14 | 
+15 |         # Create an agent with the Wikipedia tool
+16 |         agent = adk.Agent(
+17 |             instructions="You are a helpful assistant that can answer questions using Wikipedia.",
+18 |             tools=[wiki_tool]
+19 |         )
+20 | 
+21 |         # Create a runner and start a chat session
+22 |         runner = adk.Runner()
+23 |         print("LangChain Wiki Bot is ready. Ask a question or type 'exit'.")
+24 | 
+25 |         while True:
+26 |             user_input = input("You: ")
+27 |             if user_input.lower() == "exit":
+28 |                 print("Exiting...")
+29 |                 break
+30 | 
+31 |             # Run the agent with the user's input
+32 |             output = runner.run(agent, user_input)
+33 |             print(f"Agent: {output}")
+34 | 
+35 |     except Exception as e:
+36 |         print(f"An error occurred: {e}")
+37 | 
+38 | if __name__ == "__main__":
+39 |     run_wiki_bot()
+40 | 
+
+
+--------------------------------------------------------------------------------
+/project_14_stackoverflow_bot/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 14: StackOverflow Q&A Bot
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to use LangChain's StackExchange API tool to create a Q&A bot for programming questions. The agent will be able to search StackOverflow for answers to your coding problems. This is another example of how to extend ADK with the rich toolset of LangChain.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 langchain stackapi
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_14_stackoverflow_bot.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask a programming question, for example:
+30 | 
+31 |     ```
+32 |     How to sort a dictionary by value in Python?
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will search StackOverflow and provide a relevant answer to your question.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_14_stackoverflow_bot/project_14_stackoverflow_bot.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | from langchain.tools import StackExchangeTool
+ 4 | 
+ 5 | def run_stackoverflow_bot():
+ 6 |     """Runs an agent that can answer programming questions using the StackExchange API."""
+ 7 |     try:
+ 8 |         # Create a LangChain tool for StackExchange
+ 9 |         stack_exchange_tool = StackExchangeTool()
+10 | 
+11 |         # Wrap the LangChain tool as an ADK tool
+12 |         adk_tool = adk.LangChainTool(stack_exchange_tool)
+13 | 
+14 |         # Create an agent with the StackExchange tool
+15 |         agent = adk.Agent(
+16 |             instructions="You are a helpful assistant that answers programming questions using StackOverflow.",
+17 |             tools=[adk_tool]
+18 |         )
+19 | 
+20 |         # Create a runner and start a chat session
+21 |         runner = adk.Runner()
+22 |         print("StackOverflow Bot is ready. Ask a programming question or type 'exit'.")
+23 | 
+24 |         while True:
+25 |             user_input = input("You: ")
+26 |             if user_input.lower() == "exit":
+27 |                 print("Exiting...")
+28 |                 break
+29 | 
+30 |             # Run the agent with the user's input
+31 |             output = runner.run(agent, user_input)
+32 |             print(f"Agent: {output}")
+33 | 
+34 |     except Exception as e:
+35 |         print(f"An error occurred: {e}")
+36 | 
+37 | if __name__ == "__main__":
+38 |     run_stackoverflow_bot()
+39 | 
+
+
+--------------------------------------------------------------------------------
+/project_15_github_issues/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 15: GitHub Issue Tracker Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to use the ADK's built-in GitHub toolset to create an agent that can interact with GitHub. The agent will be able to fetch open issues from a given repository. This is a powerful example of how to connect your agent to external services and automate development workflows.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 PyGithub
+19 |     ```
+20 | 
+21 | 2.  **Set up GitHub authentication:**
+22 | 
+23 |     You will need a GitHub personal access token. You can create one [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+24 | 
+25 | 3.  **Set the `GITHUB_TOKEN` environment variable:**
+26 | 
+27 |     ```bash
+28 |     export GITHUB_TOKEN="your_personal_access_token"
+29 |     ```
+30 | 
+31 | 4.  **Run the script:**
+32 | 
+33 |     ```bash
+34 |     python project_15_github_issues.py
+35 |     ```
+36 | 
+37 | 5.  **Interact with the agent:**
+38 | 
+39 |     When prompted, ask the agent to list the open issues in a repository, for example:
+40 | 
+41 |     ```
+42 |     List open issues in the repository "google/generative-ai-python"
+43 |     ```
+44 | 
+45 | ---
+46 | 
+47 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+48 | 
+49 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_15_github_issues/project_15_github_issues.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import os
+ 4 | 
+ 5 | def run_github_issues_agent():
+ 6 |     """Runs an agent that can fetch open issues from a GitHub repository."""
+ 7 |     try:
+ 8 |         # Get the GitHub token from the environment variable
+ 9 |         github_token = os.environ.get("GITHUB_TOKEN")
+10 |         if not github_token:
+11 |             print("Error: GITHUB_TOKEN environment variable not set.")
+12 |             return
+13 | 
+14 |         # Create a GitHub toolset
+15 |         github_tools = adk.github.GitHub(token=github_token)
+16 | 
+17 |         # Create an agent with the GitHub toolset
+18 |         agent = adk.Agent(
+19 |             instructions="You are a helpful assistant that can list open issues in a GitHub repository.",
+20 |             tools=github_tools.get_tools()
+21 |         )
+22 | 
+23 |         # Create a runner and start a chat session
+24 |         runner = adk.Runner()
+25 |         print("GitHub Issues Agent is ready. Ask me to list open issues or type 'exit'.")
+26 | 
+27 |         while True:
+28 |             user_input = input("You: ")
+29 |             if user_input.lower() == "exit":
+30 |                 print("Exiting...")
+31 |                 break
+32 | 
+33 |             # Run the agent with the user's input
+34 |             output = runner.run(agent, user_input)
+35 |             print(f"Agent: {output}")
+36 | 
+37 |     except Exception as e:
+38 |         print(f"An error occurred: {e}")
+39 | 
+40 | if __name__ == "__main__":
+41 |     run_github_issues_agent()
+42 | 
+
+
+--------------------------------------------------------------------------------
+/project_16_advanced_chat/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 16: Chatbot with Callbacks & Memory
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to enhance a chatbot with logging and more persistent memory. It uses ADK's callback system to trace the agent's execution, which is useful for debugging and monitoring. It also shows how to use a more persistent form of memory to maintain conversation history across sessions.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_16_advanced_chat.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     Have a conversation with the agent. The agent's actions will be logged to the console, and the conversation history will be saved to a file.
+30 | 
+31 | ---
+32 | 
+33 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+34 | 
+35 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_16_advanced_chat/project_16_advanced_chat.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import json
+ 4 | 
+ 5 | class LoggingCallback(adk.Callback):
+ 6 |     """A simple callback that logs the agent's actions."""
+ 7 |     def on_agent_step(self, step, **kwargs):
+ 8 |         print(f"Agent Step: {step}")
+ 9 | 
+10 | class FileSessionService(adk.SessionService):
+11 |     """A session service that stores conversation history in a file."""
+12 |     def __init__(self, file_path="session.json"):
+13 |         self.file_path = file_path
+14 | 
+15 |     def load(self, session_id):
+16 |         try:
+17 |             with open(self.file_path, "r") as f:
+18 |                 return json.load(f)
+19 |         except FileNotFoundError:
+20 |             return []
+21 | 
+22 |     def save(self, session_id, history):
+23 |         with open(self.file_path, "w") as f:
+24 |             json.dump(history, f)
+25 | 
+26 | def run_advanced_chat():
+27 |     """Runs a chatbot with logging and file-based memory."""
+28 |     try:
+29 |         # Create an agent
+30 |         agent = adk.Agent(
+31 |             instructions="You are a friendly assistant."
+32 |         )
+33 | 
+34 |         # Create a runner with the logging callback and file session service
+35 |         runner = adk.Runner(
+36 |             callbacks=[LoggingCallback()],
+37 |             session_service=FileSessionService()
+38 |         )
+39 | 
+40 |         print("Advanced Chatbot is ready. Talk to it or type 'exit'.")
+41 | 
+42 |         # Start a chat session
+43 |         with runner.chat() as session:
+44 |             while True:
+45 |                 user_input = input("You: ")
+46 |                 if user_input.lower() == "exit":
+47 |                     print("Exiting...")
+48 |                     break
+49 | 
+50 |                 # Run the agent with the user's input
+51 |                 output = session.run(agent, user_input)
+52 |                 print(f"Agent: {output}")
+53 | 
+54 |     except Exception as e:
+55 |         print(f"An error occurred: {e}")
+56 | 
+57 | if __name__ == "__main__":
+58 |     run_advanced_chat()
+59 | 
+
+
+--------------------------------------------------------------------------------
+/project_17_plot_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 17: Data Visualization Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to create an agent that generates data visualizations. The agent will use a Python plotting library (matplotlib) to create a plot of a mathematical function and save it as an image file. This is a powerful example of how to give your agent the ability to generate rich, non-textual content.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 matplotlib
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_17_plot_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask the agent to plot a function, for example:
+30 | 
+31 |     ```
+32 |     Plot x^2 from -10 to 10
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will generate a plot and save it as `plot.png` in the current directory. It will then return a message confirming that the plot has been created.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_17_plot_agent/project_17_plot_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import matplotlib.pyplot as plt
+ 4 | import numpy as np
+ 5 | 
+ 6 | def plot_function(function_string: str, x_min: float, x_max: float) -> str:
+ 7 |     """Plots a mathematical function and saves it to a file."""
+ 8 |     try:
+ 9 |         x = np.linspace(x_min, x_max, 400)
+10 |         # A simple and unsafe way to evaluate the function string.
+11 |         # For a real application, use a safer parsing library.
+12 |         y = eval(function_string, {"x": x, "np": np})
+13 | 
+14 |         plt.figure()
+15 |         plt.plot(x, y)
+16 |         plt.title(f"Plot of {function_string}")
+17 |         plt.xlabel("x")
+18 |         plt.ylabel("y")
+19 |         plt.grid(True)
+20 |         plt.savefig("plot.png")
+21 | 
+22 |         return "The plot has been saved as plot.png"
+23 | 
+24 |     except Exception as e:
+25 |         return f"Error plotting function: {e}"
+26 | 
+27 | def run_plot_agent():
+28 |     """Runs an agent that can plot mathematical functions."""
+29 |     try:
+30 |         # Create a tool from the plot_function
+31 |         plot_tool = adk.FunctionTool(plot_function)
+32 | 
+33 |         # Create an agent with the plot tool
+34 |         agent = adk.Agent(
+35 |             instructions="You are a plotting assistant. Use the provided tool to plot functions.",
+36 |             tools=[plot_tool]
+37 |         )
+38 | 
+39 |         # Create a runner and start a chat session
+40 |         runner = adk.Runner()
+41 |         print("Plotting Agent is ready. Ask me to plot a function or type 'exit'.")
+42 | 
+43 |         while True:
+44 |             user_input = input("You: ")
+45 |             if user_input.lower() == "exit":
+46 |                 print("Exiting...")
+47 |                 break
+48 | 
+49 |             # Run the agent with the user's input
+50 |             output = runner.run(agent, user_input)
+51 |             print(f"Agent: {output}")
+52 | 
+53 |     except Exception as e:
+54 |         print(f"An error occurred: {e}")
+55 | 
+56 | if __name__ == "__main__":
+57 |     run_plot_agent()
+58 | 
+
+
+--------------------------------------------------------------------------------
+/project_18_deploy_agent/Dockerfile:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | # Use the official Python image.
+ 3 | FROM python:3.9-slim
+ 4 | 
+ 5 | # Set the working directory.
+ 6 | WORKDIR /app
+ 7 | 
+ 8 | # Copy the requirements file.
+ 9 | COPY requirements.txt .
+10 | 
+11 | # Install the dependencies.
+12 | RUN pip install --no-cache-dir -r requirements.txt
+13 | 
+14 | # Copy the main application file.
+15 | COPY main.py .
+16 | 
+17 | # Expose the port the app runs on.
+18 | EXPOSE 8080
+19 | 
+20 | # Run the application.
+21 | CMD ["python", "main.py"]
+22 | 
+
+
+--------------------------------------------------------------------------------
+/project_18_deploy_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 18: Cloud Run Deployment Example
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project provides a basic example of how to package an ADK agent for deployment as a web service using Docker and Google Cloud Run. The agent is a simple "greeter" that responds to HTTP requests. This is a starting point for building scalable and production-ready ADK applications.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install Docker:**
+16 | 
+17 |     Follow the instructions on the [Docker website](https://docs.docker.com/get-docker/) to install Docker on your machine.
+18 | 
+19 | 2.  **Build the Docker image:**
+20 | 
+21 |     ```bash
+22 |     docker build -t adk-greeter-agent .
+23 |     ```
+24 | 
+25 | 3.  **Run the Docker container locally:**
+26 | 
+27 |     ```bash
+28 |     docker run -p 8080:8080 adk-greeter-agent
+29 |     ```
+30 | 
+31 | 4.  **Test the agent:**
+32 | 
+33 |     Open a new terminal and send a request to the agent:
+34 | 
+35 |     ```bash
+36 |     curl -X POST -H "Content-Type: application/json" -d '{"message": "Hello"}' http://localhost:8080/
+37 |     ```
+38 | 
+39 | 5.  **Deploy to Cloud Run:**
+40 | 
+41 |     Follow the [Google Cloud Run documentation](https://cloud.google.com/run/docs/deploying) to deploy the container image to Cloud Run.
+42 | 
+43 | ---
+44 | 
+45 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+46 | 
+47 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_18_deploy_agent/main.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | from http.server import BaseHTTPRequestHandler, HTTPServer
+ 4 | import json
+ 5 | 
+ 6 | # Create a simple greeter agent
+ 7 | agent = adk.Agent(instructions="You are a friendly greeter.")
+ 8 | runner = adk.Runner()
+ 9 | 
+10 | class AgentRequestHandler(BaseHTTPRequestHandler):
+11 |     def do_POST(self):
+12 |         try:
+13 |             content_length = int(self.headers['Content-Length'])
+14 |             post_data = self.rfile.read(content_length)
+15 |             request_data = json.loads(post_data)
+16 | 
+17 |             # Run the agent with the message from the request
+18 |             output = runner.run(agent, request_data['message'])
+19 | 
+20 |             # Send the response
+21 |             self.send_response(200)
+22 |             self.send_header('Content-type', 'application/json')
+23 |             self.end_headers()
+24 |             self.wfile.write(json.dumps({"response": output}).encode('utf-8'))
+25 | 
+26 |         except Exception as e:
+27 |             self.send_response(500)
+28 |             self.send_header('Content-type', 'application/json')
+29 |             self.end_headers()
+30 |             self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+31 | 
+32 | def run_server():
+33 |     """Runs the agent as an HTTP server."""
+34 |     server_address = ('', 8080)
+35 |     httpd = HTTPServer(server_address, AgentRequestHandler)
+36 |     print("Starting server on port 8080...")
+37 |     httpd.serve_forever()
+38 | 
+39 | if __name__ == "__main__":
+40 |     run_server()
+41 | 
+
+
+--------------------------------------------------------------------------------
+/project_18_deploy_agent/requirements.txt:
+--------------------------------------------------------------------------------
+1 | google-adk==0.1.0
+2 | 
+
+
+--------------------------------------------------------------------------------
+/project_19_moderation_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 19: Content Moderation Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to implement a content moderation agent that filters user input. The agent uses a function to check for banned words. If the input is inappropriate, the agent will respond with a warning; otherwise, it will proceed with the request. This is a basic example of how to build safety features into your agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_19_moderation_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     Try sending both appropriate and inappropriate messages to the agent. For example:
+30 | 
+31 |     *   `Hello, how are you?`
+32 |     *   `This is an example of a bad word.`
+33 | 
+34 | 4.  **Expected Output:**
+35 | 
+36 |     The agent will either respond normally or with a moderation warning, depending on the input.
+37 | 
+38 | ---
+39 | 
+40 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+41 | 
+42 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_19_moderation_agent/project_19_moderation_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | BANNED_WORDS = ["bad", "word"]
+ 5 | 
+ 6 | def check_for_banned_words(text: str) -> bool:
+ 7 |     """Checks if the text contains any banned words."""
+ 8 |     return any(word in text.lower() for word in BANNED_WORDS)
+ 9 | 
+10 | def run_moderation_agent():
+11 |     """Runs a content moderation agent."""
+12 |     try:
+13 |         # Create a normal agent
+14 |         normal_agent = adk.Agent(
+15 |             instructions="You are a friendly assistant."
+16 |         )
+17 | 
+18 |         # Create a moderation agent
+19 |         moderation_agent = adk.Agent(
+20 |             instructions="Warn the user that their message is inappropriate."
+21 |         )
+22 | 
+23 |         # Create a router that decides which agent to use
+24 |         def router(user_input):
+25 |             if check_for_banned_words(user_input):
+26 |                 return moderation_agent
+27 |             else:
+28 |                 return normal_agent
+29 | 
+30 |         # Create a runner and start a chat session
+31 |         runner = adk.Runner()
+32 |         print("Moderation Agent is ready. Say something or type 'exit'.")
+33 | 
+34 |         while True:
+35 |             user_input = input("You: ")
+36 |             if user_input.lower() == "exit":
+37 |                 print("Exiting...")
+38 |                 break
+39 | 
+40 |             # Route the input to the appropriate agent
+41 |             agent_to_use = router(user_input)
+42 |             output = runner.run(agent_to_use, user_input)
+43 |             print(f"Agent: {output}")
+44 | 
+45 |     except Exception as e:
+46 |         print(f"An error occurred: {e}")
+47 | 
+48 | if __name__ == "__main__":
+49 |     run_moderation_agent()
+50 | 
+
+
+--------------------------------------------------------------------------------
+/project_20_evaluation/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 20: Agent Evaluation Pipeline
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to create a pipeline to automatically test an agent's accuracy. It uses ADK's built-in evaluation tools to run an agent against a set of input/output pairs and measure its performance. This is a crucial step in building reliable and high-quality agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_20_evaluation.py
+25 |     ```
+26 | 
+27 | 3.  **Expected Output:**
+28 | 
+29 |     The script will run the evaluation and print a report with the agent's accuracy and any failures.
+30 | 
+31 | ---
+32 | 
+33 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+34 | 
+35 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_20_evaluation/project_20_evaluation.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_evaluation_pipeline():
+ 5 |     """Runs an evaluation pipeline for a simple Q&A agent."""
+ 6 |     try:
+ 7 |         # Create a simple Q&A agent
+ 8 |         agent = adk.Agent(
+ 9 |             instructions="You are a question-answering assistant."
+10 |         )
+11 | 
+12 |         # Define a dataset of questions and expected answers
+13 |         dataset = [
+14 |             {
+15 |                 "input": "What is the capital of France?",
+16 |                 "expected_output": "Paris"
+17 |             },
+18 |             {
+19 |                 "input": "What is 2 + 2?",
+20 |                 "expected_output": "4"
+21 |             }
+22 |         ]
+23 | 
+24 |         # Create an evaluator
+25 |         evaluator = adk.Evaluator()
+26 | 
+27 |         # Run the evaluation
+28 |         results = evaluator.run(agent, dataset)
+29 | 
+30 |         # Print the evaluation results
+31 |         print("Evaluation Results:")
+32 |         for result in results:
+33 |             print(f"Input: {result.input}")
+34 |             print(f"Output: {result.output}")
+35 |             print(f"Expected Output: {result.expected_output}")
+36 |             print(f"Correct: {result.is_correct()}")
+37 |             print("---")
+38 | 
+39 |     except Exception as e:
+40 |         print(f"An error occurred: {e}")
+41 | 
+42 | if __name__ == "__main__":
+43 |     run_evaluation_pipeline()
+44 | 
+
+
+--------------------------------------------------------------------------------
+/project_21_booking_assistant/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 21: Enterprise Booking Assistant
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates a complex multi-agent system for booking travel. A coordinator agent manages flight, hotel, and car rental sub-agents. It merges the plans from the sub-agents, uses parallel workflows to gather information, and handles errors gracefully. This is an example of how to build a sophisticated, enterprise-level agent.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_21_booking_assistant.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask the agent to book a trip, for example:
+30 | 
+31 |     ```
+32 |     Book a trip to San Francisco from September 1st to September 5th, including a flight, hotel, and car rental.
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will provide a complete travel itinerary with details for the flight, hotel, and car rental.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_21_booking_assistant/project_21_booking_assistant.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | # Dummy functions for booking
+ 5 | def book_flight(destination, dates): return f"Flight booked to {destination} for {dates}."
+ 6 | def book_hotel(destination, dates): return f"Hotel booked in {destination} for {dates}."
+ 7 | def book_car(destination, dates): return f"Car rented in {destination} for {dates}."
+ 8 | 
+ 9 | def run_booking_assistant():
+10 |     """Runs a multi-agent system for booking travel."""
+11 |     try:
+12 |         # Create tools for booking
+13 |         flight_tool = adk.FunctionTool(book_flight)
+14 |         hotel_tool = adk.FunctionTool(book_hotel)
+15 |         car_tool = adk.FunctionTool(book_car)
+16 | 
+17 |         # Create sub-agents for each booking task
+18 |         flight_agent = adk.Agent(instructions="Book a flight.", tools=[flight_tool])
+19 |         hotel_agent = adk.Agent(instructions="Book a hotel.", tools=[hotel_tool])
+20 |         car_agent = adk.Agent(instructions="Book a car.", tools=[car_tool])
+21 | 
+22 |         # Create a parallel workflow for booking
+23 |         booking_workflow = adk.Parallel([flight_agent, hotel_agent, car_agent])
+24 | 
+25 |         # Create a coordinator agent
+26 |         coordinator_agent = adk.Agent(
+27 |             instructions="You are a travel booking assistant. Use the provided agents to book a trip.",
+28 |             agents={"booking": booking_workflow}
+29 |         )
+30 | 
+31 |         # Create a runner and start a chat session
+32 |         runner = adk.Runner()
+33 |         print("Booking Assistant is ready. Ask me to book a trip or type 'exit'.")
+34 | 
+35 |         while True:
+36 |             user_input = input("You: ")
+37 |             if user_input.lower() == "exit":
+38 |                 print("Exiting...")
+39 |                 break
+40 | 
+41 |             # Run the coordinator agent
+42 |             output = runner.run(coordinator_agent, user_input)
+43 |             print(f"Agent: {output}")
+44 | 
+45 |     except Exception as e:
+46 |         print(f"An error occurred: {e}")
+47 | 
+48 | if __name__ == "__main__":
+49 |     run_booking_assistant()
+50 | 
+
+
+--------------------------------------------------------------------------------
+/project_22_rag_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 22: Document QA Agent (RAG)
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build a Retrieval-Augmented Generation (RAG) agent. The agent can answer questions about a set of documents by first retrieving relevant information from the documents and then using that information to generate an answer. This is a powerful technique for building agents that can reason about your own data.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 faiss-cpu
+19 |     ```
+20 | 
+21 | 2.  **Create a `documents` directory:**
+22 | 
+23 |     Create a directory named `documents` and place some text files in it. These will be the documents that the agent can answer questions about.
+24 | 
+25 | 3.  **Run the script:**
+26 | 
+27 |     ```bash
+28 |     python project_22_rag_agent.py
+29 |     ```
+30 | 
+31 | 4.  **Interact with the agent:**
+32 | 
+33 |     When prompted, ask a question about the documents, for example:
+34 | 
+35 |     ```
+36 |     What is the main topic of the documents?
+37 |     ```
+38 | 
+39 | 4.  **Expected Output:**
+40 | 
+41 |     The agent will provide an answer to your question based on the content of the documents.
+42 | 
+43 | ---
+44 | 
+45 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+46 | 
+47 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_22_rag_agent/project_22_rag_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import os
+ 4 | 
+ 5 | def run_rag_agent():
+ 6 |     """Runs a Retrieval-Augmented Generation (RAG) agent."""
+ 7 |     try:
+ 8 |         # Create a document store
+ 9 |         document_store = adk.VectorStore(
+10 |             adk.loaders.DirectoryLoader("documents"),
+11 |             adk.embeddings.GoogleGenerativeAIEmbeddings(),
+12 |             adk.vector_stores.Faiss()
+13 |         )
+14 | 
+15 |         # Create a RAG agent
+16 |         agent = adk.RAG(
+17 |             document_store=document_store,
+18 |             instructions="You are a helpful assistant that answers questions about the provided documents."
+19 |         )
+20 | 
+21 |         # Create a runner and start a chat session
+22 |         runner = adk.Runner()
+23 |         print("RAG Agent is ready. Ask a question about the documents or type 'exit'.")
+24 | 
+25 |         while True:
+26 |             user_input = input("You: ")
+27 |             if user_input.lower() == "exit":
+28 |                 print("Exiting...")
+29 |                 break
+30 | 
+31 |             # Run the agent with the user's input
+32 |             output = runner.run(agent, user_input)
+33 |             print(f"Agent: {output}")
+34 | 
+35 |     except Exception as e:
+36 |         print(f"An error occurred: {e}")
+37 | 
+38 | if __name__ == "__main__":
+39 |     # Create a dummy documents directory for the example
+40 |     if not os.path.exists("documents"):
+41 |         os.makedirs("documents")
+42 |         with open("documents/doc1.txt", "w") as f:
+43 |             f.write("The sky is blue.")
+44 |         with open("documents/doc2.txt", "w") as f:
+45 |             f.write("The grass is green.")
+46 | 
+47 |     run_rag_agent()
+48 | 
+
+
+--------------------------------------------------------------------------------
+/project_23_audio_chatbot/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 23: Real-time Audio Chatbot
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project simulates a voice assistant that handles streaming audio. It uses ADK's streaming features to process a continuous stream of user messages (simulating transcribed audio). The agent can schedule actions based on speech commands, demonstrating how to build real-time, interactive agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_23_audio_chatbot.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     The script will simulate a stream of audio by processing your text input in real-time. You can type commands and the agent will respond as if it were a voice assistant.
+30 | 
+31 | ---
+32 | 
+33 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+34 | 
+35 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_23_audio_chatbot/project_23_audio_chatbot.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import time
+ 4 | 
+ 5 | def run_audio_chatbot():
+ 6 |     """Simulates a real-time audio chatbot."""
+ 7 |     try:
+ 8 |         # Create an agent
+ 9 |         agent = adk.Agent(
+10 |             instructions="You are a voice assistant. You can perform actions like setting a timer."
+11 |         )
+12 | 
+13 |         # Create a runner
+14 |         runner = adk.Runner()
+15 |         print("Audio Chatbot is ready. Speak your commands (type them) or type 'exit'.")
+16 | 
+17 |         # Simulate a streaming audio session
+18 |         with runner.stream() as stream:
+19 |             while True:
+20 |                 user_input = input("You: ")
+21 |                 if user_input.lower() == "exit":
+22 |                     print("Exiting...")
+23 |                     break
+24 | 
+25 |                 # Send the user's input to the stream
+26 |                 stream.send(agent, user_input)
+27 | 
+28 |                 # Process the stream
+29 |                 for output in stream:
+30 |                     print(f"Agent: {output}")
+31 | 
+32 |     except Exception as e:
+33 |         print(f"An error occurred: {e}")
+34 | 
+35 | if __name__ == "__main__":
+36 |     run_audio_chatbot()
+37 | 
+
+
+--------------------------------------------------------------------------------
+/project_24_calendar_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 24: Meeting Scheduling Assistant
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build a meeting scheduling assistant that can integrate with an external API like Google Calendar. The agent will be able to handle scheduling conflicts, ask for alternative times, and use loops to manage the conversation. This is an advanced example of how to build a practical, interactive agent.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_24_calendar_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, ask the agent to schedule a meeting, for example:
+30 | 
+31 |     ```
+32 |     Schedule a meeting with John Doe for tomorrow at 2pm to discuss the project.
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will guide you through the process of scheduling the meeting, handling any conflicts that may arise.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_24_calendar_agent/project_24_calendar_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | # Dummy function to simulate checking for calendar conflicts
+ 5 | def check_calendar(time): return False # Assume no conflicts for this example
+ 6 | 
+ 7 | # Dummy function to simulate scheduling a meeting
+ 8 | def schedule_meeting(attendees, time, topic): return f"Meeting scheduled with {attendees} at {time} to discuss {topic}."
+ 9 | 
+10 | def run_calendar_agent():
+11 |     """Runs a meeting scheduling assistant."""
+12 |     try:
+13 |         # Create tools for calendar operations
+14 |         check_calendar_tool = adk.FunctionTool(check_calendar)
+15 |         schedule_meeting_tool = adk.FunctionTool(schedule_meeting)
+16 | 
+17 |         # Create an agent for scheduling meetings
+18 |         agent = adk.Agent(
+19 |             instructions="You are a meeting scheduling assistant. Use the provided tools to schedule meetings.",
+20 |             tools=[check_calendar_tool, schedule_meeting_tool]
+21 |         )
+22 | 
+23 |         # Create a runner and start a chat session
+24 |         runner = adk.Runner()
+25 |         print("Calendar Agent is ready. Ask me to schedule a meeting or type 'exit'.")
+26 | 
+27 |         while True:
+28 |             user_input = input("You: ")
+29 |             if user_input.lower() == "exit":
+30 |                 print("Exiting...")
+31 |                 break
+32 | 
+33 |             # Run the agent with the user's input
+34 |             output = runner.run(agent, user_input)
+35 |             print(f"Agent: {output}")
+36 | 
+37 |     except Exception as e:
+38 |         print(f"An error occurred: {e}")
+39 | 
+40 | if __name__ == "__main__":
+41 |     run_calendar_agent()
+42 | 
+
+
+--------------------------------------------------------------------------------
+/project_25_research_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 25: Autonomous Research Agent
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build an autonomous research agent. The agent will take a research query, plan a sequence of actions (e.g., search, browse, summarize), and then execute those actions to compile a report. This is an advanced example of how to build an agent that can perform complex tasks with a high degree of autonomy.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_25_research_agent.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a research query, for example:
+30 | 
+31 |     ```
+32 |     Research the latest advancements in quantum computing.
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agent will provide a research report on the topic, including a summary and a list of sources.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_25_research_agent/project_25_research_agent.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_research_agent():
+ 5 |     """Runs an autonomous research agent."""
+ 6 |     try:
+ 7 |         # Define the sub-agents for the research tasks
+ 8 |         search_agent = adk.Agent(
+ 9 |             instructions="Search for information on the given topic.",
+10 |             tools=[adk.google_search]
+11 |         )
+12 |         summarize_agent = adk.Agent(
+13 |             instructions="Summarize the given text."
+14 |         )
+15 | 
+16 |         # Define the research workflow
+17 |         research_workflow = adk.Sequential([search_agent, summarize_agent])
+18 | 
+19 |         # Define the planner agent
+20 |         planner_agent = adk.Agent(
+21 |             instructions="You are a research assistant. Create a plan to research the given topic.",
+22 |             agents={"research": research_workflow}
+23 |         )
+24 | 
+25 |         # Create a runner and start a chat session
+26 |         runner = adk.Runner()
+27 |         print("Research Agent is ready. Enter a research query or type 'exit'.")
+28 | 
+29 |         while True:
+30 |             user_input = input("You: ")
+31 |             if user_input.lower() == "exit":
+32 |                 print("Exiting...")
+33 |                 break
+34 | 
+35 |             # Run the planner agent
+36 |             output = runner.run(planner_agent, user_input)
+37 |             print(f"Agent: {output}")
+38 | 
+39 |     except Exception as e:
+40 |         print(f"An error occurred: {e}")
+41 | 
+42 | if __name__ == "__main__":
+43 |     run_research_agent()
+44 | 
+
+
+--------------------------------------------------------------------------------
+/project_26_a2a_collaboration/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 26: Multi-Agent Collaboration
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to implement Agent-to-Agent (A2A) communication. Two expert agents will exchange messages to solve a problem collaboratively. For example, one agent might provide data, and the other might analyze it. This is an advanced example of how to build complex systems where agents can work together.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_26_a2a_collaboration.py
+25 |     ```
+26 | 
+27 | 3.  **Interact with the agent:**
+28 | 
+29 |     When prompted, enter a problem that requires collaboration between the two agents, for example:
+30 | 
+31 |     ```
+32 |     Analyze the following data: [1, 2, 3, 4, 5]
+33 |     ```
+34 | 
+35 | 4.  **Expected Output:**
+36 | 
+37 |     The agents will work together to solve the problem and provide a result.
+38 | 
+39 | ---
+40 | 
+41 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+42 | 
+43 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_26_a2a_collaboration/project_26_a2a_collaboration.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | 
+ 4 | def run_a2a_collaboration():
+ 5 |     """Demonstrates Agent-to-Agent (A2A) collaboration."""
+ 6 |     try:
+ 7 |         # Define the data provider agent
+ 8 |         data_agent = adk.Agent(
+ 9 |             instructions="You are a data provider. You provide data to other agents."
+10 |         )
+11 | 
+12 |         # Define the data analysis agent
+13 |         analysis_agent = adk.Agent(
+14 |             instructions="You are a data analyst. You analyze data provided by other agents."
+15 |         )
+16 | 
+17 |         # Define the master agent that facilitates the collaboration
+18 |         master_agent = adk.Agent(
+19 |             instructions="You are a master agent. Use the data and analysis agents to solve problems.",
+20 |             agents={
+21 |                 "data": data_agent,
+22 |                 "analysis": analysis_agent
+23 |             }
+24 |         )
+25 | 
+26 |         # Create a runner and start a chat session
+27 |         runner = adk.Runner()
+28 |         print("A2A Collaboration is ready. Enter a problem or type 'exit'.")
+29 | 
+30 |         while True:
+31 |             user_input = input("You: ")
+32 |             if user_input.lower() == "exit":
+33 |                 print("Exiting...")
+34 |                 break
+35 | 
+36 |             # Run the master agent
+37 |             output = runner.run(master_agent, user_input)
+38 |             print(f"Agent: {output}")
+39 | 
+40 |     except Exception as e:
+41 |         print(f"An error occurred: {e}")
+42 | 
+43 | if __name__ == "__main__":
+44 |     run_a2a_collaboration()
+45 | 
+
+
+--------------------------------------------------------------------------------
+/project_27_code_reviewer/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 27: Code Review Assistant
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to build a code review assistant. The agent will use the GitHub API to fetch code from a repository, analyze it (e.g., count lines, look for TODOs), and return a summary. This is an advanced example of how to build an agent that can automate development workflows.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 PyGithub
+19 |     ```
+20 | 
+21 | 2.  **Set up GitHub authentication:**
+22 | 
+23 |     You will need a GitHub personal access token. You can create one [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+24 | 
+25 | 3.  **Set the `GITHUB_TOKEN` environment variable:**
+26 | 
+27 |     ```bash
+28 |     export GITHUB_TOKEN="your_personal_access_token"
+29 |     ```
+30 | 
+31 | 4.  **Run the script:**
+32 | 
+33 |     ```bash
+34 |     python project_27_code_reviewer.py
+35 |     ```
+36 | 
+37 | 5.  **Interact with the agent:**
+38 | 
+39 |     When prompted, ask the agent to review a repository, for example:
+40 | 
+41 |     ```
+42 |     Review the repository "google/generative-ai-python"
+43 |     ```
+44 | 
+45 | 4.  **Expected Output:**
+46 | 
+47 |     The agent will provide a code review summary, including the number of lines of code and any TODOs found.
+48 | 
+49 | ---
+50 | 
+51 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+52 | 
+53 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_27_code_reviewer/project_27_code_reviewer.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import os
+ 4 | 
+ 5 | def run_code_reviewer():
+ 6 |     """Runs a code review assistant."""
+ 7 |     try:
+ 8 |         # Get the GitHub token from the environment variable
+ 9 |         github_token = os.environ.get("GITHUB_TOKEN")
+10 |         if not github_token:
+11 |             print("Error: GITHUB_TOKEN environment variable not set.")
+12 |             return
+13 | 
+14 |         # Create a GitHub toolset
+15 |         github_tools = adk.github.GitHub(token=github_token)
+16 | 
+17 |         # Create an agent with the GitHub toolset
+18 |         agent = adk.Agent(
+19 |             instructions="You are a code review assistant. Use the provided tools to review code.",
+20 |             tools=github_tools.get_tools()
+21 |         )
+22 | 
+23 |         # Create a runner and start a chat session
+24 |         runner = adk.Runner()
+25 |         print("Code Review Assistant is ready. Ask me to review a repository or type 'exit'.")
+26 | 
+27 |         while True:
+28 |             user_input = input("You: ")
+29 |             if user_input.lower() == "exit":
+30 |                 print("Exiting...")
+31 |                 break
+32 | 
+33 |             # Run the agent with the user's input
+34 |             output = runner.run(agent, user_input)
+35 |             print(f"Agent: {output}")
+36 | 
+37 |     except Exception as e:
+38 |         print(f"An error occurred: {e}")
+39 | 
+40 | if __name__ == "__main__":
+41 |     run_code_reviewer()
+42 | 
+
+
+--------------------------------------------------------------------------------
+/project_28_scalable_network/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 28: Scalable Agent Network
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to deploy multiple agents in parallel for load balancing. It simulates a scenario where multiple instances of an agent handle different tasks, showing how to scale `Runner` processes. This is a conceptual example of how to build a scalable agent network using a technology like Kubernetes.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_28_scalable_network.py
+25 |     ```
+26 | 
+27 | 3.  **Expected Output:**
+28 | 
+29 |     The script will simulate running multiple agent instances in parallel and print the output from each instance.
+30 | 
+31 | ---
+32 | 
+33 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+34 | 
+35 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_28_scalable_network/project_28_scalable_network.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import threading
+ 4 | 
+ 5 | def run_scalable_network():
+ 6 |     """Simulates a scalable agent network."""
+ 7 |     try:
+ 8 |         # Create a simple agent
+ 9 |         agent = adk.Agent(
+10 |             instructions="You are a helpful assistant."
+11 |         )
+12 | 
+13 |         # Define a function to run an agent instance
+14 |         def run_agent_instance(instance_id, user_input):
+15 |             runner = adk.Runner()
+16 |             output = runner.run(agent, user_input)
+17 |             print(f"Instance {instance_id}: {output}")
+18 | 
+19 |         # Simulate multiple user requests
+20 |         user_requests = ["Hello", "How are you?", "What is your name?"]
+21 | 
+22 |         # Create and start a thread for each user request
+23 |         threads = []
+24 |         for i, request in enumerate(user_requests):
+25 |             thread = threading.Thread(target=run_agent_instance, args=(i, request))
+26 |             threads.append(thread)
+27 |             thread.start()
+28 | 
+29 |         # Wait for all threads to complete
+30 |         for thread in threads:
+31 |             thread.join()
+32 | 
+33 |     except Exception as e:
+34 |         print(f"An error occurred: {e}")
+35 | 
+36 | if __name__ == "__main__":
+37 |     run_scalable_network()
+38 | 
+
+
+--------------------------------------------------------------------------------
+/project_29_performance_tuning/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 29: Performance Tuning
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This project demonstrates how to profile and optimize an ADK agent's performance. It uses timing callbacks to track how long an agent takes per step and then shows how to optimize it by adjusting concurrency or model parameters. This is an important step in building efficient and responsive agents.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0
+19 |     ```
+20 | 
+21 | 2.  **Run the script:**
+22 | 
+23 |     ```bash
+24 |     python project_29_performance_tuning.py
+25 |     ```
+26 | 
+27 | 3.  **Expected Output:**
+28 | 
+29 |     The script will print the time it takes for the agent to complete each step, allowing you to identify and optimize performance bottlenecks.
+30 | 
+31 | ---
+32 | 
+33 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+34 | 
+35 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_29_performance_tuning/project_29_performance_tuning.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import time
+ 4 | 
+ 5 | class TimingCallback(adk.Callback):
+ 6 |     """A callback that times the execution of each agent step."""
+ 7 |     def __init__(self):
+ 8 |         self.start_time = None
+ 9 | 
+10 |     def on_agent_step(self, step, **kwargs):
+11 |         if self.start_time:
+12 |             end_time = time.time()
+13 |             print(f"Step finished in {end_time - self.start_time:.2f} seconds.")
+14 |         self.start_time = time.time()
+15 | 
+16 | def run_performance_tuning():
+17 |     """Demonstrates how to profile and tune an agent's performance."""
+18 |     try:
+19 |         # Create an agent
+20 |         agent = adk.Agent(
+21 |             instructions="You are a helpful assistant."
+22 |         )
+23 | 
+24 |         # Create a runner with the timing callback
+25 |         runner = adk.Runner(callbacks=[TimingCallback()])
+26 | 
+27 |         # Run the agent with some input
+28 |         runner.run(agent, "Hello")
+29 | 
+30 |     except Exception as e:
+31 |         print(f"An error occurred: {e}")
+32 | 
+33 | if __name__ == "__main__":
+34 |     run_performance_tuning()
+35 | 
+
+
+--------------------------------------------------------------------------------
+/project_30_smart_assistant/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 30: Capstone: Smart Assistant
+ 2 | 
+ 3 | **HERE AND NOW AI**
+ 4 | 
+ 5 | *designed with passion for innovation*
+ 6 | 
+ 7 | ---
+ 8 | 
+ 9 | ## Project Description
+10 | 
+11 | This capstone project brings together many of the concepts covered in the previous projects to create a smart assistant. The assistant will have memory, be able to use tools (RAG for document retrieval and APIs for scheduling), and be deployed as a service. This is a comprehensive example of how to build a sophisticated and practical ADK application.
+12 | 
+13 | ## Usage Instructions
+14 | 
+15 | 1.  **Install the necessary libraries:**
+16 | 
+17 |     ```bash
+18 |     pip install google-adk==0.1.0 faiss-cpu requests
+19 |     ```
+20 | 
+21 | 2.  **Create a `documents` directory:**
+22 | 
+23 |     Create a directory named `documents` and place some text files in it (e.g., travel guides).
+24 | 
+25 | 3.  **Run the script:**
+26 | 
+27 |     ```bash
+28 |     python project_30_smart_assistant.py
+29 |     ```
+30 | 
+31 | 4.  **Interact with the agent:**
+32 | 
+33 |     You can ask the agent to perform a variety of tasks, such as answering questions about your documents, scheduling meetings, or having a conversation.
+34 | 
+35 | ---
+36 | 
+37 | **HERE AND NOW AI** | [Website](https://hereandnowai.com) | [Contact](mailto:info@hereandnowai.com)
+38 | 
+39 | *Logo: ![[Logo]](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)*
+
+
+--------------------------------------------------------------------------------
+/project_30_smart_assistant/project_30_smart_assistant.py:
+--------------------------------------------------------------------------------
+ 1 | 
+ 2 | import adk
+ 3 | import os
+ 4 | 
+ 5 | # Dummy function for scheduling
+ 6 | def schedule_meeting(attendees, time, topic): return f"Meeting scheduled with {attendees} at {time} to discuss {topic}."
+ 7 | 
+ 8 | def run_smart_assistant():
+ 9 |     """Runs a capstone smart assistant."""
+10 |     try:
+11 |         # Create a document store for RAG
+12 |         document_store = adk.VectorStore(
+13 |             adk.loaders.DirectoryLoader("documents"),
+14 |             adk.embeddings.GoogleGenerativeAIEmbeddings(),
+15 |             adk.vector_stores.Faiss()
+16 |         )
+17 | 
+18 |         # Create a RAG agent
+19 |         rag_agent = adk.RAG(
+20 |             document_store=document_store,
+21 |             instructions="Answer questions about the provided documents."
+22 |         )
+23 | 
+24 |         # Create a scheduling tool
+25 |         schedule_tool = adk.FunctionTool(schedule_meeting)
+26 | 
+27 |         # Create a scheduling agent
+28 |         schedule_agent = adk.Agent(
+29 |             instructions="Schedule meetings.",
+30 |             tools=[schedule_tool]
+31 |         )
+32 | 
+33 |         # Create a master agent
+34 |         master_agent = adk.Agent(
+35 |             instructions="You are a smart assistant. You can answer questions about documents and schedule meetings.",
+36 |             agents={
+37 |                 "rag": rag_agent,
+38 |                 "schedule": schedule_agent
+39 |             }
+40 |         )
+41 | 
+42 |         # Create a runner with memory
+43 |         runner = adk.Runner(session_service=adk.InMemorySessionService())
+44 | 
+45 |         print("Smart Assistant is ready. Ask me anything or type 'exit'.")
+46 | 
+47 |         # Start a chat session
+48 |         with runner.chat() as session:
+49 |             while True:
+50 |                 user_input = input("You: ")
+51 |                 if user_input.lower() == "exit":
+52 |                     print("Exiting...")
+53 |                     break
+54 | 
+55 |                 # Run the master agent
+56 |                 output = session.run(master_agent, user_input)
+57 |                 print(f"Agent: {output}")
+58 | 
+59 |     except Exception as e:
+60 |         print(f"An error occurred: {e}")
+61 | 
+62 | if __name__ == "__main__":
+63 |     # Create a dummy documents directory for the example
+64 |     if not os.path.exists("documents"):
+65 |         os.makedirs("documents")
+66 |         with open("documents/travel_guide.txt", "w") as f:
+67 |             f.write("Paris is the capital of France.")
+68 | 
+69 |     run_smart_assistant()
+70 | 
+
+
+--------------------------------------------------------------------------------
+/requirements.txt:
+--------------------------------------------------------------------------------
+ 1 | google-adk==0.1.0
+ 2 | requests
+ 3 | langchain
+ 4 | wikipedia
+ 5 | stackapi
+ 6 | PyGithub
+ 7 | matplotlib
+ 8 | numpy
+ 9 | faiss-cpu
+10 | 
+
+
+--------------------------------------------------------------------------------

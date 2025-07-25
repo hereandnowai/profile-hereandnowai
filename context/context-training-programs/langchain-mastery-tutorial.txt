@@ -1,0 +1,3248 @@
+├── .gitignore
+├── LICENSE
+├── README.md
+├── branding.json
+├── project_01_hello_langchain
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_02_simple_chatbot
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_03_q&a_over_text
+    ├── README.md
+    ├── about-hereandnowai.txt
+    ├── main.py
+    └── requirements.txt
+├── project_04_text_summarizer
+    ├── README.md
+    ├── about-hereandnowai.txt
+    ├── main.py
+    └── requirements.txt
+├── project_05_finance_agent_stock_price
+    ├── README.md
+    ├── example_tickers.md
+    ├── main.py
+    └── requirements.txt
+├── project_06_marketing_agent_slogan_generator
+    ├── README.md
+    ├── blog_multiagents.py
+    ├── main.py
+    └── requirements.txt
+├── project_07_hr_agent_policy_qa
+    ├── README.md
+    ├── hr_policy.txt
+    ├── main.py
+    └── requirements.txt
+├── project_08_simple_data_retrieval_agent
+    ├── README.md
+    ├── config.py
+    ├── invoice_parsing_agent.py
+    ├── requirements.txt
+    ├── scanned_invoice.pdf
+    └── simple_facts_finder.py
+├── project_09_question_answering_agent
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_10_summarization_pipeline
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_11_chat_assistant_with_memory
+    ├── README.md
+    ├── complex_code.py
+    ├── config.py
+    ├── requirements.txt
+    └── simplified_code.py
+├── project_12_csv_analysis_agent
+    ├── README.md
+    ├── data
+    │   ├── sample_data.csv
+    │   ├── virat_kohli.zip
+    │   ├── virat_kohli_odi_innings_data.csv
+    │   ├── virat_kohli_t20i_innings_data.csv
+    │   └── virat_kohli_test_innings_data.csv
+    ├── main.py
+    └── requirements.txt
+├── project_13_web_scraping_agent
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_14_finance_agent_company_info
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_15_marketing_agent_social_media_post
+    ├── README.md
+    ├── main.py
+    └── requirements.txt
+├── project_16_hr_agent_resume_screener
+    ├── README.md
+    ├── requirements.txt
+    └── sample_resume.txt
+├── project_17_multi_tool_agent
+    └── main.py
+└── requirements.txt
+
+
+/.gitignore:
+--------------------------------------------------------------------------------
+ 1 | # Python
+ 2 | __pycache__/
+ 3 | *.pyc
+ 4 | .env
+ 5 | .uv/
+ 6 | .venv/
+ 7 | 
+ 8 | # IDEs
+ 9 | .vscode/
+10 | .idea/
+11 | 
+12 | # Logs
+13 | *.log
+14 | 
+15 | # OS generated files
+16 | .DS_Store
+17 | Thumbs.db
+18 | GEMINI.md
+
+
+--------------------------------------------------------------------------------
+/LICENSE:
+--------------------------------------------------------------------------------
+ 1 | MIT License
+ 2 | 
+ 3 | Copyright (c) 2025 HERE AND NOW AI
+ 4 | 
+ 5 | Permission is hereby granted, free of charge, to any person obtaining a copy
+ 6 | of this software and associated documentation files (the "Software"), to deal
+ 7 | in the Software without restriction, including without limitation the rights
+ 8 | to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ 9 | copies of the Software, and to permit persons to whom the Software is
+10 | furnished to do so, subject to the following conditions:
+11 | 
+12 | The above copyright notice and this permission notice shall be included in all
+13 | copies or substantial portions of the Software.
+14 | 
+15 | THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+16 | IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+17 | FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+18 | AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+19 | LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+20 | OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+21 | SOFTWARE.
+22 | 
+
+
+--------------------------------------------------------------------------------
+/README.md:
+--------------------------------------------------------------------------------
+ 1 | # HERE AND NOW AI - Artificial Intelligence Research Institute
+ 2 | 
+ 3 | ![HERE AND NOW AI Logo](https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png)
+ 4 | 
+ 5 | **designed with passion for innovation**
+ 6 | 
+ 7 | Welcome to the "LangChain from Scratch to Mastery" tutorial! This comprehensive guide is designed to take you from the basics of Large Language Models (LLMs) and LangChain to building sophisticated, real-world AI applications.
+ 8 | 
+ 9 | ## Why LangChain?
+10 | 
+11 | LangChain is a powerful framework for developing applications powered by language models. It simplifies the process of building complex LLM workflows, enabling you to chain together different components, integrate with external data sources, and create intelligent agents. Whether you're looking to build chatbots, Q&A systems, data analysis tools, or more, LangChain provides the tools you need to bring your ideas to life.
+12 | 
+13 | ## How to Use This Tutorial
+14 | 
+15 | This tutorial is structured as a series of 20 incremental projects, each building upon the concepts learned in the previous one. To get started, follow these steps:
+16 | 
+17 | 1.  **Clone the Repository:**
+18 |     ```bash
+19 |     git clone https://github.com/your-repo/langchain-mastery-tutorial.git
+20 |     cd langchain-mastery-tutorial
+21 |     ```
+22 | 
+23 | 2.  **Set up Virtual Environment with `uv`:**
+24 |     We recommend using `uv` for fast and efficient dependency management.
+25 |     ```bash
+26 |     pip install uv
+27 |     uv venv
+28 |     source .uv/bin/activate  # On Windows: .uv\Scripts\activate
+29 |     ```
+30 | 
+31 | 3.  **Navigate to Each Project:**
+32 |     Each project resides in its own directory (e.g., `project_01_hello_langchain`). Navigate into the project directory to run its code.
+33 | 
+34 | 4.  **Install Dependencies:**
+35 |     Inside each project directory, install the specific dependencies listed in its `requirements.txt` file:
+36 |     ```bash
+37 |     uv pip install -r requirements.txt
+38 |     ```
+39 | 
+40 | 5.  **Run the Project:**
+41 |     Execute the `main.py` file for each project:
+42 |     ```bash
+43 |     python main.py
+44 |     ```
+45 | 
+46 | ## Table of Contents
+47 | 
+48 | *   [Project 01: Hello, LangChain!](project_01_hello_langchain/README.md)
+49 | *   [Project 02: Simple Chatbot](project_02_simple_chatbot/README.md)
+50 | *   [Project 03: Q&A Over a Text File](project_03_q&a_over_text/README.md)
+51 | *   [Project 04: Text Summarizer](project_04_text_summarizer/README.md)
+52 | *   [Project 05: Finance Agent - Stock Price](project_05_finance_agent_stock_price/README.md)
+53 | *   [Project 06: Marketing Agent - Slogan Generator](project_06_marketing_agent_slogan_generator/README.md)
+54 | *   [Project 07: HR Agent - Policy Q&A](project_07_hr_agent_policy_qa/README.md)
+55 | *   [Project 08: Simple Data Retrieval Agent](project_08_simple_data_retrieval_agent/README.md)
+56 | *   [Project 09: Question Answering Agent](project_09_question_answering_agent/README.md)
+57 | *   [Project 10: Summarization Pipeline](project_10_summarization_pipeline/README.md)
+58 | *   [Project 11: Chat Assistant with Memory](project_11_chat_assistant_with_memory/README.md)
+59 | *   [Project 12: CSV Analysis Agent](project_12_csv_analysis_agent/README.md)
+60 | *   [Project 13: Web Scraping Agent](project_13_web_scraping_agent/README.md)
+61 | *   [Project 14: Finance Agent - Company Info](project_14_finance_agent_company_info/README.md)
+62 | *   [Project 15: Marketing Agent - Social Media Post](project_15_marketing_agent_social_media_post/README.md)
+63 | *   [Project 16: HR Agent - Resume Screener](project_16_hr_agent_resume_screener/README.md)
+64 | *   [Project 17: Multi-Tool Agent](project_17_multi_tool_agent/README.md)
+65 | *   [Project 18: Simple RAG Bot](project_18_simple_rag_bot/README.md)
+66 | *   [Project 19: SQL Querying Agent](project_19_sql_querying_agent/README.md)
+67 | *   [Project 20: Basic LangGraph Agent](project_20_basic_langgraph_agent/README.md)
+68 | 
+69 | ## Contributing
+70 | 
+71 | We welcome contributions to this tutorial! If you have suggestions for improvements, new project ideas, or find any issues, please feel free to open an issue or submit a pull request on our GitHub repository.
+72 | 
+73 | ## License
+74 | 
+75 | This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+76 | 
+77 | ---
+78 | 
+79 | ### Contact Information
+80 | 
+81 | *   **Website:** [https://hereandnowai.com](https://hereandnowai.com)
+82 | *   **Email:** [info@hereandnowai.com](mailto:info@hereandnowai.com)
+83 | *   **Mobile:** +91 996 296 1000
+84 | *   **LinkedIn:** [HERE AND NOW AI](https://www.linkedin.com/company/hereandnowai/)
+85 | *   **Instagram:** [@hereandnow_ai](https://instagram.com/hereandnow_ai)
+86 | *   **X (formerly Twitter):** [@hereandnow_ai](https://x.com/hereandnow_ai)
+87 | *   **YouTube:** [@hereandnow_ai](https://youtube.com/@hereandnow_ai)
+88 | *   **Blog:** [HERE AND NOW AI Blog](https://hereandnowai.com/blog)
+89 | 
+
+
+--------------------------------------------------------------------------------
+/branding.json:
+--------------------------------------------------------------------------------
+1 | {"brand": {"organizationShortName": "HERE AND NOW AI", "organizationLongName": "HERE AND NOW AI - Artificial Intelligence Research Institute", "website": "https://hereandnowai.com", "email": "info@hereandnowai.com", "mobile": "+91 996 296 1000", "slogan": "designed with passion for innovation", "colors": {"primary": "#FFDF00", "secondary": "#004040"}, "logo": {"title": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/HNAI%20Title%20-Teal%20%26%20Golden%20Logo%20-%20DESIGN%203%20-%20Raj-07.png", "favicon": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/favicon-logo-with-name.png"}, "chatbot": {"avatar": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel.jpeg", "face": "https://raw.githubusercontent.com/hereandnowai/images/refs/heads/main/logos/caramel-face.jpeg"}, "socialMedia": {"blog": "https://hereandnowai.com/blog", "linkedin": "https://www.linkedin.com/company/hereandnowai/", "instagram": "https://instagram.com/hereandnow_ai", "github": "https://github.com/hereandnowai", "x": "https://x.com/hereandnow_ai", "youtube": "https://youtube.com/@hereandnow_ai"}}}
+
+
+--------------------------------------------------------------------------------
+/project_01_hello_langchain/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 1: Hello, LangChain!
+ 2 | 
+ 3 | ## Objective
+ 4 | The simplest possible "Hello, World!" to demonstrate a basic LLM call.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_01_hello_langchain` directory:
+ 8 |     ```bash
+ 9 |     cd project_01_hello_langchain
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 | 
+20 | ## Real-World Value
+21 | This project serves as the foundational block for any LLM application. It demonstrates the most basic interaction with a Large Language Model, showing how to send a prompt and receive a response. Understanding this fundamental step is crucial before building more complex applications.
+22 | 
+
+
+--------------------------------------------------------------------------------
+/project_01_hello_langchain/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: The simplest possible "Hello, World!" to demonstrate a basic LLM call.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from dotenv import load_dotenv
+ 6 | import os
+ 7 | 
+ 8 | load_dotenv()
+ 9 | 
+10 | def run_hello_langchain():
+11 |     """
+12 |     Instantiates a ChatGoogleGenerativeAI model and invokes it with a simple prompt.
+13 |     Prints the model's response.
+14 |     """
+15 |     # Instantiate the model
+16 |     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=os.getenv("GEMINI_API_KEY"))
+17 | 
+18 |     # Invoke the model with a simple prompt
+19 |     response = llm.invoke("Tell me about HERE AND NOW AI - Artificial Intelligence Research Institute")
+20 | 
+21 |     # Print the response
+22 |     print(response.content)
+23 | 
+24 | if __name__ == "__main__":
+25 |     run_hello_langchain()
+
+
+--------------------------------------------------------------------------------
+/project_01_hello_langchain/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_02_simple_chatbot/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 2: Simple Chatbot
+ 2 | 
+ 3 | ## Objective
+ 4 | Create a basic interactive chatbot that continuously takes user input, feeds it to an LLM, and prints the LLM's response.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_02_simple_chatbot` directory:
+ 8 |     ```bash
+ 9 |     cd project_02_simple_chatbot
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 | 4.  Type your messages and press Enter. Type `quit` to exit the chatbot.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates the fundamental building blocks of an interactive AI assistant or customer service bot. By continuously taking user input and generating responses, it lays the groundwork for applications that can engage in dynamic conversations, providing information, support, or entertainment.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_02_simple_chatbot/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: Create a basic interactive chatbot that takes user input.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from dotenv import load_dotenv
+ 6 | import os
+ 7 | 
+ 8 | load_dotenv()
+ 9 | google_api_key = os.getenv("GEMINI_API_KEY")
+10 | model = "gemini-1.5-flash"
+11 | 
+12 | def run_simple_chatbot():
+13 |     """
+14 |     Continuously prompts the user for input, feeds it to the LLM, and prints the response.
+15 |     Exits when the user types 'quit'.
+16 |     """
+17 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+18 | 
+19 |     print("Simple Chatbot. Type 'quit' to exit.")
+20 |     while True:
+21 |         user_input = input("You: ")
+22 |         if user_input.lower() == 'quit':
+23 |             break
+24 |         response = llm.invoke(user_input)
+25 |         print(f"Bot: {response.content}")
+26 | 
+27 | if __name__ == "__main__":
+28 |     run_simple_chatbot()
+29 | 
+
+
+--------------------------------------------------------------------------------
+/project_02_simple_chatbot/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_03_q&a_over_text/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 3: Q&A Over a Text File
+ 2 | 
+ 3 | ## Objective
+ 4 | Answer questions based on the content of a local text file (`sample.txt`).
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_03_q&a_over_text` directory:
+ 8 |     ```bash
+ 9 |     cd "project_03_q&a_over_text"
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will ask you a question about the `sample.txt` content.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates how to leverage LangChain to extract information and answer questions from your own local documents. This is incredibly valuable for use cases like querying internal company documentation, analyzing research papers, or building knowledge bases from unstructured text data. It allows you to unlock insights from your private data without sending it to external LLM providers.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_03_q&a_over_text/about-hereandnowai.txt:
+--------------------------------------------------------------------------------
+  1 | ### **Profile of HERE AND NOW AI**
+  2 | 
+  3 | * **Name of the organization: HERE AND NOW AI**
+  4 | * Slogan: *Designed with passion for innovation*
+  5 | * Contact: [info@hereandnowai.com](mailto:info@hereandnowai.com) | +91 996 296 1000 | hereandnowai.com
+  6 | 
+  7 | ---
+  8 | 
+  9 | ### **1. Executive Summary**
+ 10 | 
+ 11 | * Founded as a data‑science research lab in 2011; pivoted to full‑scale AI product development in 2018
+ 12 | * Headquartered in Chennai, Tamil Nadu, with a mission to build enterprise‑grade AI solutions and autonomous agent platforms
+ 13 | * Core competencies: AI product engineering, turnkey AI‑as‑a‑Service, and R\&D toward the fully autonomous Robo‑Professor
+ 14 | 
+ 15 | ---
+ 16 | 
+ 17 | ### **2. Leadership & Founders**
+ 18 | 
+ 19 | | Name                     | Role                     | Expertise & Highlights                                                            |
+ 20 | | ------------------------ | ------------------------ | --------------------------------------------------------------------------------- |
+ 21 | | **Ruthran RAGHAVAN**     | CEO & Chief AI Scientist | Leads end‑to‑end AI product strategy, deep learning R\&D, and autonomous agents   |
+ 22 | | **Deepti BALAGOPAL**     | COO                      | Oversees project delivery, strategic partnerships, and operational excellence     |
+ 23 | | **Balaji KAMALAKKANNAN** | CTO                      | Architects AI system infrastructures, integrates AI agents with enterprise stacks |
+ 24 | 
+ 25 | ---
+ 26 | 
+ 27 | ### **3. Evolution Timeline**
+ 28 | 
+ 29 | * **2011–2017**: Built data‑science & language‑processing prototypes
+ 30 | * **2018**: Transitioned into AI product development; launched first GPT‑2‑powered enterprise chatbot called Caramel AI
+ 31 | * **2019–2022**: Delivered RPA solutions and multi‑agent orchestration frameworks to clients
+ 32 | * **2023–Present**: Building AI Applications, AI Agenst, Scaling Model Context Protocol (MCP) and Agent‑to‑Agent (A2A) integrations; deploying \~10 AI agents daily
+ 33 | 
+ 34 | ---
+ 35 | 
+ 36 | ### **4. Services & Offerings**
+ 37 | 
+ 38 | * **AI Product Engineering**
+ 39 |   End‑to‑end design, prototyping, and deployment of AI solutions (NLP, Computer Vision, RAG, RL)
+ 40 | * **AI as a Service (AIaaS)**
+ 41 |   Turnkey modules—AI‑powered CRM, LMS, ERP, intelligent agents—securely integrated via MCP/A2A
+ 42 | * **R\&D & Innovation**
+ 43 |   Pioneering research in agent‑based architectures, hybrid reinforcement‑evolutionary systems, and autonomous education platforms
+ 44 | 
+ 45 | ---
+ 46 | 
+ 47 | ### **5. Impact & Metrics**
+ 48 | 
+ 49 | * **Thousands of hours** invested in product development with clients.
+ 50 | * **Hundreds of prototypes** and full‑scale AI applications built.
+ 51 | * **200+ ongoing** AI R\&D projects in active development.
+ 52 | * **Daily** deployment of \~10 smart agents, achieving 10× scaling every quarter.
+ 53 | 
+ 54 | ---
+ 55 | 
+ 56 | ### **6. Strategic Partnerships**
+ 57 | 
+ 58 | * **Project‑Based Collaborations** with 15+ engineering and arts colleges—students co‑build real AI products under industry mentorship
+ 59 | * **Corporate Alliances** across finance, healthcare, and manufacturing—custom AI solutions to automate workflows
+ 60 |   *(Detailed list of partners and project scopes to be provided)*
+ 61 | 
+ 62 | ---
+ 63 | 
+ 64 | ### **7. Vision & Strategy**
+ 65 | 
+ 66 | * **Short‑Term**: Expand AIaaS portfolio; deepen product co‑development partnerships
+ 67 | * **Mid‑Term**: Onboard 100+ corporate clients for AI workflow automation; launch standardized AI product suites
+ 68 | * **Long‑Term**: Deliver the **fully autonomous Robo‑Professor** platform, revolutionizing scalable, personalized AI education
+ 69 | 
+ 70 | ---
+ 71 | 
+ 72 | ### **8. Contact**
+ 73 | 
+ 74 | * Website: **hereandnowai.com**
+ 75 | * Email: **[info@hereandnowai.com](mailto:info@hereandnowai.com)**
+ 76 | * Mobile: **+91 996 296 1000**
+ 77 | 
+ 78 | ---
+ 79 | 
+ 80 | ## 🌐 Web‑Ready “About Us” Page
+ 81 | 
+ 82 | ### **Header**
+ 83 | 
+ 84 | **HERE AND NOW AI**
+ 85 | *Leaders in AI product engineering and autonomous agent platforms*
+ 86 | Slogan: *Designed with passion for innovation*
+ 87 | 
+ 88 | ---
+ 89 | 
+ 90 | ### **Our Mission & Vision**
+ 91 | 
+ 92 | * **Vision**: Forge the next generation of AI products and agentic systems—culminating in the autonomous Robo‑Professor
+ 93 | * **Mission**: Engineer practical, high‑impact AI solutions; partner on project‑based prototyping; drive research in agent‑based frameworks
+ 94 | 
+ 95 | ---
+ 96 | 
+ 97 | ### **Why Choose Us**
+ 98 | 
+ 99 | * **Product‑First**: We build, deliver, and maintain AI solutions, not just concepts
+100 | * **Hands‑On Partnerships**: Collaborate on real‑world AI product development with academic and corporate partners
+101 | * **Innovation at Core**: 200+ active R\&D initiatives advancing agentic AI and autonomous learning platforms
+102 | 
+103 | ---
+104 | 
+105 | ### **What We Offer**
+106 | 
+107 | * **AI Product Engineering**: Custom solutions in NLP, CV, RL, and RAG
+108 | * **AIaaS Modules**: CRM, ERP, chatbots, and intelligent agents via MCP/A2A
+109 | * **R\&D Collaborations**: Cutting‑edge research toward autonomous AI educators
+110 | 
+111 | ---
+112 | 
+113 | ### **Our Journey**
+114 | 
+115 | A snapshot timeline from 2011’s data science labs to today’s industry‑leading AI product firm in 2025.
+116 | 
+117 | ---
+118 | 
+119 | ### **Leadership Team**
+120 | 
+121 | * **Ruthran RAGHAVAN** – CEO & Chief AI Scientist
+122 | * **Deepti BALAGOPAL** – COO
+123 | * **Balaji KAMALAKKANNAN** – CTO
+124 | 
+125 | ---
+126 | 
+127 | ### **Key Metrics**
+128 | 
+129 | * Hundreds of AI products delivered
+130 | * 200+ R\&D projects in development
+131 | * 10 AI agents deployed daily across sectors
+132 | 
+133 | ---
+134 | 
+135 | ### **Project Partnerships**
+136 | 
+137 | Highlight bullet points of college and corporate co‑development engagements (to be filled from MOUs).
+138 | 
+139 | ---
+140 | 
+141 | ### **Get In Touch**
+142 | 
+143 | *   **Website:** [https://hereandnowai.com](https://hereandnowai.com)
+144 | *   **Email:** [info@hereandnowai.com](mailto:info@hereandnowai.com)
+145 | *   **Mobile:** +91 996 296 1000
+146 | *   **LinkedIn:** [HERE AND NOW AI](https://www.linkedin.com/company/hereandnowai/)
+147 | *   **Instagram:** [@hereandnow_ai](https://instagram.com/hereandnow_ai)
+148 | *   **X (formerly Twitter):** [@hereandnow_ai](https://x.com/hereandnow_ai)
+149 | *   **YouTube:** [@hereandnow_ai](https://youtube.com/@hereandnow_ai)
+150 | *   **Blog:** [HERE AND NOW AI Blog](https://hereandnowai.com/blog)
+
+
+--------------------------------------------------------------------------------
+/project_03_q&a_over_text/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: Answer questions based on the content of a local text file.
+ 3 | 
+ 4 | from langchain_community.document_loaders import TextLoader
+ 5 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 6 | from langchain.chains.combine_documents import create_stuff_documents_chain
+ 7 | from langchain_core.prompts import ChatPromptTemplate
+ 8 | from dotenv import load_dotenv
+ 9 | import os
+10 | 
+11 | load_dotenv()
+12 | google_api_key = os.getenv("GEMINI_API_KEY")
+13 | model = "gemini-1.5-flash"
+14 | 
+15 | def run_qa_over_text_file():
+16 |     """
+17 |     Loads a text file, creates a Q&A chain, and answers a question based on its content.
+18 |     """
+19 |     # Construct the absolute path to the text file
+20 |     script_dir = os.path.dirname(os.path.abspath(__file__))
+21 |     file_path = os.path.join(script_dir, "about-hereandnowai.txt")
+22 | 
+23 |     # Load the document
+24 |     loader = TextLoader(file_path)
+25 |     documents = loader.load()
+26 | 
+27 |     # Instantiate the LLM
+28 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+29 | 
+30 |     # Create a prompt template
+31 |     prompt = ChatPromptTemplate.from_template(
+32 |         "Answer the user's question based on the following context:\n\n{context}\n\nQuestion: {input}"
+33 |     )
+34 | 
+35 |     # Create the Q&A chain
+36 |     chain = create_stuff_documents_chain(llm, prompt)
+37 | 
+38 |     # Ask a question and get the response
+39 |     question = "What is the main product of the company?"
+40 |     response = chain.invoke({"context": documents, "input": question})
+41 | 
+42 |     print(f"Question: {question}")
+43 |     print(f"Answer: {response}")
+44 | 
+45 | if __name__ == "__main__":
+46 |     run_qa_over_text_file()
+
+
+--------------------------------------------------------------------------------
+/project_03_q&a_over_text/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | langchain-community
+4 | python-dotenv
+5 | uv
+6 | 
+
+
+--------------------------------------------------------------------------------
+/project_04_text_summarizer/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 4: Text Summarizer
+ 2 | 
+ 3 | ## Objective
+ 4 | Summarize a given piece of text using a LangChain prompt template and LLMChain.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_04_text_summarizer` directory:
+ 8 |     ```bash
+ 9 |     cd project_04_text_summarizer
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will print the summarized text.
+20 | 
+21 | ## Real-World Value
+22 | Text summarization is a crucial application of LLMs. This project demonstrates how to build a basic summarizer that can condense long articles, emails, reports, or any textual content into concise summaries. This is invaluable for quickly grasping the main points of lengthy documents, improving information consumption, and automating content creation workflows.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_04_text_summarizer/about-hereandnowai.txt:
+--------------------------------------------------------------------------------
+  1 | ### **Profile of HERE AND NOW AI**
+  2 | 
+  3 | * **Name of the organization: HERE AND NOW AI**
+  4 | * Slogan: *Designed with passion for innovation*
+  5 | * Contact: [info@hereandnowai.com](mailto:info@hereandnowai.com) | +91 996 296 1000 | hereandnowai.com
+  6 | 
+  7 | ---
+  8 | 
+  9 | ### **1. Executive Summary**
+ 10 | 
+ 11 | * Founded as a data‑science research lab in 2011; pivoted to full‑scale AI product development in 2018
+ 12 | * Headquartered in Chennai, Tamil Nadu, with a mission to build enterprise‑grade AI solutions and autonomous agent platforms
+ 13 | * Core competencies: AI product engineering, turnkey AI‑as‑a‑Service, and R\&D toward the fully autonomous Robo‑Professor
+ 14 | 
+ 15 | ---
+ 16 | 
+ 17 | ### **2. Leadership & Founders**
+ 18 | 
+ 19 | | Name                     | Role                     | Expertise & Highlights                                                            |
+ 20 | | ------------------------ | ------------------------ | --------------------------------------------------------------------------------- |
+ 21 | | **Ruthran RAGHAVAN**     | CEO & Chief AI Scientist | Leads end‑to‑end AI product strategy, deep learning R\&D, and autonomous agents   |
+ 22 | | **Deepti BALAGOPAL**     | COO                      | Oversees project delivery, strategic partnerships, and operational excellence     |
+ 23 | | **Balaji KAMALAKKANNAN** | CTO                      | Architects AI system infrastructures, integrates AI agents with enterprise stacks |
+ 24 | 
+ 25 | ---
+ 26 | 
+ 27 | ### **3. Evolution Timeline**
+ 28 | 
+ 29 | * **2011–2017**: Built data‑science & language‑processing prototypes
+ 30 | * **2018**: Transitioned into AI product development; launched first GPT‑2‑powered enterprise chatbot called Caramel AI
+ 31 | * **2019–2022**: Delivered RPA solutions and multi‑agent orchestration frameworks to clients
+ 32 | * **2023–Present**: Building AI Applications, AI Agenst, Scaling Model Context Protocol (MCP) and Agent‑to‑Agent (A2A) integrations; deploying \~10 AI agents daily
+ 33 | 
+ 34 | ---
+ 35 | 
+ 36 | ### **4. Services & Offerings**
+ 37 | 
+ 38 | * **AI Product Engineering**
+ 39 |   End‑to‑end design, prototyping, and deployment of AI solutions (NLP, Computer Vision, RAG, RL)
+ 40 | * **AI as a Service (AIaaS)**
+ 41 |   Turnkey modules—AI‑powered CRM, LMS, ERP, intelligent agents—securely integrated via MCP/A2A
+ 42 | * **R\&D & Innovation**
+ 43 |   Pioneering research in agent‑based architectures, hybrid reinforcement‑evolutionary systems, and autonomous education platforms
+ 44 | 
+ 45 | ---
+ 46 | 
+ 47 | ### **5. Impact & Metrics**
+ 48 | 
+ 49 | * **Thousands of hours** invested in product development with clients.
+ 50 | * **Hundreds of prototypes** and full‑scale AI applications built.
+ 51 | * **200+ ongoing** AI R\&D projects in active development.
+ 52 | * **Daily** deployment of \~10 smart agents, achieving 10× scaling every quarter.
+ 53 | 
+ 54 | ---
+ 55 | 
+ 56 | ### **6. Strategic Partnerships**
+ 57 | 
+ 58 | * **Project‑Based Collaborations** with 15+ engineering and arts colleges—students co‑build real AI products under industry mentorship
+ 59 | * **Corporate Alliances** across finance, healthcare, and manufacturing—custom AI solutions to automate workflows
+ 60 |   *(Detailed list of partners and project scopes to be provided)*
+ 61 | 
+ 62 | ---
+ 63 | 
+ 64 | ### **7. Vision & Strategy**
+ 65 | 
+ 66 | * **Short‑Term**: Expand AIaaS portfolio; deepen product co‑development partnerships
+ 67 | * **Mid‑Term**: Onboard 100+ corporate clients for AI workflow automation; launch standardized AI product suites
+ 68 | * **Long‑Term**: Deliver the **fully autonomous Robo‑Professor** platform, revolutionizing scalable, personalized AI education
+ 69 | 
+ 70 | ---
+ 71 | 
+ 72 | ### **8. Contact**
+ 73 | 
+ 74 | * Website: **hereandnowai.com**
+ 75 | * Email: **[info@hereandnowai.com](mailto:info@hereandnowai.com)**
+ 76 | * Mobile: **+91 996 296 1000**
+ 77 | 
+ 78 | ---
+ 79 | 
+ 80 | ## 🌐 Web‑Ready “About Us” Page
+ 81 | 
+ 82 | ### **Header**
+ 83 | 
+ 84 | **HERE AND NOW AI**
+ 85 | *Leaders in AI product engineering and autonomous agent platforms*
+ 86 | Slogan: *Designed with passion for innovation*
+ 87 | 
+ 88 | ---
+ 89 | 
+ 90 | ### **Our Mission & Vision**
+ 91 | 
+ 92 | * **Vision**: Forge the next generation of AI products and agentic systems—culminating in the autonomous Robo‑Professor
+ 93 | * **Mission**: Engineer practical, high‑impact AI solutions; partner on project‑based prototyping; drive research in agent‑based frameworks
+ 94 | 
+ 95 | ---
+ 96 | 
+ 97 | ### **Why Choose Us**
+ 98 | 
+ 99 | * **Product‑First**: We build, deliver, and maintain AI solutions, not just concepts
+100 | * **Hands‑On Partnerships**: Collaborate on real‑world AI product development with academic and corporate partners
+101 | * **Innovation at Core**: 200+ active R\&D initiatives advancing agentic AI and autonomous learning platforms
+102 | 
+103 | ---
+104 | 
+105 | ### **What We Offer**
+106 | 
+107 | * **AI Product Engineering**: Custom solutions in NLP, CV, RL, and RAG
+108 | * **AIaaS Modules**: CRM, ERP, chatbots, and intelligent agents via MCP/A2A
+109 | * **R\&D Collaborations**: Cutting‑edge research toward autonomous AI educators
+110 | 
+111 | ---
+112 | 
+113 | ### **Our Journey**
+114 | 
+115 | A snapshot timeline from 2011’s data science labs to today’s industry‑leading AI product firm in 2025.
+116 | 
+117 | ---
+118 | 
+119 | ### **Leadership Team**
+120 | 
+121 | * **Ruthran RAGHAVAN** – CEO & Chief AI Scientist
+122 | * **Deepti BALAGOPAL** – COO
+123 | * **Balaji KAMALAKKANNAN** – CTO
+124 | 
+125 | ---
+126 | 
+127 | ### **Key Metrics**
+128 | 
+129 | * Hundreds of AI products delivered
+130 | * 200+ R\&D projects in development
+131 | * 10 AI agents deployed daily across sectors
+132 | 
+133 | ---
+134 | 
+135 | ### **Project Partnerships**
+136 | 
+137 | Highlight bullet points of college and corporate co‑development engagements (to be filled from MOUs).
+138 | 
+139 | ---
+140 | 
+141 | ### **Get In Touch**
+142 | 
+143 | *   **Website:** [https://hereandnowai.com](https://hereandnowai.com)
+144 | *   **Email:** [info@hereandnowai.com](mailto:info@hereandnowai.com)
+145 | *   **Mobile:** +91 996 296 1000
+146 | *   **LinkedIn:** [HERE AND NOW AI](https://www.linkedin.com/company/hereandnowai/)
+147 | *   **Instagram:** [@hereandnow_ai](https://instagram.com/hereandnow_ai)
+148 | *   **X (formerly Twitter):** [@hereandnow_ai](https://x.com/hereandnow_ai)
+149 | *   **YouTube:** [@hereandnow_ai](https://youtube.com/@hereandnow_ai)
+150 | *   **Blog:** [HERE AND NOW AI Blog](https://hereandnowai.com/blog)
+
+
+--------------------------------------------------------------------------------
+/project_04_text_summarizer/main.py:
+--------------------------------------------------------------------------------
+ 1 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 2 | from langchain.prompts import PromptTemplate
+ 3 | from dotenv import load_dotenv
+ 4 | import os
+ 5 | 
+ 6 | load_dotenv()
+ 7 | google_api_key = os.getenv("GEMINI_API_KEY")
+ 8 | model = "gemini-1.5-flash"
+ 9 | 
+10 | def run_text_summarizer():
+11 |     """
+12 |     Creates a prompt template for summarization, uses a chain, and prints the summary.
+13 |     """
+14 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+15 | 
+16 |     # Define the prompt template for summarization
+17 |     prompt_template = "Summarize the following text:\n\n{text}\n\nSummary:"
+18 |     prompt = PromptTemplate(template=prompt_template, input_variables=["text"])
+19 | 
+20 |     # Create a summarization chain using the new syntax
+21 |     chain = prompt | llm
+22 | 
+23 |     # Read the text to be summarized from the file
+24 |     try:
+25 |         with open("about-hereandnowai.txt", "r", encoding="utf-8") as f:
+26 |             long_text = f.read()
+27 |     except FileNotFoundError:
+28 |         print("Error: 'about-hereandnowai.txt' not found. Make sure the file exists in the 'project_04_text_summarizer' directory.")
+29 |         return
+30 | 
+31 |     # Run the summarization chain
+32 |     summary_output = chain.invoke({"text": long_text})
+33 |     print(summary_output.content)
+34 | 
+35 | if __name__ == "__main__":
+36 |     run_text_summarizer()
+
+
+--------------------------------------------------------------------------------
+/project_04_text_summarizer/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_05_finance_agent_stock_price/README.md:
+--------------------------------------------------------------------------------
+  1 | <div align="center">
+  2 |   <a href="https://www.hereandnowai.com/">
+  3 |     <img src="https://img.shields.io/badge/HERE_AND_NOW_AI-Tutorial_Series-blue.svg" alt="HERE AND NOW AI Tutorial Series">
+  4 |   </a>
+  5 |   <h1>Project 5: Finance Agent - Stock Price</h1>
+  6 |   <strong>A deep dive into creating your first LangChain Agent with a custom tool.</strong>
+  7 | </div>
+  8 | 
+  9 | ---
+ 10 | 
+ 11 | ## 🌟 Project Objective
+ 12 | 
+ 13 | Welcome to Project 5! This isn't just another script; it's your first step into the exciting world of **LangChain Agents**. An agent is an AI system that doesn't just respond to you—it can **think, decide, and use tools** to accomplish a goal.
+ 14 | 
+ 15 | In this project, we will build a simple but powerful financial agent. Its mission is to answer the question: *"What is the current stock price of a company?"* To do this, we will write a custom Python function to fetch stock data and then give that function to our agent as a **Tool**.
+ 16 | 
+ 17 | ## 🚀 How to Run This Project
+ 18 | 
+ 19 | Getting started is easy. Just follow these steps in your terminal.
+ 20 | 
+ 21 | 1.  **Navigate to the project directory:**
+ 22 |     ```bash
+ 23 |     cd project_05_finance_agent_stock_price
+ 24 |     ```
+ 25 | 2.  **Install the necessary Python libraries:**
+ 26 |     *(We use `uv` for a fast and modern virtual environment setup.)*
+ 27 |     ```bash
+ 28 |     uv pip install -r requirements.txt
+ 29 |     ```
+ 30 | 3.  **Run the main script:**
+ 31 |     ```bash
+ 32 |     python main.py
+ 33 |     ```
+ 34 | 
+ 35 | You will see the agent "think" out loud in your terminal, decide to use the stock price tool, get the result, and give you a final answer.
+ 36 | 
+ 37 | ---
+ 38 | 
+ 39 | ## 🧠 Deep Dive: Understanding the Code (`main.py`)
+ 40 | 
+ 41 | Let's break down the `main.py` file line-by-line. Understanding every piece is key to mastering agents.
+ 42 | 
+ 43 | ### 1. The Imports: Gathering Our Libraries
+ 44 | 
+ 45 | ```python
+ 46 | import os
+ 47 | import ast
+ 48 | import time
+ 49 | import sys
+ 50 | from dotenv import load_dotenv
+ 51 | import warnings
+ 52 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 53 | from langchain.agents import AgentExecutor, create_react_agent
+ 54 | from langchain import hub
+ 55 | from langchain.tools import tool
+ 56 | import yfinance as yf
+ 57 | ```
+ 58 | 
+ 59 | *   `os`: Used to access environment variables, like your `GEMINI_API_KEY`.
+ 60 | *   `ast`: Stands for **Abstract Syntax Tree**. We use its `literal_eval` function to safely convert a string that looks like a list (e.g., `"['GOOG', 'MSFT']"`) into an actual Python list. This is crucial for security, as the powerful `eval()` function could run malicious code.
+ 61 | *   `time` & `sys`: Used to create the interactive countdown timer you see when you run the script. `sys` lets us write to the same line in the terminal.
+ 62 | *   `dotenv`: Loads your secret API key from the `.env` file so you don't have to hardcode it.
+ 63 | *   `warnings`: We use this to hide a common, harmless warning from LangChain about LangSmith API keys, keeping our output clean.
+ 64 | *   `langchain_...` & `yfinance`: These are the core libraries for our project. We import the Google Gemini model, the agent-building components, the `@tool` decorator, and the Yahoo Finance library to get real stock data.
+ 65 | 
+ 66 | ### 2. The Setup: Preparing the Environment
+ 67 | 
+ 68 | ```python
+ 69 | warnings.filterwarnings("ignore", message="API key must be provided when using hosted LangSmith API")
+ 70 | load_dotenv()
+ 71 | google_api_key = os.getenv("GEMINI_API_KEY")
+ 72 | model = "models/gemini-2.5-flash-lite-preview-06-17"
+ 73 | ```
+ 74 | 
+ 75 | Here, we simply tell Python to ignore a specific warning, load our environment variables from the `.env` file, and store our API key and the chosen Gemini model name in variables for later use.
+ 76 | 
+ 77 | ### 3. The Tool: `get_stock_prices()`
+ 78 | 
+ 79 | This is the most important concept in this project. A **Tool** is a function that an agent can decide to use to get information or perform an action.
+ 80 | 
+ 81 | ```python
+ 82 | @tool
+ 83 | def get_stock_prices(tickers: str) -> str:
+ 84 |     """
+ 85 |     Fetches the current stock prices for a list of ticker symbols.
+ 86 |     The input should be a string representation of a Python list (e.g., "['GOOG', 'MSFT']").
+ 87 |     Returns the prices in the stock's native currency (USD for US, INR for Indian).
+ 88 |     """
+ 89 |     # ... function code ...
+ 90 | ```
+ 91 | 
+ 92 | #### **❓ What is the `@tool` decorator?**
+ 93 | 
+ 94 | The `@tool` line is a **decorator**. It's a special piece of Python syntax that wraps the function below it, giving it extra powers. In this case, it registers our `get_stock_prices` function with LangChain, making it an official "Tool" that an agent can see and use.
+ 95 | 
+ 96 | #### **❓ Why is the docstring `"""..."""` so important?**
+ 97 | 
+ 98 | The text right below the function definition is called a **docstring**. For a LangChain tool, this is **critical**. The agent's "brain" (the LLM) reads this docstring to understand what the tool does. Based on this description, it decides if this tool is the right one to use to answer the user's question. A good docstring is the key to a smart agent.
+ 99 | 
+100 | #### **Code Breakdown:**
+101 | 
+102 | *   `ticker_list = ast.literal_eval(tickers)`: Safely converts the input string from the agent (e.g., `"['GOOG']"`) into a real list (`['GOOG']`).
+103 | *   `stock = yf.Ticker(ticker)`: Creates an object to interact with the Yahoo Finance API for a specific stock.
+104 | *   `price = stock.info.get('regularMarketPrice')`: The fastest way to get the current price.
+105 | *   `if price is None:`: Sometimes, `regularMarketPrice` isn't available. This is our fallback.
+106 | *   `price = stock.history(period="1d")['Close'].iloc[-1]`: This is a powerful line using the `pandas` library. It means: "Fetch the last **1 day** of stock data, get the **'Close'** price column, and give me the very last entry (`.iloc[-1]`)."
+107 | *   `results.append(f"...")`: We build a nice, human-readable string.
+108 | *   `{price:.2f}`: This is an **f-string format specifier**. It tells Python to format the `price` variable as a floating-point number with exactly **2** decimal places.
+109 | *   `return "".join(results)`: Finally, we join all the individual result strings into a single block of text to return to the agent.
+110 | 
+111 | ### 4. The Orchestrator: `run_finance_agent_stock_price()`
+112 | 
+113 | If `get_stock_prices` is the **Tool**, this function is the **Orchestrator** (or the "Carpenter") that sets up the agent and puts it to work.
+114 | 
+115 | #### **❓ Why do we need two separate functions?**
+116 | 
+117 | This separation is key to good design.
+118 | *   **The Tool (`get_stock_prices`)** is a self-contained, reusable capability. It doesn't know about agents or LLMs.
+119 | *   **The Orchestrator (`run_finance_agent_stock_price`)** assembles the AI system. It chooses the brain (LLM) and the tools, and gives the agent a task.
+120 | 
+121 | This design makes it easy to add more tools to your agent later without rewriting everything.
+122 | 
+123 | #### **Code Breakdown:**
+124 | 
+125 | ```python
+126 | def run_finance_agent_stock_price():
+127 |     # ... countdown timer code ...
+128 | 
+129 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+130 |     tools = [get_stock_prices]
+131 |     prompt = hub.pull("hwchase17/react")
+132 |     agent = create_react_agent(llm, tools, prompt)
+133 |     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
+134 |     response = agent_executor.invoke({
+135 |         "input": "What are the current stock prices of Google (GOOG) and Reliance Industries (RELIANCE.NS)?"
+136 |     })
+137 |     print(response["output"])
+138 | ```
+139 | 
+140 | 1.  `llm = ...`: We initialize our "brain," the Gemini model.
+141 | 2.  `tools = [get_stock_prices]`: We put our tool(s) into a list for the agent to use.
+142 | 3.  `prompt = hub.pull("hwchase17/react")`: We pull a pre-built prompt template from the LangChain Hub. The "react" prompt is a famous template that teaches an agent how to **Re**ason and **Act**. It guides the agent through a `Thought -> Action -> Observation` loop.
+143 | 4.  `agent = create_react_agent(...)`: We assemble the agent, giving it the LLM, the tools, and the prompt that teaches it how to think.
+144 | 5.  `agent_executor = AgentExecutor(...)`: This is the engine that actually runs the agent loop. `verbose=True` is amazing for learning—it makes the agent print out its thoughts and actions step-by-step.
+145 | 6.  `agent_executor.invoke(...)`: We give the agent its task and kick it off!
+146 | 
+147 | ### 5. The Entry Point
+148 | 
+149 | ```python
+150 | if __name__ == "__main__":
+151 |     run_finance_agent_stock_price()
+152 | ```
+153 | 
+154 | This is standard Python practice. It means "only run the `run_finance_agent_stock_price()` function if this script is executed directly." It prevents the code from running automatically if it's imported into another file.
+155 | 
+156 | ---
+157 | 
+158 | ## 💼 Real-World Value
+159 | 
+160 | This project is the "Hello, World!" of AI agents. The concept you've learned here—giving an LLM tools to interact with the outside world—is the foundation for building incredibly powerful applications:
+161 | 
+162 | *   **Automated Financial Analysis:** An agent could use tools to fetch stock prices, read company news, and analyze financial reports to generate a summary.
+163 | *   **Customer Service Bots:** An agent could use a tool to look up a customer's order status in a database.
+164 | *   **Smart Home Assistants:** An agent could use tools to control your lights, thermostat, and music.
+165 | 
+166 | You've taken your first step into a larger world of building AI that doesn't just talk, but *does*.
+167 | 
+168 | ---
+169 | 
+170 | <div align="center">
+171 |   <h2>Connect with HERE AND NOW AI</h2>
+172 |   <p>Your journey into AI and LLMs is just beginning. Follow us for more tutorials, projects, and insights!</p>
+173 |   <a href="https://youtube.com/@hereandnow_ai"><img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white" alt="YouTube"></a>
+174 |   <a href="https://github.com/hereandnowai"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+175 |   <a href="https://www.linkedin.com/company/hereandnowai/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+176 |   <a href="https://x.com/hereandnow_ai"><img src="https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white" alt="Twitter"></a>
+177 |   <a href="https://instagram.com/hereandnow_ai"><img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
+178 |   <br>
+179 |   <strong>Website:</strong> <a href="https://hereandnowai.com">www.hereandnowai.com</a> | <strong>Contact:</strong> <a href="mailto:info@hereandnowai.com">info@hereandnowai.com</a>
+180 | </div>
+
+
+--------------------------------------------------------------------------------
+/project_05_finance_agent_stock_price/example_tickers.md:
+--------------------------------------------------------------------------------
+ 1 | docstrings for the agents:
+ 2 | get_stock_prices
+ 3 | ```
+ 4 |     """
+ 5 |     Fetches the current stock prices for a list of ticker symbols.
+ 6 |     The input should be a string representation of a Python list (e.g., "['GOOG', 'MSFT']").
+ 7 |     Returns the prices in the stock's native currency (USD for US, INR for Indian).
+ 8 |     """
+ 9 | ```
+10 | run_finance_agent_stock_price:
+11 | ``
+12 |     """
+13 |     Creates and runs an agent that can use the get_stock_prices tool.
+14 |     """
+15 | 
+16 | ```
+17 | # 🇮🇳 Indian Stock Tickers
+18 | RELIANCE.NS
+19 | HDFCBANK.NS
+20 | TCS.NS
+21 | ICICIBANK.NS
+22 | BHARTIARTL.NS
+23 | SBIN.NS
+24 | INFY.NS
+25 | BAJFINANCE.NS
+26 | ```
+27 | 
+28 | ```
+29 | # 🇺🇸 US Stock Tickers
+30 | GOOG
+31 | AAPL
+32 | MSFT
+33 | AMZN
+34 | TSLA
+35 | NVDA
+36 | META
+37 | JNJ
+38 | ```
+
+
+--------------------------------------------------------------------------------
+/project_05_finance_agent_stock_price/main.py:
+--------------------------------------------------------------------------------
+ 1 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 2 | from langchain.agents import AgentExecutor, create_react_agent
+ 3 | from langchain import hub
+ 4 | from langchain.tools import tool
+ 5 | import yfinance as yf
+ 6 | import os
+ 7 | import ast # Abstract Syntax Tree
+ 8 | import time
+ 9 | import sys
+10 | from dotenv import load_dotenv
+11 | 
+12 | import warnings
+13 | warnings.filterwarnings("ignore", message="API key must be provided when using hosted LangSmith API")
+14 | 
+15 | load_dotenv()
+16 | google_api_key = os.getenv("GEMINI_API_KEY")
+17 | model = "models/gemini-2.5-flash-lite-preview-06-17" 
+18 | 
+19 | @tool
+20 | def get_stock_prices(tickers: str) -> str:
+21 |     """
+22 |     Fetches the current stock prices for a list of ticker symbols.
+23 |     The input should be a string representation of a Python list (e.g., "['GOOG', 'MSFT']").
+24 |     Returns the prices in the stock's native currency (USD for US, INR for Indian).
+25 |     """
+26 |     results = []
+27 |     try:
+28 |         ticker_list = ast.literal_eval(tickers)
+29 |         if not isinstance(ticker_list, list):
+30 |             return "Input must be a list of ticker symbols."
+31 |     except (ValueError, SyntaxError):
+32 |         return "Invalid input format. Please provide a list of tickers as a string (e.g., \"['GOOG', 'RELIANCE.NS']\")."
+33 | 
+34 |     for ticker in ticker_list:
+35 |         try:
+36 |             stock = yf.Ticker(ticker)
+37 |             price = stock.info.get('regularMarketPrice')
+38 |             if price is None:
+39 |                 price = stock.history(period="1d")['Close'].iloc[-1] # 1d - one day
+40 |             currency = stock.info.get('currency', 'USD')
+41 |             results.append(f"The current price of {ticker} is {price:.2f} {currency}. ")
+42 |         except Exception as e:
+43 |             results.append(f"Could not find the stock price for {ticker}. Error: {e}. ")
+44 |     return "".join(results)
+45 | 
+46 | def run_finance_agent_stock_price():
+47 |     """
+48 |     Creates and runs an agent that can use the get_stock_prices tool.
+49 |     """
+50 |     wait_time = 15
+51 |     print(f"Waiting for {wait_time} seconds to comply with potential rate limits...")
+52 |     for i in range(wait_time, 0, -1):
+53 |         sys.stdout.write(f"\rWaiting... {i} seconds remaining.")
+54 |         sys.stdout.flush()
+55 |         time.sleep(1)
+56 |     sys.stdout.write("\rDone waiting.                          \n")
+57 |     # sys.stdout.flush()
+58 |     
+59 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+60 |     tools = [get_stock_prices]
+61 |     prompt = hub.pull("hwchase17/react")
+62 |     agent = create_react_agent(llm, tools, prompt)
+63 |     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True, handle_parsing_errors=True)
+64 |     response = agent_executor.invoke({
+65 |         "input": "What are the current stock prices of Google (GOOG) and Reliance Industries (RELIANCE.NS)?"
+66 |     })
+67 |     print(response["output"])
+68 | 
+69 | if __name__ == "__main__":
+70 |     run_finance_agent_stock_price()
+
+
+--------------------------------------------------------------------------------
+/project_05_finance_agent_stock_price/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | yfinance
+
+
+--------------------------------------------------------------------------------
+/project_06_marketing_agent_slogan_generator/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 6: Marketing Agent - Slogan Generator
+ 2 | 
+ 3 | ## Objective
+ 4 | Generate marketing slogans for a product using a specific prompt template.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_06_marketing_agent_slogan_generator` directory:
+ 8 |     ```bash
+ 9 |     cd project_06_marketing_agent_slogan_generator
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will print 5 creative slogans for the specified product.
+20 | 
+21 | ## Real-World Value
+22 | This project highlights the power of prompt engineering for creative tasks. By carefully crafting prompts, you can guide LLMs to generate highly specific and creative outputs, such as marketing slogans, ad copy, social media posts, or even short stories. This is incredibly valuable for marketing teams, content creators, and businesses looking to rapidly generate diverse and engaging content, significantly speeding up the creative process and offering fresh perspectives.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_06_marketing_agent_slogan_generator/blog_multiagents.py:
+--------------------------------------------------------------------------------
+  1 | # Objective: A multi-agent system for researching, writing, and publishing blog posts.
+  2 | # This script uses LangGraph to define a workflow with multiple agents.
+  3 | 
+  4 | """"
+  5 | The current code is capable of creating only slogans. That is not what I want from this project. This project should be able to do some research on the hot topics. I'll be giving the organization, organization name, and the description about the organization, and the agent should be capable of doing some research related to the organization's topics and choose five topics and from the five topics it should be able to select one topic and start writing a blog. It should have a person who's selecting editor or just like you know in a blog writing organization you know in an international blog writing organization how many people will be working on it like an editor or a reviewer or proofreader, the content writer, so please create as many agents as possible. If need be you can even use lang graph for this project. Yeah and also for the don't change the model whatever model that I've given like GPT 2.5 flash preview 06-17 is okay because that's the only model that has higher rate limit and also please keep keep always sleep timer time maybe 20 seconds to seconds so which would comply with the rate limits so making this using all using my current prompt please refactor the code
+  6 | Finally, the written blog should be approved by the final editor and once he approves, the agent should be going and publishing it on the WordPress site of Hurono AI. Could you please could you please work on that work on refactoring this code and also ask me what are the information that you would be needing like API from WordPress and also guide me how I can get the WordPress API I'm the owner of a website website name is is given below
+  7 | https://hereandnowai.com
+  8 | """
+  9 | 
+ 10 | import os
+ 11 | import time
+ 12 | import requests
+ 13 | from typing import TypedDict, List, Optional
+ 14 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 15 | from langchain_core.prompts import PromptTemplate
+ 16 | from langchain_core.output_parsers import StrOutputParser
+ 17 | from langgraph.graph import StateGraph, END
+ 18 | from dotenv import load_dotenv
+ 19 | 
+ 20 | # --- Environment Setup ---
+ 21 | load_dotenv()
+ 22 | 
+ 23 | # Check for Gemini API Key
+ 24 | if "GEMINI_API_KEY" not in os.environ:
+ 25 |     raise ValueError("GEMINI_API_KEY not found in .env file. Please add it.")
+ 26 | 
+ 27 | # Model Configuration
+ 28 | # Using the specified model with a higher rate limit.
+ 29 | LLM = ChatGoogleGenerativeAI(model="models/gemini-2.5-flash-lite-preview-06-17") 
+ 30 | # The user mentioned "GPT 2.5 flash preview 06-17", which seems to be a typo.
+ 31 | # Using a stable and available Gemini model.
+ 32 | 
+ 33 | # --- Organization Details ---
+ 34 | # These details will guide the research and writing process.
+ 35 | ORGANIZATION_NAME = "HERE AND NOW AI"
+ 36 | ORGANIZATION_DESCRIPTION = "specializes in cutting-edge AI solutions, focusing on autonomous agents, multi-modal applications, and advancing AI's role in business and creativity."
+ 37 | 
+ 38 | # --- State Definition for the Graph ---
+ 39 | # This TypedDict defines the structure that will be passed between agents.
+ 40 | class BlogWorkflowState(TypedDict):
+ 41 |     organization_name: str
+ 42 |     organization_description: str
+ 43 |     topics: Optional[List[str]]
+ 44 |     selected_topic: Optional[str]
+ 45 |     blog_post: Optional[str]
+ 46 |     review_feedback: Optional[str]
+ 47 |     approved: bool
+ 48 |     published: bool
+ 49 | 
+ 50 | # --- Agent Definitions ---
+ 51 | 
+ 52 | def researcher_agent(state: BlogWorkflowState):
+ 53 |     """Researches and suggests 5 blog topics."""
+ 54 |     print("--- Researcher Agent ---")
+ 55 |     prompt = PromptTemplate(
+ 56 |         template="""You are a research assistant. Your goal is to find trending topics for a blog post for {organization_name}, which {organization_description}.
+ 57 |         Please search for recent news, articles, and trends related to this field.
+ 58 |         From your research, identify and list 5 compelling blog post topics.
+ 59 |         Present them as a numbered list, with each topic on a new line.
+ 60 |         Example:
+ 61 |         1. Topic 1
+ 62 |         2. Topic 2
+ 63 |         ...""",
+ 64 |         input_variables=["organization_name", "organization_description"],
+ 65 |     )
+ 66 |     chain = prompt | LLM | StrOutputParser()
+ 67 |     
+ 68 |     print("Researching topics...")
+ 69 |     time.sleep(20) # Rate limit compliance
+ 70 |     result = chain.invoke({
+ 71 |         "organization_name": state['organization_name'],
+ 72 |         "organization_description": state['organization_description']
+ 73 |     })
+ 74 |     
+ 75 |     topics = [line.strip() for line in result.strip().split('\n') if line.strip()]
+ 76 |     print(f"Found topics: {topics}")
+ 77 |     return {"topics": topics}
+ 78 | 
+ 79 | def writer_agent(state: BlogWorkflowState):
+ 80 |     """Writes a blog post on the selected topic."""
+ 81 |     print("--- Writer Agent ---")
+ 82 |     # Simple topic selection: pick the first one.
+ 83 |     selected_topic = state['topics'][0] 
+ 84 |     print(f"Selected topic: {selected_topic}")
+ 85 | 
+ 86 |     prompt = PromptTemplate(
+ 87 |         template="""You are a content creator. Write a high-quality, engaging blog post on the topic: '{selected_topic}'.
+ 88 |         The blog post should be well-structured with a clear introduction, body, and conclusion.
+ 89 |         It should be at least 300 words. The tone should be professional and informative.
+ 90 |         The target audience is interested in {organization_description}.""",
+ 91 |         input_variables=["selected_topic", "organization_description"],
+ 92 |     )
+ 93 |     chain = prompt | LLM | StrOutputParser()
+ 94 | 
+ 95 |     print("Writing blog post...")
+ 96 |     time.sleep(20) # Rate limit compliance
+ 97 |     blog_post = chain.invoke({
+ 98 |         "selected_topic": selected_topic,
+ 99 |         "organization_description": state['organization_description']
+100 |     })
+101 |     
+102 |     print("Blog post generated.")
+103 |     return {"selected_topic": selected_topic, "blog_post": blog_post}
+104 | 
+105 | def editor_agent(state: BlogWorkflowState):
+106 |     """Reviews the blog post and decides whether to approve it."""
+107 |     print("--- Editor Agent ---")
+108 |     prompt = PromptTemplate(
+109 |         template="""You are a blog editor. Review the following blog post for quality, clarity, and grammar.
+110 |         If the post is well-written and ready for publication, respond with only the word 'APPROVE'.
+111 |         Otherwise, provide a few bullet points of feedback.
+112 |         
+113 |         Blog Post:
+114 |         {blog_post}""",
+115 |         input_variables=["blog_post"],
+116 |     )
+117 |     chain = prompt | LLM | StrOutputParser()
+118 | 
+119 |     print("Editing blog post...")
+120 |     time.sleep(20) # Rate limit compliance
+121 |     review = chain.invoke({"blog_post": state['blog_post']})
+122 | 
+123 |     if "APPROVE" in review.upper():
+124 |         print("Editor approved the post.")
+125 |         return {"approved": True}
+126 |     else:
+127 |         print(f"Editor requested revisions: {review}")
+128 |         # In a more complex graph, this feedback would loop back to the writer.
+129 |         # For simplicity, we'll stop the process if not approved.
+130 |         return {"approved": False, "review_feedback": review}
+131 | 
+132 | def publisher_agent(state: BlogWorkflowState):
+133 |     """Publishes the blog post to WordPress if credentials are available."""
+134 |     print("--- Publisher Agent ---")
+135 |     wp_user = os.getenv("WORDPRESS_USER")
+136 |     wp_password = os.getenv("WORDPRESS_APP_PASSWORD")
+137 |     wp_url = f"https://hereandnowai.com/wp-json/wp/v2/posts"
+138 | 
+139 |     if not all([wp_user, wp_password]):
+140 |         print("WARNING: WordPress credentials not in .env. Skipping publishing.")
+141 |         return {"published": False}
+142 | 
+143 |     auth = requests.auth.HTTPBasicAuth(wp_user, wp_password)
+144 |     headers = {'Content-Type': 'application/json'}
+145 |     post_data = {
+146 |         'title': state['selected_topic'],
+147 |         'content': state['blog_post'],
+148 |         'status': 'publish'  # Use 'draft' to save as a draft instead
+149 |     }
+150 | 
+151 |     print("Publishing to WordPress...")
+152 |     response = requests.post(wp_url, auth=auth, headers=headers, json=post_data)
+153 | 
+154 |     if response.status_code == 201:
+155 |         print("Blog post published successfully!")
+156 |         return {"published": True}
+157 |     else:
+158 |         print(f"ERROR: Failed to publish. Status: {response.status_code}")
+159 |         print(response.text)
+160 |         return {"published": False}
+161 | 
+162 | # --- Graph Logic ---
+163 | 
+164 | def should_publish(state: BlogWorkflowState):
+165 |     """Conditional edge to decide if the blog post should be published."""
+166 |     if state['approved']:
+167 |         return "publish"
+168 |     else:
+169 |         return "end"
+170 | 
+171 | # --- Workflow Construction ---
+172 | 
+173 | workflow = StateGraph(BlogWorkflowState)
+174 | 
+175 | # Add nodes for each agent
+176 | workflow.add_node("researcher", researcher_agent)
+177 | workflow.add_node("writer", writer_agent)
+178 | workflow.add_node("editor", editor_agent)
+179 | workflow.add_node("publisher", publisher_agent)
+180 | 
+181 | # Define the flow of the graph
+182 | workflow.set_entry_point("researcher")
+183 | workflow.add_edge("researcher", "writer")
+184 | workflow.add_edge("writer", "editor")
+185 | workflow.add_conditional_edges(
+186 |     "editor",
+187 |     should_publish,
+188 |     {
+189 |         "publish": "publisher",
+190 |         "end": END
+191 |     }
+192 | )
+193 | workflow.add_edge("publisher", END)
+194 | 
+195 | # Compile the graph
+196 | app = workflow.compile()
+197 | 
+198 | # --- Main Execution ---
+199 | 
+200 | if __name__ == "__main__":
+201 |     initial_state = {
+202 |         "organization_name": ORGANIZATION_NAME,
+203 |         "organization_description": ORGANIZATION_DESCRIPTION,
+204 |         "approved": False,
+205 |         "published": False,
+206 |     }
+207 |     
+208 |     # Run the workflow
+209 |     final_state = app.invoke(initial_state)
+210 |     
+211 |     print("\n--- Workflow Complete ---")
+212 |     print(f"Final State: {final_state}")
+
+
+--------------------------------------------------------------------------------
+/project_06_marketing_agent_slogan_generator/main.py:
+--------------------------------------------------------------------------------
+ 1 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 2 | from langchain.agents import AgentExecutor, create_react_agent
+ 3 | from langchain import hub
+ 4 | from langchain.tools import tool
+ 5 | from langchain.chains import LLMChain
+ 6 | from langchain.prompts import PromptTemplate
+ 7 | from pydantic.v1 import BaseModel, Field
+ 8 | from dotenv import load_dotenv
+ 9 | import os
+10 | import time
+11 | import sys
+12 | import warnings
+13 | 
+14 | warnings.filterwarnings("ignore", message="API key must be provided when using hosted LangSmith API")
+15 | 
+16 | load_dotenv()
+17 | google_api_key = os.getenv("GEMINI_API_KEY")
+18 | 
+19 | # Use a stable, generally available model
+20 | model = os.getenv("MODEL")
+21 | 
+22 | class SloganGeneratorInput(BaseModel):
+23 |     product_name: str = Field(description="The name of the product or company.")
+24 |     description: str = Field(description="A detailed description of the product or company for which to generate slogans.")
+25 | 
+26 | @tool(args_schema=SloganGeneratorInput)
+27 | def slogan_generator(product_name: str, description: str) -> str:
+28 |     """
+29 |     Generates 5 creative marketing slogans for a product given its name and description.
+30 |     """
+31 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+32 |     prompt_template = """Generate 5 creative marketing slogans for a product with the following details:
+33 | Product Name: {product_name}
+34 | Description: {description}
+35 | 
+36 | Slogans:"""
+37 |     prompt = PromptTemplate(template=prompt_template, input_variables=["product_name", "description"])
+38 |     llm_chain = LLMChain(prompt=prompt, llm=llm)
+39 |     slogans = llm_chain.invoke({"product_name": product_name, "description": description})
+40 |     return slogans["text"]
+41 | 
+42 | def run_marketing_agent():
+43 |     """
+44 |     Creates and runs an agent that can use the slogan_generator tool.
+45 |     """
+46 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+47 |     tools = [slogan_generator]
+48 |     prompt = hub.pull("hwchase17/react")
+49 |     agent = create_react_agent(llm, tools, prompt)
+50 |     
+51 |     # Provide a specific error message to help the agent recover from parsing errors
+52 |     custom_error_message = (
+53 |         "The tool input was not formatted correctly. "
+54 |         "Please format the Action Input as a valid JSON object with "
+55 |         "keys 'product_name' and 'description'."
+56 |     )
+57 |     
+58 |     agent_executor = AgentExecutor(
+59 |         agent=agent, 
+60 |         tools=tools, 
+61 |         verbose=True, 
+62 |         handle_parsing_errors=custom_error_message
+63 |     )
+64 | 
+65 |     product_name = "HERE AND NOW - The French Institute"
+66 |     description = "HERE AND NOW – The French Institute is a premier language school based in Chennai, dedicated to delivering immersive and practical French learning experiences. Blending structured linguistics with cultural engagement, their flagship “IMMERSION PROGRAM” helps professionals and students progress from A1 to B2 in just 108 days—designed using research-backed, psychologically optimized methods"
+67 | 
+68 |     # --- FINAL ADJUSTMENT ---
+69 |     # The 429 error is a rate limit error. Waiting before execution helps avoid this.
+70 |     # We increase the wait time to be safe.
+71 |     wait_time = 30
+72 |     print(f"Waiting for {wait_time} seconds to allow API quota to reset...")
+73 |     for i in range(wait_time, 0, -1):
+74 |         sys.stdout.write(f"\rWaiting... {i} seconds remaining. ")
+75 |         sys.stdout.flush()
+76 |         time.sleep(1)
+77 |     sys.stdout.write("\rDone waiting. Executing agent.\n")
+78 |     sys.stdout.flush()
+79 | 
+80 |     response = agent_executor.invoke({
+81 |         "input": f"Generate marketing slogans for the following product:\nProduct Name: {product_name}\nDescription: {description}"
+82 |     })
+83 |     print("\n--- AGENT RESPONSE ---")
+84 |     print(response["output"])
+85 | 
+86 | if __name__ == "__main__":
+87 |     run_marketing_agent()
+88 | 
+
+
+--------------------------------------------------------------------------------
+/project_06_marketing_agent_slogan_generator/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | langgraph
+6 | requests
+7 | langchain-community
+
+
+--------------------------------------------------------------------------------
+/project_07_hr_agent_policy_qa/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 7: HR Agent - Policy Q&A
+ 2 | 
+ 3 | ## Objective
+ 4 | Answer questions about a simple HR policy document (`hr_policy.txt`).
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_07_hr_agent_policy_qa` directory:
+ 8 |     ```bash
+ 9 |     cd project_07_hr_agent_policy_qa
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will answer a question about the HR policy.
+20 | 
+21 | ## Real-World Value
+22 | This project reinforces the concept of Q&A over documents, applying it to a practical business scenario: an HR policy. Building an HR agent that can answer employee questions about company policies (e.g., vacation days, sick leave, benefits) can significantly reduce the workload on HR departments, provide instant answers to employees, and improve overall employee satisfaction. This is a foundational step towards creating intelligent internal knowledge bases.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_07_hr_agent_policy_qa/hr_policy.txt:
+--------------------------------------------------------------------------------
+ 1 | HR Policy Document
+ 2 | 
+ 3 | Vacation Policy:
+ 4 | Employees are entitled to 15 paid vacation days per year during their first five years of employment. After five years, this increases to 20 days per year. Vacation requests must be submitted at least two weeks in advance and are subject to manager approval.
+ 5 | 
+ 6 | Sick Leave Policy:
+ 7 | Employees accrue 5 sick days per year. Unused sick days do not roll over to the next year.
+ 8 | 
+ 9 | Remote Work Policy:
+10 | Remote work is permitted for eligible positions, subject to departmental guidelines and manager approval. Employees working remotely must ensure they have a suitable home office environment and reliable internet access.
+
+
+--------------------------------------------------------------------------------
+/project_07_hr_agent_policy_qa/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: Answer questions about a simple HR policy document.
+ 3 | 
+ 4 | from langchain_community.document_loaders import TextLoader
+ 5 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 6 | from langchain.chains.question_answering import load_qa_chain
+ 7 | 
+ 8 | def run_hr_policy_qa():
+ 9 |     """
+10 |     Loads an HR policy file, creates a Q&A chain, and answers a question based on its content.
+11 |     """
+12 |     # Load the HR policy document
+13 |     loader = TextLoader("hr_policy.txt")
+14 |     documents = loader.load()
+15 | 
+16 |     # Instantiate the LLM
+17 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+18 | 
+19 |     # Load the Q&A chain
+20 |     chain = load_qa_chain(llm, chain_type="stuff")
+21 | 
+22 |     # Ask a question about the HR policy
+23 |     question = "How many vacation days do I get?"
+24 |     response = chain.invoke({"input_documents": documents, "question": question})
+25 | 
+26 |     print(f"Question: {question}")
+27 |     print(f"Answer: {response["output_text"]}")
+28 | 
+29 | if __name__ == "__main__":
+30 |     run_hr_policy_qa()
+31 | 
+
+
+--------------------------------------------------------------------------------
+/project_07_hr_agent_policy_qa/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | langchain-community
+4 | python-dotenv
+5 | uv
+6 | 
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 8: Simple Data Retrieval Agent
+ 2 | 
+ 3 | ## Objective
+ 4 | Create a basic agent that can retrieve data from a predefined list of facts.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_08_simple_data_retrieval_agent` directory:
+ 8 |     ```bash
+ 9 |     cd project_08_simple_data_retrieval_agent
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The agent will use its tool to answer questions based on the predefined facts.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates how agents can be equipped with tools to retrieve information from structured data sources. In a real-world scenario, this could be a database, an API, or a knowledge graph. This capability is crucial for building intelligent systems that can answer specific queries by accessing and interpreting factual information. Examples include internal knowledge bases for employees, product catalogs for e-commerce, or customer information systems for support agents.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/config.py:
+--------------------------------------------------------------------------------
+1 | MODEL="models/gemini-2.5-flash-lite-preview-06-17"
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/invoice_parsing_agent.py:
+--------------------------------------------------------------------------------
+ 1 | import os
+ 2 | import sys
+ 3 | import warnings
+ 4 | from dotenv import load_dotenv
+ 5 | from langchain.agents import AgentExecutor, create_react_agent
+ 6 | from langchain import hub
+ 7 | from langchain.tools import tool
+ 8 | from langchain.chat_models import init_chat_model
+ 9 | from langchain_core.rate_limiters import InMemoryRateLimiter
+10 | from pdf2image import convert_from_path
+11 | import pytesseract
+12 | 
+13 | # Suppress irrelevant warnings
+14 | warnings.filterwarnings("ignore", message="API key must be provided when using hosted LangSmith API")
+15 | 
+16 | # Load environment variables
+17 | load_dotenv()
+18 | google_api_key = os.getenv("GEMINI_API_KEY")
+19 | model = os.getenv("MODEL")
+20 | 
+21 | @tool(description="Extract text from a scanned PDF using OCR. Provide the full file path.")
+22 | def extract_text_from_scanned_pdf(pdf_path: str) -> str:
+23 |     """Extracts all visible text from a scanned invoice PDF using Tesseract OCR."""
+24 |     if not os.path.exists(pdf_path):
+25 |         return f"Error: File not found at {pdf_path}"
+26 |     try:
+27 |         text = ""
+28 |         for image in convert_from_path(pdf_path):
+29 |             text += pytesseract.image_to_string(image) + "\n"
+30 |         return text
+31 |     except Exception as e:
+32 |         return f"An error occurred during OCR: {e}"
+33 | 
+34 | def run_invoice_processing_agent():
+35 |     try:
+36 |         pytesseract.get_tesseract_version()
+37 |     except pytesseract.TesseractNotFoundError:
+38 |         print("Error: Tesseract not installed or not in PATH.")
+39 |         sys.exit(1)
+40 | 
+41 |     rate_limiter = InMemoryRateLimiter(
+42 |         requests_per_second=0.1, # Allows 1 request every 10 seconds (0.1 = 1 / 10).
+43 |         check_every_n_seconds=0.1, # It checks every 100 milliseconds whether a request can proceed.
+44 |         max_bucket_size=1) # Allows only 1 pending request at a time in memory (think of it like a buffer bucket).
+45 | 
+46 |     llm = init_chat_model(
+47 |         model=model,
+48 |         model_provider="google_genai",
+49 |         google_api_key=google_api_key,
+50 |         rate_limiter=rate_limiter)
+51 | 
+52 |     tools = [extract_text_from_scanned_pdf]
+53 |     prompt = hub.pull("hwchase17/react")
+54 |     agent = create_react_agent(llm=llm, tools=tools, prompt=prompt)
+55 | 
+56 |     agent_executor = AgentExecutor(
+57 |         agent=agent,
+58 |         tools=tools,
+59 |         verbose=True,
+60 |         handle_parsing_errors=True)
+61 | 
+62 |     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+63 |     invoice_pdf_path = os.path.join(BASE_DIR, "scanned_invoice.pdf")
+64 | 
+65 |     if not os.path.exists(invoice_pdf_path):
+66 |         print(f"'{invoice_pdf_path}' not found. Place your scanned PDF there.")
+67 |         return
+68 | 
+69 |     print(f"\n--- Processing Invoice: {invoice_pdf_path} ---")
+70 |     response = agent_executor.invoke({
+71 |         "input": f"Please extract the total amount due from the invoice located at '{invoice_pdf_path}'."})
+72 | 
+73 |     print("\n--- FINAL AGENT ANSWER ---")
+74 |     print(response["output"])
+75 | 
+76 | if __name__ == "__main__":
+77 |     run_invoice_processing_agent()
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/requirements.txt:
+--------------------------------------------------------------------------------
+ 1 | # Core packages
+ 2 | langchain>=0.3.66,<0.4
+ 3 | langchain-google-genai>=2.1.8,<3.0
+ 4 | 
+ 5 | # CLI & environment
+ 6 | python-dotenv>=1.1.0
+ 7 | 
+ 8 | # OCR & PDF handling
+ 9 | pdf2image>=1.17.0
+10 | pytesseract>=0.3.10
+11 | 
+12 | # Rate limiter support
+13 | langchain-core>=0.2.24
+14 | 
+15 | # Poppler dependency not installable via pip; install separately:
+16 | # Ubuntu: sudo apt-get install poppler-utils
+17 | # Windows: use conda or download binaries
+18 | 
+19 | # Tools & utilities
+20 | Pillow>=9.0.0
+21 | 
+22 | # sudo apt update
+23 | # sudo apt install python3-venv python3-pip python3-setuptools python3-wheel
+24 | 
+25 | # python3 -m venv .venv
+26 | # source .venv/bin/activate
+27 | 
+28 | # python -m pip install --upgrade pip setuptools wheel
+29 | # python -m pip install python-dotenv langchain langchain-google-genai pdf2image pytesseract pillow
+30 | 
+31 | # sudo apt-get update
+32 | # sudo apt-get install -y poppler-utils libpoppler-cpp-dev
+33 | 
+34 | # which pdfinfo
+35 | # pdfinfo -v
+36 | 
+37 | # how to install tessearact ocr on windows: 
+38 | # link: https://github.com/UB-Mannheim/tesseract/wiki
+39 | # link to the exe file: https://github.com/tesseract-ocr/tesseract/releases/download/5.5.0/tesseract-ocr-w64-setup-5.5.0.20241111.exe
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/scanned_invoice.pdf:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/langchain-mastery-tutorial/cb5f2b6915c2f4943c8b697aaa7d8ea103ce0684/project_08_simple_data_retrieval_agent/scanned_invoice.pdf
+
+
+--------------------------------------------------------------------------------
+/project_08_simple_data_retrieval_agent/simple_facts_finder.py:
+--------------------------------------------------------------------------------
+ 1 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 2 | from langchain.agents import AgentExecutor, create_react_agent
+ 3 | from langchain import hub
+ 4 | from langchain.tools import tool
+ 5 | from dotenv import load_dotenv
+ 6 | import os
+ 7 | import sys
+ 8 | import time
+ 9 | import warnings
+10 | warnings.filterwarnings("ignore", message="API key must be provided when using hosted LangSmith API")
+11 | 
+12 | load_dotenv()
+13 | google_api_key = os.getenv("GEMINI_API_KEY")
+14 | model = os.getenv("MODEL")
+15 | 
+16 | FACTS = {
+17 |     "capital of france": "Paris",
+18 |     "largest ocean": "Pacific Ocean",
+19 |     "inventor of telephone": "Alexander Graham Bell",
+20 |     "population of india": "Approximately 1.4 billion"
+21 | }
+22 | 
+23 | @tool
+24 | def get_fact(query: str) -> str:
+25 |     """
+26 |     Retrieves a fact from a predefined list. The query must be an exact match
+27 |     to one of the available facts.
+28 | 
+29 |     Available facts are:
+30 |     - 'capital of france'
+31 |     - 'largest ocean'
+32 |     - 'inventor of telephone'
+33 |     - 'population of india'
+34 |     """
+35 |     return FACTS.get(query.lower(), "Fact not found.")
+36 | 
+37 | 
+38 | def run_data_retrieval_agent():
+39 |     """
+40 |     Creates an agent that can use the get_fact tool.
+41 |     """
+42 |     llm = ChatGoogleGenerativeAI(model=model, google_api_key=google_api_key)
+43 |     tools = [get_fact]
+44 |     prompt = hub.pull("hwchase17/react")
+45 |     agent = create_react_agent(llm, tools, prompt)
+46 |     agent_executor = AgentExecutor(
+47 |         agent=agent, 
+48 |         tools=tools, 
+49 |         verbose=True, 
+50 |         handle_parsing_errors=True
+51 |     )
+52 |     
+53 |     wait_time = 20
+54 |     print(f"Agent starting in {wait_time} seconds...")
+55 |     for i in range(wait_time, 0, -1):
+56 |         sys.stdout.write(f"\rPlease wait for {i} seconds... ")
+57 |         sys.stdout.flush()
+58 |         time.sleep(1)
+59 |     sys.stdout.write("\rAgent is running!              \n")
+60 |     sys.stdout.flush()
+61 | 
+62 |     responses = []
+63 |     print("\n--- Query 1: Capital of France ---")
+64 |     responses.append(agent_executor.invoke({"input": "What is the capital of France?"}))
+65 |     
+66 |     print("\n--- Query 2: Inventor of Telephone ---")
+67 |     responses.append(agent_executor.invoke({"input": "Who invented the telephone?"}))
+68 |     
+69 |     print("\n--- Query 3: Population of India ---")
+70 |     responses.append(agent_executor.invoke({"input": "What is the population of India?"}))
+71 | 
+72 |     print("\n\n--- FINAL AGENT ANSWERS ---")
+73 |     for i, response in enumerate(responses, 1):
+74 |         print(f"Response {i}: {response['output']}")
+75 | 
+76 | 
+77 | if __name__ == "__main__":
+78 |     run_data_retrieval_agent()
+
+
+--------------------------------------------------------------------------------
+/project_09_question_answering_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 9: Question Answering Agent
+ 2 | 
+ 3 | ## Objective
+ 4 | Create a more advanced Q&A agent that can answer general knowledge questions by leveraging an external tool like Wikipedia.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_09_question_answering_agent` directory:
+ 8 |     ```bash
+ 9 |     cd project_09_question_answering_agent
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The agent will use the Wikipedia tool to answer the questions.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates how LangChain agents can integrate with and utilize external knowledge sources to answer a wide range of general knowledge questions. This is a fundamental capability for building intelligent assistants, sophisticated search interfaces, or educational tools that can provide accurate and up-to-date information. By connecting to external APIs and databases, LLMs can overcome their inherent knowledge limitations and provide more comprehensive and reliable answers.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_09_question_answering_agent/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: A more advanced Q&A agent that can answer general knowledge questions.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from langchain.agents import AgentExecutor, create_react_agent
+ 6 | from langchain import hub
+ 7 | from langchain_community.tools import WikipediaQueryRun
+ 8 | from langchain_community.utilities import WikipediaAPIWrapper
+ 9 | 
+10 | def run_qa_agent():
+11 |     """
+12 |     Creates an agent that can use the Wikipedia tool to answer questions.
+13 |     """
+14 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+15 | 
+16 |     # Set up Wikipedia tool
+17 |     wikipedia_api_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=200)
+18 |     wikipedia_tool = WikipediaQueryRun(api_wrapper=wikipedia_api_wrapper)
+19 |     tools = [wikipedia_tool]
+20 | 
+21 |     prompt = hub.pull("hwchase17/react")
+22 | 
+23 |     agent = create_react_agent(llm, tools, prompt)
+24 |     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+25 | 
+26 |     agent_executor.invoke({"input": "Who is the current president of the United States?"})
+27 |     agent_executor.invoke({"input": "What is the capital of Japan?"})
+28 | 
+29 | if __name__ == "__main__":
+30 |     run_qa_agent()
+31 | 
+
+
+--------------------------------------------------------------------------------
+/project_09_question_answering_agent/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | langchain-community
+4 | wikipedia
+5 | python-dotenv
+6 | uv
+7 | 
+
+
+--------------------------------------------------------------------------------
+/project_10_summarization_pipeline/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 10: Summarization Pipeline
+ 2 | 
+ 3 | ## Objective
+ 4 | Summarize a given piece of text, demonstrating a simple text processing pipeline.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_10_summarization_pipeline` directory:
+ 8 |     ```bash
+ 9 |     cd project_10_summarization_pipeline
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will print the summarized text.
+20 | 
+21 | ## Real-World Value
+22 | This project reiterates the concept of text summarization, framing it as a basic pipeline. While simple, it illustrates how multiple steps (e.g., loading text, applying a prompt, generating output) can be chained together to form a complete process. This is fundamental for more complex applications where data flows through several LLM-powered stages, such as document processing workflows, content curation, or automated report generation.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_10_summarization_pipeline/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: Summarize a given piece of text as part of a simple pipeline.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from langchain.prompts import PromptTemplate
+ 6 | from langchain.chains import LLMChain
+ 7 | 
+ 8 | def run_summarization_pipeline():
+ 9 |     """
+10 |     Creates a prompt template for summarization, uses an LLMChain, and prints the summary.
+11 |     """
+12 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+13 | 
+14 |     # Define the prompt template for summarization
+15 |     prompt_template = "Summarize the following article:\n\n{article}\n\nSummary:"
+16 |     prompt = PromptTemplate(template=prompt_template, input_variables=["article"])
+17 | 
+18 |     # Create an LLMChain
+19 |     llm_chain = LLMChain(prompt=prompt, llm=llm)
+20 | 
+21 |     # Article to be summarized
+22 |     article_text = """The Amazon rainforest is the largest rainforest in the world, covering an area of over 5.5 million square kilometers. It is home to an incredible diversity of plant and animal life, including many species that are found nowhere else on Earth. The rainforest plays a crucial role in regulating the Earth's climate by absorbing vast amounts of carbon dioxide. However, it is currently facing significant threats from deforestation, logging, and climate change, which are leading to habitat loss and increased carbon emissions."""
+23 | 
+24 |     # Run the summarization chain
+25 |     summary = llm_chain.invoke({"article": article_text})
+26 |     print(summary["text"])
+27 | 
+28 | if __name__ == "__main__":
+29 |     run_summarization_pipeline()
+30 | 
+
+
+--------------------------------------------------------------------------------
+/project_10_summarization_pipeline/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_11_chat_assistant_with_memory/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 11: Chat Assistant with Memory
+ 2 | 
+ 3 | ## Objective
+ 4 | Create a chat assistant that can remember past conversations, enabling more coherent and natural interactions.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_11_chat_assistant_with_memory` directory:
+ 8 |     ```bash
+ 9 |     cd project_11_chat_assistant_with_memory
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will demonstrate a short conversation where the chatbot remembers previous turns.
+20 | 
+21 | ## Real-World Value
+22 | Memory is a critical component for building truly interactive and personalized AI assistants. Without memory, chatbots treat each user query as a new, isolated request, leading to disjointed and frustrating conversations. By incorporating memory, as demonstrated in this project, chatbots can maintain context, refer to previous statements, and provide more relevant and helpful responses. This is essential for applications like personalized customer support, interactive learning platforms, and long-running conversational agents.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_11_chat_assistant_with_memory/complex_code.py:
+--------------------------------------------------------------------------------
+ 1 | import os
+ 2 | from dotenv import load_dotenv
+ 3 | from config import MODEL
+ 4 | 
+ 5 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 6 | from langchain_core.chat_history import BaseChatMessageHistory
+ 7 | from langchain_core.messages import HumanMessage, AIMessage
+ 8 | from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+ 9 | from langchain_core.runnables.history import RunnableWithMessageHistory
+10 | from pydantic import BaseModel, Field
+11 | from langchain_core.rate_limiters import InMemoryRateLimiter
+12 | 
+13 | load_dotenv()
+14 | google_api_key = os.getenv("GEMINI_API_KEY")
+15 | model = MODEL
+16 | 
+17 | class SlidingHistory(BaseChatMessageHistory, BaseModel):
+18 |     messages: list = Field(default_factory=list)
+19 |     k: int = Field(default=5)
+20 | 
+21 |     def add_messages(self, msgs: list[HumanMessage | AIMessage]) -> None:
+22 |         self.messages.extend(msgs)
+23 |         self.messages = self.messages[-self.k:]
+24 | 
+25 |     def clear(self) -> None:
+26 |         self.messages = []
+27 | 
+28 | # session storage for histories
+29 | store: dict[str, SlidingHistory] = {}
+30 | 
+31 | def get_session_history(session_id: str) -> SlidingHistory:
+32 |     if session_id not in store:
+33 |         store[session_id] = SlidingHistory(k=5)
+34 |     return store[session_id]
+35 | 
+36 | def run_chat_assistant_with_memory(session_id: str = "default_session"):
+37 |     """
+38 |     Modern chat assistant with sliding-window memory (last 5 messages).
+39 |     """
+40 | 
+41 |     rate_limiter = InMemoryRateLimiter(
+42 |         requests_per_second=0.1,
+43 |         check_every_n_seconds=0.1,
+44 |         max_bucket_size=1
+45 |     )
+46 | 
+47 |     llm = ChatGoogleGenerativeAI(
+48 |         model=model,
+49 |         google_api_key=google_api_key,
+50 |         rate_limiter=rate_limiter,
+51 |     )
+52 | 
+53 |     prompt = ChatPromptTemplate.from_messages([
+54 |         ("system", "You are a helpful assistant."),
+55 |         MessagesPlaceholder(variable_name="history"),
+56 |         ("human", "{input}"),
+57 |     ])
+58 | 
+59 |     # Build a runnable chain: prompt → LLM
+60 |     chain = prompt | llm
+61 | 
+62 |     # Wrap with history tracking
+63 |     with_history = RunnableWithMessageHistory(
+64 |         chain,
+65 |         get_session_history,
+66 |         input_messages_key="input",
+67 |         history_messages_key="history",
+68 |     )
+69 | 
+70 |     # Simulate conversation
+71 |     for user_input in ["Hi there!", "My name is Alice.", "What is my name?"]:
+72 |         res = with_history.invoke(
+73 |             {"input": user_input},
+74 |             config={"configurable": {"session_id": session_id}}
+75 |         )
+76 |         print("User:", user_input)
+77 |         print("AI  :", getattr(res, "content", res))
+78 | 
+79 | if __name__ == "__main__":
+80 |     run_chat_assistant_with_memory()
+
+
+--------------------------------------------------------------------------------
+/project_11_chat_assistant_with_memory/config.py:
+--------------------------------------------------------------------------------
+1 | MODEL="models/gemini-2.5-flash-lite-preview-06-17"
+
+
+--------------------------------------------------------------------------------
+/project_11_chat_assistant_with_memory/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_11_chat_assistant_with_memory/simplified_code.py:
+--------------------------------------------------------------------------------
+ 1 | import os
+ 2 | from dotenv import load_dotenv
+ 3 | from config import MODEL
+ 4 | 
+ 5 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 6 | from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+ 7 | from langchain_core.chat_history import InMemoryChatMessageHistory
+ 8 | from langchain_core.runnables.history import RunnableWithMessageHistory
+ 9 | 
+10 | load_dotenv()
+11 | assert os.getenv("GEMINI_API_KEY"), "Set GEMINI_API_KEY in .env"
+12 | 
+13 | # Setup LLM and prompt
+14 | llm = ChatGoogleGenerativeAI(model=MODEL, google_api_key=os.getenv("GEMINI_API_KEY"))
+15 | prompt = ChatPromptTemplate.from_messages([
+16 |     ("system", "You are a helpful assistant."),
+17 |     MessagesPlaceholder(variable_name="history"),
+18 |     ("human", "{input}")])
+19 | 
+20 | # Memory store for session
+21 | memory = InMemoryChatMessageHistory()
+22 | chat = RunnableWithMessageHistory(prompt | llm, lambda _: memory, input_messages_key="input", history_messages_key="history")
+23 | 
+24 | print("🤖 Chatbot (type 'exit' to quit)")
+25 | while True:
+26 |     user_input = input("You: ")
+27 |     if user_input.lower() in ("exit", "quit"):
+28 |         break
+29 |     response = chat.invoke({"input": user_input},
+30 |                            config={"configurable": {"session_id":"default"}})
+31 |     print("Bot:", response.content if hasattr(response, "content") else response)
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 12: CSV Analysis Agent
+ 2 | 
+ 3 | ## Objective
+ 4 | Create an agent that can analyze and answer questions based on the data in a CSV file.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_12_csv_analysis_agent` directory:
+ 8 |     ```bash
+ 9 |     cd project_12_csv_analysis_agent
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The agent will process the `sample_data.csv` and answer the predefined questions.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates a powerful application of LLM agents: data analysis. By enabling an agent to interact with structured data like CSV files, you can automate tasks such as data summarization, trend identification, and answering specific queries about datasets. This is incredibly useful for business intelligence, financial analysis, scientific research, and any field that deals with large volumes of tabular data, allowing users to get insights without writing complex code.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/data/sample_data.csv:
+--------------------------------------------------------------------------------
+1 | Name,Age,City,Salary
+2 | Alice,25,New York,70000
+3 | Bob,30,London,80000
+4 | Charlie,35,Paris,90000
+5 | David,40,Tokyo,100000
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/data/virat_kohli.zip:
+--------------------------------------------------------------------------------
+https://raw.githubusercontent.com/hereandnowai/langchain-mastery-tutorial/cb5f2b6915c2f4943c8b697aaa7d8ea103ce0684/project_12_csv_analysis_agent/data/virat_kohli.zip
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/data/virat_kohli_odi_innings_data.csv:
+--------------------------------------------------------------------------------
+  1 | Runs,Mins,BF,4s,6s,SR,Pos,Dismissal,Inns,Opposition,Ground,Start Date,Odi No
+  2 | 12,33,22,1,0,54.54,2,lbw,1,v Sri Lanka,Dambulla,18-08-2008,ODI # 2742
+  3 | 37,82,67,6,0,55.22,2,caught,2,v Sri Lanka,Dambulla,20-08-2008,ODI # 2745
+  4 | 25,40,38,4,0,65.78,1,run out,1,v Sri Lanka,Colombo (RPS),24-08-2008,ODI # 2750
+  5 | 54,87,66,7,0,81.81,1,bowled,1,v Sri Lanka,Colombo (RPS),27-08-2008,ODI # 2755
+  6 | 31,45,46,3,1,67.39,1,lbw,2,v Sri Lanka,Colombo (RPS),29-08-2008,ODI # 2756
+  7 | 2*,6,2,0,0,100,7,not out,1,v Sri Lanka,Colombo (RPS),14-09-2009,ODI # 2889
+  8 | 16,28,24,1,0,66.66,4,caught,2,v Pakistan,Centurion,26-09-2009,ODI # 2898
+  9 | TDNB,-,-,-,-,-,-,-,-,v Australia,Centurion,28-09-2009,ODI # 2901
+ 10 | 79*,121,104,9,2,75.96,4,not out,2,v West Indies,Johannesburg,30-09-2009,ODI # 2904
+ 11 | 30,53,41,3,0,73.17,4,caught,2,v Australia,Vadodara,25-10-2009,ODI # 2913
+ 12 | 10,32,16,1,0,62.5,3,caught,2,v Australia,Mohali,02-11-2009,ODI # 2919
+ 13 | 27,20,19,4,0,142.1,7,bowled,1,v Sri Lanka,Rajkot,15-12-2009,ODI # 2932
+ 14 | 54,93,65,7,0,83.07,4,lbw,1,v Sri Lanka,Nagpur,18-12-2009,ODI # 2933
+ 15 | 107,-,114,11,1,93.85,4,caught,2,v Sri Lanka,Eden Gardens,24-12-2009,ODI # 2935
+ 16 | TDNB,-,-,-,-,-,-,-,-,v Sri Lanka,Delhi,27-12-2009,ODI # 2936
+ 17 | 9,19,12,1,0,75,3,caught,1,v Sri Lanka,Mirpur,05-01-2010,ODI # 2938
+ 18 | 91,136,102,7,0,89.21,3,caught,2,v Bangladesh,Mirpur,07-01-2010,ODI # 2939
+ 19 | 71*,98,68,9,0,104.41,3,not out,2,v Sri Lanka,Mirpur,10-01-2010,ODI # 2941
+ 20 | 102*,128,95,11,0,107.36,3,not out,2,v Bangladesh,Mirpur,11-01-2010,ODI # 2942
+ 21 | 2,6,8,0,0,25,3,caught,1,v Sri Lanka,Mirpur,13-01-2010,ODI # 2943
+ 22 | 31,-,46,1,0,67.39,5,caught,1,v South Africa,Jaipur,21-02-2010,ODI # 2961
+ 23 | DNB,-,-,-,-,-,-,-,1,v South Africa,Gwalior,24-02-2010,ODI # 2962
+ 24 | 57,-,71,4,1,80.28,3,caught,2,v South Africa,Ahmedabad,27-02-2010,ODI # 2963
+ 25 | 0,3,0,0,0,-,3,run out,1,v Zimbabwe,Bulawayo,28-05-2010,ODI # 2981
+ 26 | 82,125,92,4,0,89.13,3,caught,2,v Sri Lanka,Bulawayo,30-05-2010,ODI # 2983
+ 27 | 18,28,29,1,0,62.06,3,caught,1,v Zimbabwe,Harare,03-06-2010,ODI # 2986
+ 28 | 68,123,95,5,0,71.57,3,caught,1,v Sri Lanka,Harare,05-06-2010,ODI # 2988
+ 29 | 11,35,22,0,0,50,3,stumped,2,v Bangladesh,Dambulla,16-06-2010,ODI # 2993
+ 30 | 18,31,27,1,0,66.66,3,bowled,2,v Pakistan,Dambulla,19-06-2010,ODI # 2996
+ 31 | 10,13,14,1,0,71.42,3,caught,1,v Sri Lanka,Dambulla,22-06-2010,ODI # 2999
+ 32 | 28,57,34,4,0,82.35,3,caught,1,v Sri Lanka,Dambulla,24-06-2010,ODI # 3001
+ 33 | 0,5,3,0,0,0,3,caught,2,v Sri Lanka,Dambulla,16-08-2010,ODI # 3032
+ 34 | 8,22,16,1,0,50,3,caught,1,v New Zealand,Dambulla,25-08-2010,ODI # 3039
+ 35 | 37,98,57,5,0,64.91,3,caught,2,v Sri Lanka,Dambulla,28-08-2010,ODI # 3040
+ 36 | 118,193,121,11,1,97.52,3,caught,2,v Australia,Visakhapatnam,20-10-2010,ODI # 3060
+ 37 | 105,162,104,10,0,100.96,3,caught,1,v New Zealand,Guwahati,28-11-2010,ODI # 3070
+ 38 | 64,78,73,8,0,87.67,3,caught,2,v New Zealand,Jaipur,01-12-2010,ODI # 3072
+ 39 | 63*,83,70,6,2,90,3,not out,2,v New Zealand,Vadodara,04-12-2010,ODI # 3074
+ 40 | 0,3,2,0,0,0,3,caught,2,v New Zealand,Bengaluru,07-12-2010,ODI # 3076
+ 41 | 2,10,8,0,0,25,3,caught,2,v New Zealand,Chennai,10-12-2010,ODI # 3077
+ 42 | 54,122,70,2,1,77.14,3,caught,2,v South Africa,Durban,12-01-2011,ODI # 3079
+ 43 | 22,43,34,1,0,64.7,3,run out,1,v South Africa,Johannesburg,15-01-2011,ODI # 3080
+ 44 | 28,51,41,5,0,68.29,3,caught,2,v South Africa,Cape Town,18-01-2011,ODI # 3082
+ 45 | 87*,126,92,7,2,94.56,3,not out,2,v South Africa,Gqeberha,21-01-2011,ODI # 3084
+ 46 | 2,11,6,0,0,33.33,3,caught,2,v South Africa,Centurion,23-01-2011,ODI # 3087
+ 47 | 100*,113,83,8,2,120.48,4,not out,1,v Bangladesh,Mirpur,19-02-2011,ODI # 3100
+ 48 | 8,12,5,1,0,160,7,bowled,1,v England,Bengaluru,27-02-2011,ODI # 3110
+ 49 | 34,82,53,3,0,64.15,4,run out,2,v Ireland,Bengaluru,06-03-2011,ODI # 3121
+ 50 | 12,16,20,2,0,60,5,bowled,2,v Netherlands,Delhi,09-03-2011,ODI # 3124
+ 51 | 1,2,3,0,0,33.33,7,caught,1,v South Africa,Nagpur,12-03-2011,ODI # 3128
+ 52 | 59,128,76,5,0,77.63,3,bowled,1,v West Indies,Chennai,20-03-2011,ODI # 3141
+ 53 | 24,38,33,1,0,72.72,4,caught,2,v Australia,Ahmedabad,24-03-2011,ODI # 3143
+ 54 | 9,20,21,0,0,42.85,4,caught,1,v Pakistan,Mohali,30-03-2011,ODI # 3147
+ 55 | 35,69,49,4,0,71.42,4,caught,2,v Sri Lanka,Wankhede,02-04-2011,ODI # 3148
+ 56 | 2,5,8,0,0,25,3,caught,2,v West Indies,Port of Spain,06-06-2011,ODI # 3159
+ 57 | 81,118,103,6,1,78.64,3,caught,2,v West Indies,Port of Spain,08-06-2011,ODI # 3160
+ 58 | 0,1,1,0,0,0,3,lbw,2,v West Indies,North Sound,11-06-2011,ODI # 3161
+ 59 | 22,68,33,1,0,66.66,3,stumped,2,v West Indies,North Sound,13-06-2011,ODI # 3162
+ 60 | 94,135,104,10,0,90.38,3,run out,1,v West Indies,Kingston,16-06-2011,ODI # 3163
+ 61 | 55,92,73,4,0,75.34,4,bowled,1,v England,Chester-le-Street,03-09-2011,ODI # 3186
+ 62 | 9,9,9,0,0,100,4,caught,1,v England,Southampton,06-09-2011,ODI # 3187
+ 63 | 7,18,18,0,0,38.88,4,caught,1,v England,The Oval,09-09-2011,ODI # 3189
+ 64 | 16,40,36,1,0,44.44,4,caught,1,v England,Lord's,11-09-2011,ODI # 3191
+ 65 | 107,102,93,9,1,115.05,4,hit wicket,1,v England,Cardiff,16-09-2011,ODI # 3195
+ 66 | 37,70,63,0,0,58.73,4,caught,1,v England,Hyderabad (Deccan),14-10-2011,ODI # 3199
+ 67 | 112*,134,98,16,0,114.28,4,not out,2,v England,Delhi,17-10-2011,ODI # 3201
+ 68 | 35,42,30,5,0,116.66,4,lbw,2,v England,Mohali,20-10-2011,ODI # 3205
+ 69 | 86*,-,99,11,0,86.86,4,not out,2,v England,Wankhede,23-10-2011,ODI # 3207
+ 70 | 0,5,5,0,0,0,3,bowled,1,v England,Eden Gardens,25-10-2011,ODI # 3210
+ 71 | 3,13,6,0,0,50,4,bowled,2,v West Indies,Cuttack,29-11-2011,ODI # 3217
+ 72 | 117,154,123,14,0,95.12,4,caught,2,v West Indies,Visakhapatnam,02-12-2011,ODI # 3219
+ 73 | 20,21,30,3,0,66.66,4,lbw,2,v West Indies,Ahmedabad,05-12-2011,ODI # 3221
+ 74 | 23*,15,11,3,0,209.09,6,not out,1,v West Indies,Indore,08-12-2011,ODI # 3223
+ 75 | 80,99,85,5,0,94.11,5,caught,1,v West Indies,Chennai,11-12-2011,ODI # 3224
+ 76 | 31,30,34,3,0,91.17,3,caught,2,v Australia,Melbourne,05-02-2012,ODI # 3231
+ 77 | 77,156,94,8,1,81.91,3,run out,2,v Sri Lanka,Perth,08-02-2012,ODI # 3233
+ 78 | 18,41,28,1,0,64.28,3,caught,2,v Australia,Adelaide,12-02-2012,ODI # 3237
+ 79 | 15,32,25,1,0,60,3,lbw,2,v Sri Lanka,Adelaide,14-02-2012,ODI # 3239
+ 80 | 12,44,25,0,0,48,3,caught,2,v Australia,Brisbane,19-02-2012,ODI # 3244
+ 81 | 66,116,83,2,0,79.51,4,caught,2,v Sri Lanka,Brisbane,21-02-2012,ODI # 3246
+ 82 | 21,36,27,2,0,77.77,4,caught,2,v Australia,Sydney,26-02-2012,ODI # 3250
+ 83 | 133*,133,86,16,2,154.65,4,not out,2,v Sri Lanka,Hobart,28-02-2012,ODI # 3251
+ 84 | 108,148,120,7,0,90,3,caught,1,v Sri Lanka,Mirpur,13-03-2012,ODI # 3259
+ 85 | 66,126,82,5,0,80.48,3,bowled,1,v Bangladesh,Mirpur,16-03-2012,ODI # 3261
+ 86 | 183,211,148,22,1,123.64,3,caught,2,v Pakistan,Mirpur,18-03-2012,ODI # 3263
+ 87 | 106,158,113,9,0,93.8,3,caught,1,v Sri Lanka,Hambantota,21-07-2012,ODI # 3291
+ 88 | 1,6,5,0,0,20,3,caught,1,v Sri Lanka,Hambantota,24-07-2012,ODI # 3292
+ 89 | 38,80,65,2,0,58.46,3,caught,2,v Sri Lanka,Colombo (RPS),28-07-2012,ODI # 3293
+ 90 | 128*,187,119,12,1,107.56,3,not out,2,v Sri Lanka,Colombo (RPS),31-07-2012,ODI # 3294
+ 91 | 23,42,35,2,0,65.71,3,lbw,1,v Sri Lanka,Pallekele,04-08-2012,ODI # 3295
+ 92 | 0,9,5,0,0,0,3,bowled,1,v Pakistan,Chennai,30-12-2012,ODI # 3314
+ 93 | 6,12,9,1,0,66.66,3,caught,2,v Pakistan,Eden Gardens,03-01-2013,ODI # 3315
+ 94 | 7,25,17,1,0,41.17,3,caught,1,v Pakistan,Delhi,06-01-2013,ODI # 3316
+ 95 | 15,45,22,1,0,68.18,3,caught,2,v England,Rajkot,11-01-2013,ODI # 3318
+ 96 | 37,86,54,1,1,68.51,3,caught,1,v England,Kochi,15-01-2013,ODI # 3320
+ 97 | 77*,110,79,9,2,97.46,3,not out,2,v England,Ranchi,19-01-2013,ODI # 3322
+ 98 | 26,44,33,3,0,78.78,3,caught,2,v England,Mohali,23-01-2013,ODI # 3327
+ 99 | 0,1,1,0,0,0,3,caught,1,v England,Dharamsala,27-01-2013,ODI # 3329
+100 | 31,46,41,2,0,75.6,3,caught,1,v South Africa,Cardiff,06-06-2013,ODI # 3363
+101 | 22,18,18,4,0,122.22,3,bowled,2,v West Indies,The Oval,11-06-2013,ODI # 3368
+102 | 22*,36,27,3,0,81.48,3,not out,2,v Pakistan,Birmingham,15-06-2013,ODI # 3372
+103 | 58*,80,64,4,1,90.62,3,not out,2,v Sri Lanka,Cardiff,20-06-2013,ODI # 3376
+104 | 43,66,34,4,1,126.47,3,caught,1,v England,Birmingham,23-06-2013,ODI # 3377
+105 | 11,19,21,0,1,52.38,3,caught,1,v West Indies,Kingston,30-06-2013,ODI # 3380
+106 | 2,6,5,0,0,40,4,caught,2,v Sri Lanka,Kingston,02-07-2013,ODI # 3382
+107 | 102,120,83,13,2,122.89,3,caught,1,v West Indies,Port of Spain,05-07-2013,ODI # 3383
+108 | 31,62,52,4,0,59.61,3,lbw,1,v Sri Lanka,Port of Spain,09-07-2013,ODI # 3387
+109 | 2,8,5,0,0,40,3,caught,2,v Sri Lanka,Port of Spain,11-07-2013,ODI # 3388
+110 | 115,133,108,13,1,106.48,3,caught,2,v Zimbabwe,Harare,24-07-2013,ODI # 3395
+111 | 14,35,18,2,0,77.77,3,caught,1,v Zimbabwe,Harare,26-07-2013,ODI # 3397
+112 | 68*,128,88,5,1,77.27,3,not out,2,v Zimbabwe,Harare,28-07-2013,ODI # 3399
+113 | DNB,-,-,-,-,-,-,-,2,v Zimbabwe,Bulawayo,01-08-2013,ODI # 3402
+114 | DNB,-,-,-,-,-,-,-,2,v Zimbabwe,Bulawayo,03-08-2013,ODI # 3403
+115 | 61,121,85,6,0,71.76,3,lbw,2,v Australia,Pune,13-10-2013,ODI # 3419
+116 | 100*,82,52,8,7,192.3,3,not out,2,v Australia,Jaipur,16-10-2013,ODI # 3420
+117 | 68,121,73,9,0,93.15,3,caught,1,v Australia,Mohali,19-10-2013,ODI # 3421
+118 | DNB,-,-,-,-,-,-,-,2,v Australia,Ranchi,23-10-2013,ODI # 3422
+119 | 115*,104,66,18,1,174.24,3,not out,2,v Australia,Nagpur,30-10-2013,ODI # 3424
+120 | 0,4,3,0,0,0,3,run out,1,v Australia,Bengaluru,02-11-2013,ODI # 3428
+121 | 86,120,84,9,2,102.38,3,caught,2,v West Indies,Kochi,21-11-2013,ODI # 3436
+122 | 99,159,100,9,0,99,3,caught,1,v West Indies,Visakhapatnam,24-11-2013,ODI # 3437
+123 | 19,19,18,3,0,105.55,3,caught,2,v West Indies,Kanpur,27-11-2013,ODI # 3439
+124 | 31,41,35,5,0,88.57,3,caught,2,v South Africa,Johannesburg,05-12-2013,ODI # 3442
+125 | 0,7,5,0,0,0,3,caught,2,v South Africa,Durban,08-12-2013,ODI # 3443
+126 | TDNB,-,-,-,-,-,-,-,-,v South Africa,Centurion,11-12-2013,ODI # 3444
+127 | 123,179,111,11,2,110.81,3,caught,2,v New Zealand,Napier,19-01-2014,ODI # 3456
+128 | 78,88,65,7,2,120,3,caught,2,v New Zealand,Hamilton,22-01-2014,ODI # 3458
+129 | 6,27,20,1,0,30,3,caught,2,v New Zealand,Auckland,25-01-2014,ODI # 3462
+130 | 2,14,10,0,0,20,2,caught,1,v New Zealand,Hamilton,28-01-2014,ODI # 3465
+131 | 82,129,78,7,3,105.12,3,caught,2,v New Zealand,Wellington,31-01-2014,ODI # 3467
+132 | 136,157,122,16,2,111.47,3,bowled,2,v Bangladesh,Fatullah,26-02-2014,ODI # 3474
+133 | 48,66,51,4,1,94.11,3,bowled,1,v Sri Lanka,Fatullah,28-02-2014,ODI # 3476
+134 | 5,29,11,0,0,45.45,3,caught,1,v Pakistan,Mirpur,02-03-2014,ODI # 3479
+135 | DNB,-,-,-,-,-,-,-,2,v Afghanistan,Mirpur,05-03-2014,ODI # 3483
+136 | 0,1,3,0,0,0,3,caught,1,v England,Cardiff,27-08-2014,ODI # 3517
+137 | 40,67,50,2,1,80,3,caught,2,v England,Nottingham,30-08-2014,ODI # 3520
+138 | 1*,9,3,0,0,33.33,3,not out,2,v England,Birmingham,02-09-2014,ODI # 3523
+139 | 13,25,21,2,0,61.9,3,caught,2,v England,Leeds,05-09-2014,ODI # 3525
+140 | 2,7,5,0,0,40,3,caught,2,v West Indies,Kochi,08-10-2014,ODI # 3531
+141 | 62,124,78,5,0,79.48,4,caught,1,v West Indies,Delhi,11-10-2014,ODI # 3533
+142 | 127,164,114,13,3,111.4,3,run out,1,v West Indies,Dharamsala,17-10-2014,ODI # 3535
+143 | 22,34,21,2,0,104.76,4,caught,1,v Sri Lanka,Cuttack,02-11-2014,ODI # 3539
+144 | 49,-,44,2,2,111.36,4,caught,2,v Sri Lanka,Ahmedabad,06-11-2014,ODI # 3540
+145 | 53,-,61,4,1,86.88,4,caught,2,v Sri Lanka,Hyderabad (Deccan),09-11-2014,ODI # 3543
+146 | 66,109,64,6,0,103.12,4,run out,1,v Sri Lanka,Eden Gardens,13-11-2014,ODI # 3544
+147 | 139*,192,126,12,3,110.31,4,not out,2,v Sri Lanka,Ranchi,16-11-2014,ODI # 3547
+148 | 9,24,16,0,0,56.25,4,caught,1,v Australia,Melbourne,18-01-2015,ODI # 3582
+149 | 4,13,8,0,0,50,4,caught,1,v England,Brisbane,20-01-2015,ODI # 3586
+150 | 3*,8,9,0,0,33.33,4,not out,1,v Australia,Sydney,26-01-2015,ODI # 3592
+151 | 8,26,19,0,0,42.1,3,caught,1,v England,Perth,30-01-2015,ODI # 3595
+152 | 107,168,126,8,0,84.92,3,caught,1,v Pakistan,Adelaide,15-02-2015,ODI # 3602
+153 | 46,106,60,3,0,76.66,3,caught,1,v South Africa,Melbourne,22-02-2015,ODI # 3610
+154 | 33*,49,41,5,0,80.48,3,not out,2,v U.A.E.,Perth,28-02-2015,ODI # 3618
+155 | 33,51,36,5,0,91.66,3,caught,2,v West Indies,Perth,06-03-2015,ODI # 3625
+156 | 44*,64,42,4,1,104.76,3,not out,2,v Ireland,Hamilton,10-03-2015,ODI # 3631
+157 | 38,71,48,4,0,79.16,3,bowled,2,v Zimbabwe,Auckland,14-03-2015,ODI # 3636
+158 | 3,6,8,0,0,37.5,3,caught,1,v Bangladesh,Melbourne,19-03-2015,ODI # 3641
+159 | 1,11,13,0,0,7.69,3,caught,2,v Australia,Sydney,26-03-2015,ODI # 3645
+160 | 1,9,4,0,0,25,3,caught,2,v Bangladesh,Mirpur,18-06-2015,ODI # 3658
+161 | 23,57,27,3,1,85.18,3,lbw,1,v Bangladesh,Mirpur,21-06-2015,ODI # 3660
+162 | 25,55,35,1,0,71.42,3,bowled,1,v Bangladesh,Mirpur,24-06-2015,ODI # 3661
+163 | 11,29,18,0,0,61.11,4,caught,2,v South Africa,Kanpur,11-10-2015,ODI # 3689
+164 | 12,24,18,0,0,66.66,4,run out,1,v South Africa,Indore,14-10-2015,ODI # 3692
+165 | 77,155,99,5,0,77.77,3,caught,2,v South Africa,Rajkot,18-10-2015,ODI # 3695
+166 | 138,202,140,6,5,98.57,3,caught,1,v South Africa,Chennai,22-10-2015,ODI # 3698
+167 | 7,11,6,0,1,116.66,3,caught,2,v South Africa,Wankhede,25-10-2015,ODI # 3700
+168 | 91,148,97,9,1,93.81,3,caught,1,v Australia,Perth,12-01-2016,ODI # 3723
+169 | 59,84,67,4,0,88.05,3,run out,1,v Australia,Brisbane,15-01-2016,ODI # 3724
+170 | 117,174,117,7,2,100,3,caught,1,v Australia,Melbourne,17-01-2016,ODI # 3725
+171 | 106,131,92,11,1,115.21,3,caught,2,v Australia,Canberra,20-01-2016,ODI # 3726
+172 | 8,11,11,1,0,72.72,3,caught,2,v Australia,Sydney,23-01-2016,ODI # 3727
+173 | 85*,109,81,9,1,104.93,3,not out,2,v New Zealand,Dharamsala,16-10-2016,ODI # 3796
+174 | 9,18,13,1,0,69.23,3,caught,2,v New Zealand,Delhi,20-10-2016,ODI # 3797
+175 | 154*,202,134,16,1,114.92,3,not out,2,v New Zealand,Mohali,23-10-2016,ODI # 3798
+176 | 45,64,51,2,1,88.23,3,caught,2,v New Zealand,Ranchi,26-10-2016,ODI # 3799
+177 | 65,152,76,2,1,85.52,3,caught,1,v New Zealand,Visakhapatnam,29-10-2016,ODI # 3800
+178 | 122,147,105,8,5,116.19,3,caught,2,v England,Pune,15-01-2017,ODI # 3819
+179 | 8,6,5,2,0,160,3,caught,1,v England,Cuttack,19-01-2017,ODI # 3821
+180 | 55,81,63,8,0,87.3,3,caught,2,v England,Eden Gardens,22-01-2017,ODI # 3824
+181 | 81*,108,68,6,3,119.11,3,not out,1,v Pakistan,Birmingham,04-06-2017,ODI # 3878
+182 | 0,5,5,0,0,0,3,caught,1,v Sri Lanka,The Oval,08-06-2017,ODI # 3882
+183 | 76*,136,101,7,1,75.24,3,not out,2,v South Africa,The Oval,11-06-2017,ODI # 3886
+184 | 96*,96,78,13,0,123.07,3,not out,2,v Bangladesh,Birmingham,15-06-2017,ODI # 3891
+185 | 5,11,9,0,0,55.55,3,caught,2,v Pakistan,The Oval,18-06-2017,ODI # 3894
+186 | 32*,-,47,1,0,68.08,3,not out,1,v West Indies,Port of Spain,23-06-2017,ODI # 3895
+187 | 87,-,66,4,4,131.81,3,caught,1,v West Indies,Port of Spain,25-06-2017,ODI # 3896
+188 | 11,-,22,2,0,50,3,caught,1,v West Indies,North Sound,30-06-2017,ODI # 3898
+189 | 3,-,12,0,0,25,3,caught,2,v West Indies,North Sound,02-07-2017,ODI # 3900
+190 | 111*,-,115,12,2,96.52,3,not out,2,v West Indies,Kingston,06-07-2017,ODI # 3902
+191 | 82*,-,70,10,1,117.14,3,not out,2,v Sri Lanka,Dambulla,20-08-2017,ODI # 3905
+192 | 4,-,2,1,0,200,5,bowled,2,v Sri Lanka,Pallekele,24-08-2017,ODI # 3906
+193 | 3,-,11,0,0,27.27,3,caught,2,v Sri Lanka,Pallekele,27-08-2017,ODI # 3907
+194 | 131,-,96,17,2,136.45,3,caught,1,v Sri Lanka,Colombo (RPS),31-08-2017,ODI # 3908
+195 | 110*,-,116,9,0,94.82,3,not out,2,v Sri Lanka,Colombo (RPS),03-09-2017,ODI # 3909
+196 | 0,7,4,0,0,0,3,caught,1,v Australia,Chennai,17-09-2017,ODI # 3910
+197 | 92,148,107,8,0,85.98,3,bowled,1,v Australia,Eden Gardens,21-09-2017,ODI # 3912
+198 | 28,58,35,2,0,80,3,caught,2,v Australia,Indore,24-09-2017,ODI # 3914
+199 | 21,23,21,3,0,100,3,bowled,2,v Australia,Bengaluru,28-09-2017,ODI # 3917
+200 | 39,73,55,2,0,70.9,3,caught,2,v Australia,Nagpur,01-10-2017,ODI # 3919
+201 | 121,203,125,9,2,96.8,3,caught,1,v New Zealand,Wankhede,22-10-2017,ODI # 3928
+202 | 29,40,29,3,1,100,3,caught,2,v New Zealand,Pune,25-10-2017,ODI # 3931
+203 | 113,166,106,9,1,106.6,3,caught,1,v New Zealand,Kanpur,29-10-2017,ODI # 3932
+204 | 112,164,119,10,0,94.11,3,caught,2,v South Africa,Durban,01-02-2018,ODI # 3969
+205 | 46*,64,50,4,1,92,3,not out,2,v South Africa,Centurion,04-02-2018,ODI # 3970
+206 | 160*,220,159,12,2,100.62,3,not out,1,v South Africa,Cape Town,07-02-2018,ODI # 3971
+207 | 75,119,83,7,1,90.36,3,caught,1,v South Africa,Johannesburg,10-02-2018,ODI # 3973
+208 | 36,76,54,2,0,66.66,3,run out,1,v South Africa,Gqeberha,13-02-2018,ODI # 3976
+209 | 129*,123,96,19,2,134.37,3,not out,2,v South Africa,Centurion,16-02-2018,ODI # 3978
+210 | 75,-,82,7,0,91.46,3,stumped,2,v England,Nottingham,12-07-2018,ODI # 4014
+211 | 45,-,56,2,0,80.35,3,lbw,2,v England,Lord's,14-07-2018,ODI # 4016
+212 | 71,98,72,8,0,98.61,3,bowled,1,v England,Leeds,17-07-2018,ODI # 4018
+213 | 140,-,107,21,2,130.84,3,stumped,2,v West Indies,Guwahati,21-10-2018,ODI # 4056
+214 | 157*,217,129,13,4,121.7,3,not out,1,v West Indies,Visakhapatnam,24-10-2018,ODI # 4059
+215 | 107,-,119,10,1,89.91,3,bowled,2,v West Indies,Pune,27-10-2018,ODI # 4062
+216 | 16,-,17,2,0,94.11,3,caught,1,v West Indies,Brabourne,29-10-2018,ODI # 4063
+217 | 33*,57,29,6,0,113.79,3,not out,2,v West Indies,Thiruvananthapuram,01-11-2018,ODI # 4064
+218 | 3,10,8,0,0,37.5,3,caught,2,v Australia,Sydney,12-01-2019,ODI # 4077
+219 | 104,150,112,5,2,92.85,3,caught,2,v Australia,Adelaide,15-01-2019,ODI # 4078
+220 | 46,-,62,3,0,74.19,3,caught,2,v Australia,Melbourne,18-01-2019,ODI # 4079
+221 | 45,59,59,3,0,76.27,3,caught,2,v New Zealand,Napier,23-01-2019,ODI # 4082
+222 | 43,59,45,5,0,95.55,3,caught,1,v New Zealand,Mount Maunganui,26-01-2019,ODI # 4085
+223 | 60,94,74,6,1,81.08,3,caught,2,v New Zealand,Mount Maunganui,28-01-2019,ODI # 4088
+224 | 44,-,45,6,1,97.77,3,lbw,2,v Australia,Hyderabad (Deccan),02-03-2019,ODI # 4102
+225 | 116,-,120,10,0,96.66,3,caught,1,v Australia,Nagpur,05-03-2019,ODI # 4106
+226 | 123,-,95,16,1,129.47,3,bowled,2,v Australia,Ranchi,08-03-2019,ODI # 4109
+227 | 7,-,6,1,0,116.66,4,caught,1,v Australia,Mohali,10-03-2019,ODI # 4111
+228 | 20,-,22,2,0,90.9,3,caught,2,v Australia,Delhi,13-03-2019,ODI # 4113
+229 | 18,44,34,1,0,52.94,3,caught,2,v South Africa,Southampton,05-06-2019,ODI # 4150
+230 | 82,128,77,4,2,106.49,3,caught,1,v Australia,The Oval,09-06-2019,ODI # 4155
+231 | 77,105,65,7,0,118.46,3,caught,1,v Pakistan,Manchester,16-06-2019,ODI # 4161
+232 | 67,105,63,5,0,106.34,3,caught,1,v Afghanistan,Southampton,22-06-2019,ODI # 4169
+233 | 72,146,82,8,0,87.8,3,caught,1,v West Indies,Manchester,27-06-2019,ODI # 4175
+234 | 66,103,76,7,0,86.84,3,caught,2,v England,Birmingham,30-06-2019,ODI # 4179
+235 | 26,45,27,3,0,96.29,3,caught,1,v Bangladesh,Birmingham,02-07-2019,ODI # 4182
+236 | 34*,61,41,3,0,82.92,3,not out,2,v Sri Lanka,Leeds,06-07-2019,ODI # 4187
+237 | 1,8,6,0,0,16.66,3,lbw,2,v New Zealand,Manchester,09-07-2019,ODI # 4190
+238 | TDNB,-,-,-,-,-,-,-,-,v West Indies,Providence,08-08-2019,ODI # 4196
+239 | 120,179,125,14,1,96,3,caught,1,v West Indies,Port of Spain,11-08-2019,ODI # 4197
+240 | 114*,127,99,14,0,115.15,3,not out,2,v West Indies,Port of Spain,14-08-2019,ODI # 4199
+241 | 4,-,4,1,0,100,3,bowled,1,v West Indies,Chennai,15-12-2019,ODI # 4221
+242 | 0,-,1,0,0,0,3,caught,1,v West Indies,Visakhapatnam,18-12-2019,ODI # 4222
+243 | 85,-,81,9,0,104.93,3,bowled,2,v West Indies,Cuttack,22-12-2019,ODI # 4223
+244 | 16,-,14,0,1,114.28,4,caught,1,v Australia,Wankhede,14-01-2020,ODI # 4231
+245 | 78,-,76,6,0,102.63,3,caught,1,v Australia,Rajkot,17-01-2020,ODI # 4232
+246 | 89,-,91,8,0,97.8,3,bowled,2,v Australia,Bengaluru,19-01-2020,ODI # 4233
+247 | 51,88,63,6,0,80.95,3,bowled,1,v New Zealand,Hamilton,05-02-2020,ODI # 4235
+248 | 15,31,25,1,0,60,3,bowled,2,v New Zealand,Auckland,08-02-2020,ODI # 4239
+249 | 9,20,12,0,1,75,3,caught,1,v New Zealand,Mount Maunganui,11-02-2020,ODI # 4243
+250 | 21,-,21,2,1,100,3,caught,2,v Australia,Sydney,27-11-2020,ODI # 4265
+251 | 89,-,87,7,2,102.29,3,caught,2,v Australia,Sydney,29-11-2020,ODI # 4266
+252 | 63,-,78,5,0,80.76,3,caught,1,v Australia,Canberra,02-12-2020,ODI # 4267
+253 | 56,65,60,6,0,93.33,3,caught,1,v England,Pune,23-03-2021,ODI # 4281
+254 | 66,110,79,3,1,83.54,3,caught,1,v England,Pune,26-03-2021,ODI # 4283
+255 | 7,14,10,1,0,70,3,bowled,1,v England,Pune,28-03-2021,ODI # 4284
+256 | 51,79,63,3,0,80.95,3,caught,2,v South Africa,Paarl,19-01-2022,ODI # 4344
+257 | 0,4,5,0,0,0,3,caught,1,v South Africa,Paarl,21-01-2022,ODI # 4346
+258 | 65,112,84,5,0,77.38,3,caught,2,v South Africa,Cape Town,23-01-2022,ODI # 4349
+259 | 8,6,4,2,0,200,3,caught,2,v West Indies,Ahmedabad,06-02-2022,ODI # 4353
+260 | 18,42,30,3,0,60,3,caught,1,v West Indies,Ahmedabad,09-02-2022,ODI # 4355
+261 | 0,2,2,0,0,0,3,caught,1,v West Indies,Ahmedabad,11-02-2022,ODI # 4356
+262 | 16,39,25,3,0,64,3,caught,2,v England,Lord's,14-07-2022,ODI # 4428
+263 | 17,27,22,3,0,77.27,3,caught,2,v England,Manchester,17-07-2022,ODI # 4433
+264 | 
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/data/virat_kohli_t20i_innings_data.csv:
+--------------------------------------------------------------------------------
+  1 | Runs,Mins,BF,4s,6s,SR,Pos,Dismissal,Inns,Opposition,Ground,Start Date,T20I No
+  2 | 26*,30,21,3,1,123.80,5,not out,2,v Zimbabwe,Harare,12-06-2010,T20I # 182
+  3 | DNB,-,-,-,-,-,-,-,2,v Zimbabwe,Harare,13-06-2010,T20I # 183
+  4 | 28,28,19,5,0,147.36,1,bowled,1,v South Africa,Durban,09-01-2011,T20I # 196
+  5 | 14,15,12,2,0,116.66,3,caught,1,v West Indies,Port of Spain,04-06-2011,T20I # 200
+  6 | 4,5,5,0,0,80.00,4,caught,1,v England,Manchester,31-08-2011,T20I # 204
+  7 | 15,21,16,3,0,93.75,3,caught,1,v England,Eden Gardens,29-10-2011,T20I # 214
+  8 | 22,30,21,0,1,104.76,3,caught,2,v Australia,Sydney,01-02-2012,T20I # 217
+  9 | 31,29,24,3,0,129.16,3,caught,2,v Australia,Melbourne,03-02-2012,T20I # 218
+ 10 | DNB,-,-,-,-,-,-,-,2,v South Africa,Johannesburg,30-03-2012,T20I # 242
+ 11 | 68,65,48,11,1,141.66,3,caught,1,v Sri Lanka,Pallekele,07-08-2012,T20I # 255
+ 12 | 70,67,41,10,1,170.73,2,caught,2,v New Zealand,Chennai,11-09-2012,T20I # 261
+ 13 | 50,60,39,4,2,128.20,3,caught,1,v Afghanistan,Colombo (RPS),19-09-2012,T20I # 265
+ 14 | 40,33,32,6,0,125.00,3,caught,1,v England,Colombo (RPS),23-09-2012,T20I # 272
+ 15 | 15,18,13,2,0,115.38,3,caught,1,v Australia,Colombo (RPS),28-09-2012,T20I # 278
+ 16 | 78*,61,61,8,2,127.86,3,not out,2,v Pakistan,Colombo (RPS),30-09-2012,T20I # 282
+ 17 | 2,5,6,0,0,33.33,3,caught,1,v South Africa,Colombo (RPS),02-10-2012,T20I # 286
+ 18 | 21,35,17,2,0,123.52,3,bowled,2,v England,Pune,20-12-2012,T20I # 292
+ 19 | 38,25,20,7,0,190.00,3,lbw,1,v England,Wankhede,22-12-2012,T20I # 294
+ 20 | 9,15,11,1,0,81.81,3,caught,1,v Pakistan,Bengaluru,25-12-2012,T20I # 296
+ 21 | 27,31,22,3,0,122.72,3,run out,1,v Pakistan,Ahmedabad,28-12-2012,T20I # 298
+ 22 | 29,26,22,2,1,131.81,4,caught,2,v Australia,Rajkot,10-10-2013,T20I # 331
+ 23 | 36*,45,32,4,1,112.50,3,not out,2,v Pakistan,Mirpur,21-03-2014,T20I # 378
+ 24 | 54,51,41,5,1,131.70,3,bowled,2,v West Indies,Mirpur,23-03-2014,T20I # 382
+ 25 | 57*,66,50,3,1,114.00,3,not out,2,v Bangladesh,Mirpur,28-03-2014,T20I # 389
+ 26 | 23,23,22,2,1,104.54,3,caught,1,v Australia,Mirpur,30-03-2014,T20I # 393
+ 27 | 72*,67,44,5,2,163.63,3,not out,2,v South Africa,Mirpur,04-04-2014,T20I # 399
+ 28 | 77,75,58,5,4,132.75,3,run out,1,v Sri Lanka,Mirpur,06-04-2014,T20I # 400
+ 29 | 66,54,41,9,1,160.97,3,caught,2,v England,Birmingham,07-09-2014,T20I # 405
+ 30 | 43,58,27,1,3,159.25,3,caught,1,v South Africa,Dharamsala,02-10-2015,T20I # 456
+ 31 | 1,3,1,0,0,100.00,3,run out,1,v South Africa,Cuttack,05-10-2015,T20I # 457
+ 32 | 90*,71,55,9,2,163.63,3,not out,1,v Australia,Adelaide,26-01-2016,T20I # 485
+ 33 | 59*,44,33,7,1,178.78,3,not out,1,v Australia,Melbourne,29-01-2016,T20I # 486
+ 34 | 50,49,36,2,1,138.88,3,bowled,2,v Australia,Sydney,31-01-2016,T20I # 489
+ 35 | 7,13,12,1,0,58.33,3,caught,1,v Bangladesh,Mirpur,24-02-2016,T20I # 509
+ 36 | 49,71,51,7,0,96.07,3,lbw,2,v Pakistan,Mirpur,27-02-2016,T20I # 512
+ 37 | 56*,85,47,7,0,119.14,3,not out,2,v Sri Lanka,Mirpur,01-03-2016,T20I # 515
+ 38 | DNB,-,-,-,-,-,-,-,2,v U.A.E.,Mirpur,03-03-2016,T20I # 517
+ 39 | 41*,62,28,5,0,146.42,3,not out,2,v Bangladesh,Mirpur,06-03-2016,T20I # 521
+ 40 | 23,-,27,2,0,85.18,3,caught,2,v New Zealand,Nagpur,15-03-2016,T20I # 535
+ 41 | 55*,66,37,7,1,148.64,3,not out,2,v Pakistan,Eden Gardens,19-03-2016,T20I # 541
+ 42 | 24,37,24,0,1,100.00,3,bowled,1,v Bangladesh,Bengaluru,23-03-2016,T20I # 547
+ 43 | 82*,78,51,9,2,160.78,3,not out,2,v Australia,Mohali,27-03-2016,T20I # 553
+ 44 | 89*,63,47,11,1,189.36,3,not out,1,v West Indies,Wankhede,31-03-2016,T20I # 556
+ 45 | 16,8,9,3,0,177.77,3,caught,2,v West Indies,Lauderhill,27-08-2016,T20I # 562
+ 46 | DNB,-,-,-,-,-,-,-,2,v West Indies,Lauderhill,28-08-2016,T20I # 563
+ 47 | 29,34,26,4,0,111.53,1,caught,1,v England,Kanpur,26-01-2017,T20I # 592
+ 48 | 21,17,15,2,1,140.00,1,caught,1,v England,Nagpur,29-01-2017,T20I # 593
+ 49 | 2,6,4,0,0,50.00,1,run out,1,v England,Bengaluru,01-02-2017,T20I # 594
+ 50 | 39,-,22,7,1,177.27,1,caught,1,v West Indies,Kingston,09-07-2017,T20I # 617
+ 51 | 82,-,54,7,1,151.85,3,caught,2,v Sri Lanka,Colombo (RPS),06-09-2017,T20I # 618
+ 52 | 22*,19,14,3,0,157.14,3,not out,2,v Australia,Ranchi,07-10-2017,T20I # 623
+ 53 | 0,2,2,0,0,0.00,3,caught,1,v Australia,Guwahati,10-10-2017,T20I # 624
+ 54 | 26*,19,11,0,3,236.36,4,not out,1,v New Zealand,Delhi,01-11-2017,T20I # 630
+ 55 | 65,59,42,8,1,154.76,4,caught,2,v New Zealand,Rajkot,04-11-2017,T20I # 631
+ 56 | 13,6,6,1,1,216.66,3,caught,1,v New Zealand,Thiruvananthapuram,07-11-2017,T20I # 632
+ 57 | 26,26,20,2,1,130.00,4,lbw,1,v South Africa,Johannesburg,18-02-2018,T20I # 652
+ 58 | 1,6,5,0,0,20.00,4,caught,1,v South Africa,Centurion,21-02-2018,T20I # 654
+ 59 | 0,1,2,0,0,0.00,6,caught,1,v Ireland,Dublin (Malahide),27-06-2018,T20I # 678
+ 60 | 9,-,8,1,0,112.50,2,caught,1,v Ireland,Dublin (Malahide),29-06-2018,T20I # 680
+ 61 | 20*,-,22,0,1,90.90,4,not out,2,v England,Manchester,03-07-2018,T20I # 684
+ 62 | 47,-,38,1,2,123.68,4,caught,1,v England,Cardiff,06-07-2018,T20I # 688
+ 63 | 43,-,29,2,2,148.27,4,caught,2,v England,Bristol,08-07-2018,T20I # 690
+ 64 | 4,-,8,0,0,50.00,4,caught,2,v Australia,Brisbane,21-11-2018,T20I # 712
+ 65 | TDNB,-,-,-,-,-,-,-,-,v Australia,Melbourne,23-11-2018,T20I # 713
+ 66 | 61*,-,41,4,2,148.78,3,not out,2,v Australia,Sydney,25-11-2018,T20I # 714
+ 67 | 24,25,17,3,0,141.17,3,caught,1,v Australia,Visakhapatnam,24-02-2019,T20I # 748
+ 68 | 72*,63,38,2,6,189.47,3,not out,1,v Australia,Bengaluru,27-02-2019,T20I # 749
+ 69 | 19,-,29,1,0,65.51,3,caught,2,v West Indies,Lauderhill,03-08-2019,T20I # 842
+ 70 | 28,-,23,1,1,121.73,3,bowled,1,v West Indies,Lauderhill,04-08-2019,T20I # 843
+ 71 | 59,-,45,6,0,131.11,3,caught,2,v West Indies,Providence,06-08-2019,T20I # 846
+ 72 | 72*,66,52,4,3,138.46,3,not out,2,v South Africa,Mohali,18-09-2019,T20I # 888
+ 73 | 9,28,15,0,0,60.00,3,caught,1,v South Africa,Bengaluru,22-09-2019,T20I # 893
+ 74 | 94*,-,50,6,6,188.00,3,not out,2,v West Indies,Hyderabad (Deccan),06-12-2019,T20I # 1020
+ 75 | 19,-,17,2,0,111.76,4,caught,1,v West Indies,Thiruvananthapuram,08-12-2019,T20I # 1022
+ 76 | 70*,-,29,4,7,241.37,4,not out,1,v West Indies,Wankhede,11-12-2019,T20I # 1024
+ 77 | TDNB,-,-,-,-,-,-,-,-,v Sri Lanka,Guwahati,05-01-2020,T20I # 1025
+ 78 | 30*,-,17,1,2,176.47,4,not out,2,v Sri Lanka,Indore,07-01-2020,T20I # 1026
+ 79 | 26,-,17,2,1,152.94,6,run out,1,v Sri Lanka,Pune,10-01-2020,T20I # 1027
+ 80 | 45,-,32,3,1,140.62,3,caught,2,v New Zealand,Auckland,24-01-2020,T20I # 1031
+ 81 | 11,21,12,1,0,91.66,3,caught,2,v New Zealand,Auckland,26-01-2020,T20I # 1034
+ 82 | 38,31,27,2,1,140.74,4,caught,1,v New Zealand,Hamilton,29-01-2020,T20I # 1035
+ 83 | 11,16,9,2,0,122.22,3,caught,1,v New Zealand,Wellington,31-01-2020,T20I # 1036
+ 84 | 9,-,9,1,0,100.00,3,caught,1,v Australia,Canberra,04-12-2020,T20I # 1114
+ 85 | 40,-,24,2,2,166.66,3,caught,2,v Australia,Sydney,06-12-2020,T20I # 1115
+ 86 | 85,-,61,4,3,139.34,3,caught,2,v Australia,Sydney,08-12-2020,T20I # 1116
+ 87 | 0,6,5,0,0,0.00,3,caught,1,v England,Ahmedabad,12-03-2021,T20I # 1131
+ 88 | 73*,85,49,5,3,148.97,3,not out,2,v England,Ahmedabad,14-03-2021,T20I # 1132
+ 89 | 77*,80,46,8,4,167.39,4,not out,1,v England,Ahmedabad,16-03-2021,T20I # 1133
+ 90 | 1,3,5,0,0,20.00,4,stumped,1,v England,Ahmedabad,18-03-2021,T20I # 1135
+ 91 | 80*,103,52,7,2,153.84,2,not out,1,v England,Ahmedabad,20-03-2021,T20I # 1138
+ 92 | 57,94,49,5,1,116.32,3,caught,1,v Pakistan,Dubai (DSC),24-10-2021,T20I # 1361
+ 93 | 9,20,17,0,0,52.94,4,caught,1,v New Zealand,Dubai (DSC),31-10-2021,T20I # 1381
+ 94 | DNB,-,-,-,-,-,-,-,1,v Afghanistan,Abu Dhabi,03-11-2021,T20I # 1390
+ 95 | 2*,7,2,0,0,100.00,3,not out,2,v Scotland,Dubai (DSC),05-11-2021,T20I # 1396
+ 96 | DNB,-,-,-,-,-,-,-,2,v Namibia,Dubai (DSC),08-11-2021,T20I # 1410
+ 97 | 17,25,13,1,0,130.76,3,caught,2,v West Indies,Eden Gardens,16-02-2022,T20I # 1467
+ 98 | 52,57,41,7,1,126.82,3,bowled,1,v West Indies,Eden Gardens,18-02-2022,T20I # 1473
+ 99 | 1,8,3,0,0,33.33,3,caught,1,v England,Birmingham,09-07-2022,T20I # 1628
+100 | 11,8,6,1,1,183.33,3,caught,2,v England,Nottingham,10-07-2022,T20I # 1631
+101 | 35,47,34,3,1,102.94,3,caught,2,v Pakistan,Dubai (DSC),28-08-2022,T20I # 1750
+102 | 59*,74,44,1,3,134.09,3,not out,1,v Hong Kong,Dubai (DSC),31-08-2022,T20I # 1754
+103 | 60,77,44,4,1,136.36,3,run out,1,v Pakistan,Dubai (DSC),04-09-2022,T20I # 1758
+104 | 0,6,4,0,0,0.00,3,bowled,1,v Sri Lanka,Dubai (DSC),06-09-2022,T20I # 1759
+105 | 122*,90,61,12,6,200.00,2,not out,1,v Afghanistan,Dubai (DSC),08-09-2022,T20I # 1761
+106 | 2,12,7,0,0,28.57,3,caught,1,v Australia,Mohali,20-09-2022,T20I # 1788
+107 | 11,-,6,2,0,183.33,3,bowled,2,v Australia,Nagpur,23-09-2022,T20I # 1794
+108 | 63,89,48,3,4,131.25,3,caught,2,v Australia,Hyderabad (Deccan),25-09-2022,T20I # 1796
+109 | 3,19,9,0,0,33.33,3,caught,2,v South Africa,Thiruvananthapuram,28-09-2022,T20I # 1800
+110 | 49*,56,28,7,1,175.00,3,not out,1,v South Africa,Guwahati,02-10-2022,T20I # 1803
+111 | 82*,98,53,6,4,154.71,3,not out,2,v Pakistan,Melbourne,23-10-2022,T20I # 1842
+112 | 62*,79,44,3,2,140.90,3,not out,1,v Netherlands,Sydney,27-10-2022,T20I # 1848
+113 | 12,13,11,2,0,109.09,3,caught,1,v South Africa,Perth,30-10-2022,T20I # 1853
+114 | 64*,84,44,8,1,145.45,3,not out,1,v Bangladesh,Adelaide,02-11-2022,T20I # 1860
+115 | 26,36,25,2,0,104.00,3,caught,1,v Zimbabwe,Melbourne,06-11-2022,T20I # 1873
+116 | 
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/data/virat_kohli_test_innings_data.csv:
+--------------------------------------------------------------------------------
+  1 | Runs,Mins,BF,4s,6s,SR,Pos,Dismissal,Inns,Opposition,Ground,Start Date,Test No
+  2 | 4,13,10,1,0,40.00,5,caught,1,v West Indies,Kingston,20-06-2011,Test # 1997
+  3 | 15,72,54,2,0,27.77,5,caught,3,v West Indies,Kingston,20-06-2011,Test # 1997
+  4 | 0,1,2,0,0,0.00,5,caught,1,v West Indies,Bridgetown,28-06-2011,Test # 1998
+  5 | 27,118,107,1,1,25.23,5,caught,3,v West Indies,Bridgetown,28-06-2011,Test # 1998
+  6 | 30,62,53,2,0,56.60,5,caught,2,v West Indies,Roseau,06-07-2011,Test # 1999
+  7 | DNB,-,-,-,-,-,-,-,4,v West Indies,Roseau,06-07-2011,Test # 1999
+  8 | 52,154,111,5,0,46.84,6,caught,2,v West Indies,Wankhede,22-11-2011,Test # 2019
+  9 | 63,136,114,3,1,55.26,6,caught,4,v West Indies,Wankhede,22-11-2011,Test # 2019
+ 10 | 11,28,21,1,0,52.38,7,caught,2,v Australia,Melbourne,26-12-2011,Test # 2025
+ 11 | 0,3,1,0,0,0.00,6,lbw,4,v Australia,Melbourne,26-12-2011,Test # 2025
+ 12 | 23,50,41,3,0,56.09,6,caught,1,v Australia,Sydney,03-01-2012,Test # 2027
+ 13 | 9,35,24,2,0,37.50,6,lbw,3,v Australia,Sydney,03-01-2012,Test # 2027
+ 14 | 44,107,81,6,0,54.32,6,caught,1,v Australia,Perth,13-01-2012,Test # 2029
+ 15 | 75,191,136,9,0,55.14,6,caught,3,v Australia,Perth,13-01-2012,Test # 2029
+ 16 | 116,237,213,11,1,54.46,6,lbw,2,v Australia,Adelaide,24-01-2012,Test # 2031
+ 17 | 22,96,62,2,0,35.48,6,run out,4,v Australia,Adelaide,24-01-2012,Test # 2031
+ 18 | 58,143,107,8,0,54.20,5,caught,1,v New Zealand,Hyderabad (Deccan),23-08-2012,Test # 2054
+ 19 | 103,284,193,14,1,53.36,5,lbw,2,v New Zealand,Bengaluru,31-08-2012,Test # 2055
+ 20 | 51*,130,82,9,0,62.19,5,not out,4,v New Zealand,Bengaluru,31-08-2012,Test # 2055
+ 21 | 19,70,67,3,0,28.35,5,bowled,1,v England,Ahmedabad,15-11-2012,Test # 2058
+ 22 | 14*,17,21,3,0,66.66,3,not out,4,v England,Ahmedabad,15-11-2012,Test # 2058
+ 23 | 19,65,55,3,0,34.54,5,caught,1,v England,Wankhede,23-11-2012,Test # 2062
+ 24 | 7,16,13,1,0,53.84,5,caught,3,v England,Wankhede,23-11-2012,Test # 2062
+ 25 | 6,31,24,1,0,25.00,5,caught,1,v England,Eden Gardens,05-12-2012,Test # 2065
+ 26 | 20,86,60,3,0,33.33,5,caught,3,v England,Eden Gardens,05-12-2012,Test # 2065
+ 27 | 103,356,295,11,0,34.91,5,lbw,2,v England,Nagpur,13-12-2012,Test # 2066
+ 28 | 107,266,206,15,1,51.94,5,caught,2,v Australia,Chennai,22-02-2013,Test # 2074
+ 29 | DNB,-,-,-,-,-,-,-,4,v Australia,Chennai,22-02-2013,Test # 2074
+ 30 | 34,119,92,3,0,36.95,5,caught,2,v Australia,Hyderabad (Deccan),02-03-2013,Test # 2076
+ 31 | 67*,157,129,7,1,51.93,5,not out,2,v Australia,Mohali,14-03-2013,Test # 2081
+ 32 | 34,80,61,6,0,55.73,3,caught,4,v Australia,Mohali,14-03-2013,Test # 2081
+ 33 | 1,11,8,0,0,12.50,3,lbw,2,v Australia,Delhi,22-03-2013,Test # 2085
+ 34 | 41,76,60,4,0,68.33,3,lbw,4,v Australia,Delhi,22-03-2013,Test # 2085
+ 35 | 3,13,5,0,0,60.00,5,caught,2,v West Indies,Eden Gardens,06-11-2013,Test # 2101
+ 36 | 57,80,78,5,0,73.07,5,caught,2,v West Indies,Wankhede,14-11-2013,Test # 2102
+ 37 | 119,257,181,18,0,65.74,4,caught,1,v South Africa,Johannesburg,18-12-2013,Test # 2108
+ 38 | 96,254,193,9,0,49.74,4,caught,3,v South Africa,Johannesburg,18-12-2013,Test # 2108
+ 39 | 46,114,87,5,0,52.87,4,caught,1,v South Africa,Durban,26-12-2013,Test # 2111
+ 40 | 11,26,27,1,0,40.74,4,caught,3,v South Africa,Durban,26-12-2013,Test # 2111
+ 41 | 4,17,13,1,0,30.76,4,caught,2,v New Zealand,Auckland,06-02-2014,Test # 2118
+ 42 | 67,131,102,12,0,65.68,4,caught,4,v New Zealand,Auckland,06-02-2014,Test # 2118
+ 43 | 38,131,93,4,0,40.86,5,caught,2,v New Zealand,Wellington,14-02-2014,Test # 2120
+ 44 | 105*,195,135,15,1,77.77,4,not out,4,v New Zealand,Wellington,14-02-2014,Test # 2120
+ 45 | 1,6,8,0,0,12.50,4,caught,1,v England,Nottingham,09-07-2014,Test # 2128
+ 46 | 8,39,29,1,0,27.58,4,lbw,3,v England,Nottingham,09-07-2014,Test # 2128
+ 47 | 25,39,34,4,0,73.52,4,caught,1,v England,Lord's,17-07-2014,Test # 2130
+ 48 | 0,1,1,0,0,0.00,4,bowled,3,v England,Lord's,17-07-2014,Test # 2130
+ 49 | 39,119,75,3,0,52.00,4,caught,2,v England,Southampton,27-07-2014,Test # 2132
+ 50 | 28,77,56,3,0,50.00,4,caught,4,v England,Southampton,27-07-2014,Test # 2132
+ 51 | 0,3,2,0,0,0.00,4,caught,1,v England,Manchester,07-08-2014,Test # 2134
+ 52 | 7,15,11,1,0,63.63,4,caught,3,v England,Manchester,07-08-2014,Test # 2134
+ 53 | 6,34,18,1,0,33.33,4,lbw,1,v England,The Oval,15-08-2014,Test # 2137
+ 54 | 20,80,54,2,0,37.03,4,caught,3,v England,The Oval,15-08-2014,Test # 2137
+ 55 | 115,267,184,12,0,62.50,4,caught,2,v Australia,Adelaide,09-12-2014,Test # 2148
+ 56 | 141,279,175,16,1,80.57,4,caught,4,v Australia,Adelaide,09-12-2014,Test # 2148
+ 57 | 19,50,27,1,0,70.37,4,caught,1,v Australia,Brisbane,17-12-2014,Test # 2149
+ 58 | 1,14,11,0,0,9.09,4,bowled,3,v Australia,Brisbane,17-12-2014,Test # 2149
+ 59 | 169,380,272,18,0,62.13,4,caught,2,v Australia,Melbourne,26-12-2014,Test # 2152
+ 60 | 54,134,99,7,0,54.54,4,caught,4,v Australia,Melbourne,26-12-2014,Test # 2152
+ 61 | 147,315,230,20,0,63.91,4,caught,2,v Australia,Sydney,06-01-2015,Test # 2156
+ 62 | 46,123,95,3,0,48.42,4,caught,4,v Australia,Sydney,06-01-2015,Test # 2156
+ 63 | 14,17,22,2,0,63.63,4,bowled,1,v Bangladesh,Fatullah,10-06-2015,Test # 2165
+ 64 | 103,266,191,11,0,53.92,4,lbw,2,v Sri Lanka,Galle,12-08-2015,Test # 2176
+ 65 | 3,14,10,0,0,30.00,5,caught,4,v Sri Lanka,Galle,12-08-2015,Test # 2176
+ 66 | 78,178,107,8,1,72.89,4,caught,1,v Sri Lanka,Colombo (PSS),20-08-2015,Test # 2177
+ 67 | 10,33,19,0,0,52.63,4,lbw,3,v Sri Lanka,Colombo (PSS),20-08-2015,Test # 2177
+ 68 | 18,96,60,3,0,30.00,4,caught,1,v Sri Lanka,Colombo (SSC),28-08-2015,Test # 2179
+ 69 | 21,87,63,2,0,33.33,4,caught,3,v Sri Lanka,Colombo (SSC),28-08-2015,Test # 2179
+ 70 | 1,5,4,0,0,25.00,4,caught,1,v South Africa,Mohali,05-11-2015,Test # 2186
+ 71 | 29,92,71,4,0,40.84,4,caught,3,v South Africa,Mohali,05-11-2015,Test # 2186
+ 72 | DNB,-,-,-,-,-,-,-,2,v South Africa,Bengaluru,14-11-2015,Test # 2188
+ 73 | 22,73,55,2,0,40.00,4,caught,1,v South Africa,Nagpur,25-11-2015,Test # 2189
+ 74 | 16,49,30,2,0,53.33,4,caught,3,v South Africa,Nagpur,25-11-2015,Test # 2189
+ 75 | 44,74,62,7,0,70.96,4,caught,1,v South Africa,Delhi,03-12-2015,Test # 2191
+ 76 | 88,259,165,10,0,53.33,5,lbw,3,v South Africa,Delhi,03-12-2015,Test # 2191
+ 77 | 200,375,283,24,0,70.67,4,bowled,1,v West Indies,North Sound,21-07-2016,Test # 2207
+ 78 | 44,144,90,4,1,48.88,4,caught,2,v West Indies,Kingston,30-07-2016,Test # 2211
+ 79 | 3,17,8,0,0,37.50,3,caught,1,v West Indies,Gros Islet,09-08-2016,Test # 2215
+ 80 | 4,21,17,0,0,23.52,3,lbw,3,v West Indies,Gros Islet,09-08-2016,Test # 2215
+ 81 | TDNB,-,-,-,-,-,-,-,-,v West Indies,Port of Spain,18-08-2016,Test # 2218
+ 82 | 9,12,10,2,0,90.00,4,caught,1,v New Zealand,Kanpur,22-09-2016,Test # 2221
+ 83 | 18,45,40,3,0,45.00,4,caught,3,v New Zealand,Kanpur,22-09-2016,Test # 2221
+ 84 | 9,42,28,1,0,32.14,4,caught,1,v New Zealand,Eden Gardens,30-09-2016,Test # 2222
+ 85 | 45,82,65,7,0,69.23,4,lbw,3,v New Zealand,Eden Gardens,30-09-2016,Test # 2222
+ 86 | 211,536,366,20,0,57.65,4,lbw,1,v New Zealand,Indore,08-10-2016,Test # 2223
+ 87 | 17,36,28,1,0,60.71,4,lbw,3,v New Zealand,Indore,08-10-2016,Test # 2223
+ 88 | 40,135,95,5,0,42.10,4,hit wicket,2,v England,Rajkot,09-11-2016,Test # 2232
+ 89 | 49*,129,98,6,0,50.00,4,not out,4,v England,Rajkot,09-11-2016,Test # 2232
+ 90 | 167,401,267,18,0,62.54,4,caught,1,v England,Visakhapatnam,17-11-2016,Test # 2235
+ 91 | 81,172,109,8,0,74.31,4,caught,3,v England,Visakhapatnam,17-11-2016,Test # 2235
+ 92 | 62,161,127,9,0,48.81,4,caught,2,v England,Mohali,26-11-2016,Test # 2238
+ 93 | 6*,11,11,0,0,54.54,4,not out,4,v England,Mohali,26-11-2016,Test # 2238
+ 94 | 235,515,340,25,1,69.11,4,caught,2,v England,Wankhede,08-12-2016,Test # 2239
+ 95 | 15,44,29,1,0,51.72,4,caught,2,v England,Chennai,16-12-2016,Test # 2241
+ 96 | 204,295,246,24,0,82.92,4,lbw,1,v Bangladesh,Hyderabad (Deccan),09-02-2017,Test # 2249
+ 97 | 38,51,40,2,1,95.00,4,caught,3,v Bangladesh,Hyderabad (Deccan),09-02-2017,Test # 2249
+ 98 | 0,2,2,0,0,0.00,4,caught,2,v Australia,Pune,23-02-2017,Test # 2250
+ 99 | 13,33,37,1,0,35.13,4,bowled,4,v Australia,Pune,23-02-2017,Test # 2250
+100 | 12,25,17,2,0,70.58,4,lbw,1,v Australia,Bengaluru,04-03-2017,Test # 2251
+101 | 15,34,25,1,0,60.00,4,lbw,3,v Australia,Bengaluru,04-03-2017,Test # 2251
+102 | 6,38,23,0,0,26.08,4,caught,2,v Australia,Ranchi,16-03-2017,Test # 2256
+103 | 3,15,8,0,0,37.50,4,caught,1,v Sri Lanka,Galle,26-07-2017,Test # 2265
+104 | 103*,158,136,5,1,75.73,4,not out,3,v Sri Lanka,Galle,26-07-2017,Test # 2265
+105 | 13,31,29,2,0,44.82,4,caught,1,v Sri Lanka,Colombo (SSC),03-08-2017,Test # 2267
+106 | 42,119,84,3,0,50.00,4,caught,1,v Sri Lanka,Pallekele,12-08-2017,Test # 2269
+107 | 0,18,11,0,0,0.00,4,lbw,1,v Sri Lanka,Eden Gardens,16-11-2017,Test # 2281
+108 | 104*,208,119,12,2,87.39,4,not out,3,v Sri Lanka,Eden Gardens,16-11-2017,Test # 2281
+109 | 213,386,267,17,2,79.77,4,caught,2,v Sri Lanka,Nagpur,24-11-2017,Test # 2283
+110 | 243,447,287,25,0,84.66,4,lbw,1,v Sri Lanka,Delhi,02-12-2017,Test # 2286
+111 | 50,89,58,3,0,86.20,5,caught,3,v Sri Lanka,Delhi,02-12-2017,Test # 2286
+112 | 5,14,13,0,0,38.46,4,caught,2,v South Africa,Cape Town,05-01-2018,Test # 2292
+113 | 28,62,40,4,0,70.00,4,lbw,4,v South Africa,Cape Town,05-01-2018,Test # 2292
+114 | 153,379,217,15,0,70.50,4,caught,2,v South Africa,Centurion,13-01-2018,Test # 2293
+115 | 5,22,20,1,0,25.00,4,lbw,4,v South Africa,Centurion,13-01-2018,Test # 2293
+116 | 54,146,106,9,0,50.94,4,caught,1,v South Africa,Johannesburg,24-01-2018,Test # 2294
+117 | 41,131,79,6,0,51.89,5,bowled,3,v South Africa,Johannesburg,24-01-2018,Test # 2294
+118 | 149,277,225,22,1,66.22,4,caught,2,v England,Birmingham,01-08-2018,Test # 2314
+119 | 51,185,93,4,0,54.83,4,lbw,4,v England,Birmingham,01-08-2018,Test # 2314
+120 | 23,73,57,2,0,40.35,4,caught,1,v England,Lord's,09-08-2018,Test # 2315
+121 | 17,57,29,2,0,58.62,5,caught,3,v England,Lord's,09-08-2018,Test # 2315
+122 | 97,243,152,11,0,63.81,4,caught,1,v England,Nottingham,18-08-2018,Test # 2316
+123 | 103,292,197,10,0,52.28,4,lbw,3,v England,Nottingham,18-08-2018,Test # 2316
+124 | 46,100,71,6,0,64.78,4,caught,2,v England,Southampton,30-08-2018,Test # 2317
+125 | 58,170,130,4,0,44.61,4,caught,4,v England,Southampton,30-08-2018,Test # 2317
+126 | 49,112,70,6,0,70.00,4,caught,2,v England,The Oval,07-09-2018,Test # 2318
+127 | 0,3,1,0,0,0.00,4,caught,4,v England,The Oval,07-09-2018,Test # 2318
+128 | 139,341,230,10,0,60.43,4,caught,1,v West Indies,Rajkot,04-10-2018,Test # 2319
+129 | 45,86,78,5,0,57.69,4,lbw,2,v West Indies,Hyderabad (Deccan),12-10-2018,Test # 2321
+130 | DNB,-,-,-,-,-,-,-,4,v West Indies,Hyderabad (Deccan),12-10-2018,Test # 2321
+131 | 3,17,16,0,0,18.75,4,caught,1,v Australia,Adelaide,06-12-2018,Test # 2333
+132 | 34,132,104,3,0,32.69,4,caught,3,v Australia,Adelaide,06-12-2018,Test # 2333
+133 | 123,373,257,13,1,47.85,4,caught,2,v Australia,Perth,14-12-2018,Test # 2334
+134 | 17,64,40,2,0,42.50,4,caught,4,v Australia,Perth,14-12-2018,Test # 2334
+135 | 82,305,204,9,0,40.19,4,caught,1,v Australia,Melbourne,26-12-2018,Test # 2337
+136 | 0,6,4,0,0,0.00,4,caught,3,v Australia,Melbourne,26-12-2018,Test # 2337
+137 | 23,-,59,4,0,38.98,4,caught,1,v Australia,Sydney,03-01-2019,Test # 2339
+138 | 9,-,12,2,0,75.00,4,caught,1,v West Indies,North Sound,22-08-2019,Test # 2358
+139 | 51,-,113,2,0,45.13,4,caught,3,v West Indies,North Sound,22-08-2019,Test # 2358
+140 | 76,211,163,10,0,46.62,4,caught,1,v West Indies,Kingston,30-08-2019,Test # 2359
+141 | 0,3,1,0,0,0.00,4,caught,3,v West Indies,Kingston,30-08-2019,Test # 2359
+142 | 20,-,40,4,0,50.00,4,caught,1,v South Africa,Visakhapatnam,02-10-2019,Test # 2363
+143 | 31*,-,25,3,1,124.00,5,not out,3,v South Africa,Visakhapatnam,02-10-2019,Test # 2363
+144 | 254*,-,336,33,2,75.59,4,not out,1,v South Africa,Pune,10-10-2019,Test # 2364
+145 | 12,-,22,2,0,54.54,4,lbw,1,v South Africa,Ranchi,19-10-2019,Test # 2365
+146 | 0,-,2,0,0,0.00,4,lbw,2,v Bangladesh,Indore,14-11-2019,Test # 2366
+147 | 136,-,194,18,0,70.10,4,caught,2,v Bangladesh,Eden Gardens,22-11-2019,Test # 2369
+148 | 2,9,7,0,0,28.57,4,caught,1,v New Zealand,Wellington,21-02-2020,Test # 2385
+149 | 19,61,43,3,0,44.18,4,caught,3,v New Zealand,Wellington,21-02-2020,Test # 2385
+150 | 3,23,15,0,0,20.00,4,lbw,1,v New Zealand,Christchurch,29-02-2020,Test # 2387
+151 | 14,40,30,3,0,46.66,4,lbw,3,v New Zealand,Christchurch,29-02-2020,Test # 2387
+152 | 74,244,180,8,0,41.11,4,run out,1,v Australia,Adelaide,17-12-2020,Test # 2396
+153 | 4,13,8,1,0,50.00,5,caught,3,v Australia,Adelaide,17-12-2020,Test # 2396
+154 | 11,69,48,0,0,22.91,4,caught,2,v England,Chennai,05-02-2021,Test # 2409
+155 | 72,153,104,9,0,69.23,4,bowled,4,v England,Chennai,05-02-2021,Test # 2409
+156 | 0,6,5,0,0,0.00,4,bowled,1,v England,Chennai,13-02-2021,Test # 2411
+157 | 62,200,149,7,0,41.61,4,lbw,3,v England,Chennai,13-02-2021,Test # 2411
+158 | 27,85,58,3,0,46.55,4,bowled,2,v England,Ahmedabad,24-02-2021,Test # 2412
+159 | DNB,-,-,-,-,-,-,-,4,v England,Ahmedabad,24-02-2021,Test # 2412
+160 | 0,13,8,0,0,0.00,4,caught,2,v England,Ahmedabad,04-03-2021,Test # 2414
+161 | 44,196,132,1,0,33.33,4,lbw,1,v New Zealand,Southampton,18-06-2021,Test # 2425
+162 | 13,43,29,0,0,44.82,4,caught,3,v New Zealand,Southampton,18-06-2021,Test # 2425
+163 | 0,2,1,0,0,0.00,4,caught,2,v England,Nottingham,04-08-2021,Test # 2428
+164 | DNB,-,-,-,-,-,-,-,4,v England,Nottingham,04-08-2021,Test # 2428
+165 | 42,152,103,3,0,40.77,4,caught,1,v England,Lord's,12-08-2021,Test # 2429
+166 | 20,54,31,4,0,64.51,4,caught,3,v England,Lord's,12-08-2021,Test # 2429
+167 | 7,31,17,1,0,41.17,4,caught,1,v England,Leeds,25-08-2021,Test # 2432
+168 | 55,173,125,8,0,44.00,4,caught,3,v England,Leeds,25-08-2021,Test # 2432
+169 | 50,133,96,8,0,52.08,4,caught,1,v England,The Oval,02-09-2021,Test # 2433
+170 | 44,151,96,7,0,45.83,4,caught,3,v England,The Oval,02-09-2021,Test # 2433
+171 | 0,8,4,0,0,0.00,4,lbw,1,v New Zealand,Wankhede,03-12-2021,Test # 2438
+172 | 36,111,84,1,1,42.85,4,bowled,3,v New Zealand,Wankhede,03-12-2021,Test # 2438
+173 | 35,108,94,4,0,37.23,4,caught,1,v South Africa,Centurion,26-12-2021,Test # 2443
+174 | 18,41,32,4,0,56.25,5,caught,3,v South Africa,Centurion,26-12-2021,Test # 2443
+175 | 79,273,201,12,1,39.30,4,caught,1,v South Africa,Cape Town,11-01-2022,Test # 2448
+176 | 29,193,143,4,0,20.27,4,caught,3,v South Africa,Cape Town,11-01-2022,Test # 2448
+177 | 45,106,76,5,0,59.21,4,bowled,1,v Sri Lanka,Mohali,04-03-2022,Test # 2452
+178 | 23,63,48,2,0,47.91,4,lbw,1,v Sri Lanka,Bengaluru,12-03-2022,Test # 2456
+179 | 13,27,16,1,0,81.25,4,lbw,3,v Sri Lanka,Bengaluru,12-03-2022,Test # 2456
+180 | 11,33,19,2,0,57.89,4,bowled,1,v England,Birmingham,01-07-2022,Test # 2470
+181 | 20,64,40,4,0,50.00,4,caught,3,v England,Birmingham,01-07-2022,Test # 2470
+182 | 
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/main.py:
+--------------------------------------------------------------------------------
+ 1 | import os
+ 2 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 3 | from langchain_experimental.agents.agent_toolkits import create_csv_agent
+ 4 | from langchain_core.rate_limiters import InMemoryRateLimiter
+ 5 | from dotenv import load_dotenv
+ 6 | 
+ 7 | load_dotenv()
+ 8 | model = os.getenv("MODEL")
+ 9 | google_api_key = os.getenv("GEMINI_API_KEY")
+10 | 
+11 | 
+12 | def run_csv_sports_agent(csv_paths: list[str]):
+13 |     # Set up rate limiter: 1 request per 10 seconds
+14 |     rate_limiter = InMemoryRateLimiter(
+15 |         requests_per_second=0.1,
+16 |         check_every_n_seconds=0.1,
+17 |         max_bucket_size=1,
+18 |     )
+19 | 
+20 |     # Initialize LLM with rate limiter
+21 |     llm = ChatGoogleGenerativeAI(
+22 |         model=model,
+23 |         google_api_key=google_api_key,
+24 |         rate_limiter=rate_limiter
+25 |     ).with_retry()
+26 | 
+27 |     # Build CSV agent supporting multiple files
+28 |     agent = create_csv_agent(
+29 |         llm=llm,
+30 |         path=csv_paths,
+31 |         verbose=True,
+32 |         allow_dangerous_code=True # Opt into Python REPL execution
+33 |     )
+34 | 
+35 |     # Sample queries for exploratory analysis
+36 |     questions = [
+37 |         "Across all formats, how many innings has Virat Kohli played?",
+38 |         "What is his overall batting average and strike rate in T20Is?",
+39 |         "Which opposition team has he scored the most total runs against in Tests?",
+40 |         "Show the top 3 highest scores in ODIs."
+41 |     ]
+42 |     for q in questions:
+43 |         resp = agent.invoke({"input": q})
+44 |         print(f"\n> Q: {q}\nA: {resp['output']}")
+45 | 
+46 | if __name__ == "__main__":
+47 |     BASE = os.path.dirname(os.path.abspath(__file__))
+48 |     csvs = [
+49 |         os.path.join(BASE, "data", "virat_kohli_odi_innings_data.csv"),
+50 |         os.path.join(BASE, "data", "virat_kohli_t20i_innings_data.csv"),
+51 |         os.path.join(BASE, "data", "virat_kohli_test_innings_data.csv"),
+52 |     ]
+53 |     run_csv_sports_agent(csvs)
+
+
+--------------------------------------------------------------------------------
+/project_12_csv_analysis_agent/requirements.txt:
+--------------------------------------------------------------------------------
+ 1 | # LangChain core and Google Gemini support
+ 2 | langchain
+ 3 | langchain-google-genai
+ 4 | 
+ 5 | # Experimental agent toolkits (CSV support)
+ 6 | langchain-experimental
+ 7 | 
+ 8 | # Rate limiter support
+ 9 | langchain-core
+10 | 
+11 | # CLI & environment variable loading
+12 | python-dotenv
+13 | 
+14 | # Data manipulation
+15 | pandas
+16 | 
+17 | # Optional for DataFrame markdown preview
+18 | tabulate
+
+
+--------------------------------------------------------------------------------
+/project_13_web_scraping_agent/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 13: Web Scraping Agent
+ 2 | 
+ 3 | ## Objective
+ 4 | Create an agent that can scrape content from a given URL and answer questions based on it.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_13_web_scraping_agent` directory:
+ 8 |     ```bash
+ 9 |     cd project_13_web_scraping_agent
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The agent will scrape a sample URL and answer a question about its content.
+20 | 
+21 | ## Real-World Value
+22 | Web scraping is a powerful technique for gathering information from the internet. This project demonstrates how LangChain agents can be equipped with web scraping capabilities, allowing them to extract data from websites and use it to answer questions or perform analysis. This is invaluable for competitive analysis, market research, content aggregation, news monitoring, and building custom datasets from publicly available web pages.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_13_web_scraping_agent/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: An agent that can scrape content from a given URL.
+ 3 | 
+ 4 | from langchain_community.document_loaders import WebBaseLoader
+ 5 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 6 | from langchain.chains.question_answering import load_qa_chain
+ 7 | from bs4 import BeautifulSoup
+ 8 | 
+ 9 | def run_web_scraping_agent():
+10 |     """
+11 |     Loads content from a URL, creates a Q&A chain, and answers a question based on its content.
+12 |     """
+13 |     # Load the document from a sample URL
+14 |     # Note: Replace with a real URL if you want to test live scraping.
+15 |     # For demonstration, we'll use a simple local HTML content if no internet access.
+16 |     # In a real scenario, you'd pass a URL like "https://www.example.com"
+17 |     loader = WebBaseLoader("https://www.example.com")
+18 |     documents = loader.load()
+19 | 
+20 |     # Instantiate the LLM
+21 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+22 | 
+23 |     # Load the Q&A chain
+24 |     chain = load_qa_chain(llm, chain_type="stuff")
+25 | 
+26 |     # Ask a question and get the response
+27 |     question = "What is the main heading on this page?"
+28 |     response = chain.invoke({"input_documents": documents, "question": question})
+29 | 
+30 |     print(f"Question: {question}")
+31 |     print(f"Answer: {response["output_text"]}")
+32 | 
+33 | if __name__ == "__main__":
+34 |     run_web_scraping_agent()
+35 | 
+
+
+--------------------------------------------------------------------------------
+/project_13_web_scraping_agent/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | langchain-community
+4 | beautifulsoup4
+5 | lxml
+6 | python-dotenv
+7 | uv
+8 | 
+
+
+--------------------------------------------------------------------------------
+/project_14_finance_agent_company_info/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 14: Finance Agent - Company Info
+ 2 | 
+ 3 | ## Objective
+ 4 | Create a finance agent that can retrieve basic company information using a simulated tool.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_14_finance_agent_company_info` directory:
+ 8 |     ```bash
+ 9 |     cd project_14_finance_agent_company_info
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The agent will use its tool to provide information about a company.
+20 | 
+21 | ## Real-World Value
+22 | Building on the agent concept, this project demonstrates how an LLM can act as a specialized finance agent capable of fetching company-specific data. While this example uses a simulated tool, in a real application, it would connect to financial databases or APIs (e.g., Bloomberg, Refinitiv, or public company filings). This enables automated research, due diligence, and quick access to critical business information, which is invaluable for investors, financial analysts, and business development professionals.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_14_finance_agent_company_info/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: A finance agent that can retrieve basic company information.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from langchain.agents import AgentExecutor, create_react_agent
+ 6 | from langchain import hub
+ 7 | from langchain.tools import tool
+ 8 | 
+ 9 | # Define a simulated tool for company information
+10 | @tool
+11 | def get_company_info(company_name: str) -> str:
+12 |     """Retrieves basic information about a given company."""
+13 |     if company_name.lower() == "google":
+14 |         return "Google LLC is an American multinational technology company focusing on online advertising, search engine technology, cloud computing, computer software, quantum computing, e-commerce, artificial intelligence, and consumer electronics."
+15 |     elif company_name.lower() == "apple":
+16 |         return "Apple Inc. is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services."
+17 |     return "Company information not found."
+18 | 
+19 | def run_finance_agent_company_info():
+20 |     """
+21 |     Creates an agent that can use the get_company_info tool.
+22 |     """
+23 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+24 |     tools = [get_company_info]
+25 | 
+26 |     prompt = hub.pull("hwchase17/react")
+27 | 
+28 |     agent = create_react_agent(llm, tools, prompt)
+29 |     agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+30 | 
+31 |     agent_executor.invoke({"input": "Tell me about Google."})
+32 |     agent_executor.invoke({"input": "What is Apple Inc.?"})
+33 |     agent_executor.invoke({"input": "Can you tell me about Tesla?"})
+34 | 
+35 | if __name__ == "__main__":
+36 |     run_finance_agent_company_info()
+37 | 
+
+
+--------------------------------------------------------------------------------
+/project_14_finance_agent_company_info/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_15_marketing_agent_social_media_post/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 15: Marketing Agent - Social Media Post
+ 2 | 
+ 3 | ## Objective
+ 4 | Generate a social media post for a product or event.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_15_marketing_agent_social_media_post` directory:
+ 8 |     ```bash
+ 9 |     cd project_15_marketing_agent_social_media_post
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will print a social media post with relevant hashtags.
+20 | 
+21 | ## Real-World Value
+22 | This project demonstrates how LLMs can be used to automate and streamline content creation for social media. By providing key details about a product or event, the agent can generate engaging and concise posts tailored for different platforms, complete with relevant hashtags. This is incredibly valuable for marketing teams, social media managers, and businesses looking to maintain an active online presence efficiently, saving time and ensuring consistent messaging.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_15_marketing_agent_social_media_post/main.py:
+--------------------------------------------------------------------------------
+ 1 | # main.py
+ 2 | # Objective: Generate a social media post for a product or event.
+ 3 | 
+ 4 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 5 | from langchain.prompts import PromptTemplate
+ 6 | from langchain.chains import LLMChain
+ 7 | 
+ 8 | def run_social_media_post_generator():
+ 9 |     """
+10 |     Creates a prompt template for social media post generation and uses an LLMChain.
+11 |     """
+12 |     llm = ChatGoogleGenerativeAI(model="gemini-pro")
+13 | 
+14 |     # Define the prompt template for social media post generation
+15 |     prompt_template = """Generate a concise and engaging social media post (e.g., for Twitter or Instagram) for the following:
+16 | Product/Event Name: {name}
+17 | Description: {description}
+18 | Target Audience: {audience}
+19 | 
+20 | Include relevant hashtags. Post:"""
+21 |     prompt = PromptTemplate(template=prompt_template, input_variables=["name", "description", "audience"])
+22 | 
+23 |     # Create an LLMChain
+24 |     llm_chain = LLMChain(prompt=prompt, llm=llm)
+25 | 
+26 |     # Product/Event details
+27 |     name = "Annual Tech Innovation Summit"
+28 |     description = "Join us for a day of groundbreaking discussions, workshops, and networking with industry leaders in AI, blockchain, and sustainable tech."
+29 |     audience = "Tech enthusiasts, developers, industry professionals"
+30 | 
+31 |     # Run the social media post generation chain
+32 |     post = llm_chain.invoke({"name": name, "description": description, "audience": audience})
+33 |     print(post["text"])
+34 | 
+35 | if __name__ == "__main__":
+36 |     run_social_media_post_generator()
+37 | 
+
+
+--------------------------------------------------------------------------------
+/project_15_marketing_agent_social_media_post/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_16_hr_agent_resume_screener/README.md:
+--------------------------------------------------------------------------------
+ 1 | # Project 16: HR Agent - Resume Screener
+ 2 | 
+ 3 | ## Objective
+ 4 | Screen a sample resume against a set of job requirements and provide a summary.
+ 5 | 
+ 6 | ## Setup and Run
+ 7 | 1.  Navigate to the `project_16_hr_agent_resume_screener` directory:
+ 8 |     ```bash
+ 9 |     cd project_16_hr_agent_resume_screener
+10 |     ```
+11 | 2.  Install the required dependencies:
+12 |     ```bash
+13 |     uv pip install -r requirements.txt
+14 |     ```
+15 | 3.  Run the script:
+16 |     ```bash
+17 |     python main.py
+18 |     ```
+19 |     The script will print a screening summary of the resume against the job requirements.
+20 | 
+21 | ## Real-World Value
+22 | Automating resume screening is a significant application of LLMs in Human Resources. This project demonstrates how an HR agent can quickly evaluate a candidate's resume against specific job requirements, highlighting relevant skills and experience or identifying gaps. This can drastically reduce the manual effort involved in the initial stages of recruitment, allowing HR professionals to focus on more strategic tasks and improving the efficiency of the hiring process. It helps in quickly shortlisting candidates that best fit the criteria.
+23 | 
+
+
+--------------------------------------------------------------------------------
+/project_16_hr_agent_resume_screener/requirements.txt:
+--------------------------------------------------------------------------------
+1 | langchain
+2 | langchain-google-genai
+3 | python-dotenv
+4 | uv
+5 | 
+
+
+--------------------------------------------------------------------------------
+/project_16_hr_agent_resume_screener/sample_resume.txt:
+--------------------------------------------------------------------------------
+ 1 | John Doe
+ 2 | Software Developer
+ 3 | 
+ 4 | Summary:
+ 5 | Experienced software developer with 4 years in Python, specializing in web applications and data processing. Strong problem-solving skills and a passion for learning new technologies.
+ 6 | 
+ 7 | Experience:
+ 8 | - Senior Python Developer at Tech Solutions (3 years): Developed and maintained RESTful APIs, optimized database queries, and deployed applications on AWS.
+ 9 | - Junior Developer at Innovate Corp (1 year): Assisted in building data pipelines and automating testing processes.
+10 | 
+11 | Skills:
+12 | Python, Django, Flask, SQL, AWS, Git, Docker, Data Structures, Algorithms, Agile
+13 | 
+14 | Education:
+15 | - Bachelor of Science in Computer Science, University of Example (2020)
+16 | 
+
+
+--------------------------------------------------------------------------------
+/project_17_multi_tool_agent/main.py:
+--------------------------------------------------------------------------------
+ 1 | """
+ 2 | Project 17: Multi-tool Agent
+ 3 | 
+ 4 | Objective: Demonstrate an agent capable of using multiple tools to answer a query.
+ 5 | """
+ 6 | 
+ 7 | from langchain_google_genai import ChatGoogleGenerativeAI
+ 8 | from langchain.agents import Tool, AgentExecutor, AgentType
+ 9 | from datetime import datetime
+10 | 
+11 | # Initialize the LLM
+12 | llm = ChatGoogleGenerativeAI(model="gemini-pro")
+13 | 
+14 | # Define tools
+15 | def get_current_time(query: str) -> str:
+16 |     """Returns the current time."""
+17 |     return datetime.now().strftime("%H:%M:%S")
+18 | 
+19 | def get_weather_info(query: str) -> str:
+20 |     """Returns a hardcoded weather description for a given city."""
+21 |     city = query.lower()
+22 |     if "london" in city:
+23 |         return "It's cloudy with a chance of rain in London."
+24 |     elif "new york" in city:
+25 |         return "It's sunny and warm in New York."
+26 |     else:
+27 |         return "Weather information not available for this city."
+28 | 
+29 | tools = [
+30 |     Tool(
+31 |         name="CurrentTime",
+32 |         func=get_current_time,
+33 |         description="Useful for getting the current time. Input is not used."
+34 |     ),
+35 |     Tool(
+36 |         name="WeatherInfo",
+37 |         func=get_weather_info,
+38 |         description="Useful for getting weather information for a city. Input should be the city name."
+39 |     )
+40 | ]
+41 | 
+42 | # Create an agent executor
+43 | agent = AgentExecutor.from_agent_and_tools(
+44 |     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+45 |     tools=tools,
+46 |     llm=llm,
+47 |     verbose=True
+48 | )
+49 | 
+50 | # Invoke the agent
+51 | response = agent.invoke({"input": "What is the current time and what's the weather like in London?"})
+52 | print(response["output"])
+53 | 
+
+
+--------------------------------------------------------------------------------
+/requirements.txt:
+--------------------------------------------------------------------------------
+ 1 | langchain
+ 2 | langchain-google-genai
+ 3 | python-dotenv
+ 4 | uv
+ 5 | langchain-community
+ 6 | wikipedia
+ 7 | langchain-experimental
+ 8 | pandas
+ 9 | beautifulsoup4
+10 | lxml
+
+
+--------------------------------------------------------------------------------
